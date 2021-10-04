@@ -1,0 +1,168 @@
+/* ================== CONTACTS START  ================== */
+.page-template-page_contacts .breadcrumbs_wrapper {
+  padding-top: 10px;
+}
+
+.page-template-page_contacts {
+  background-image: url(../img/contacts_bg.png);
+  background-size: 1228px;
+  background-repeat: no-repeat;
+  background-position-y: 130px;
+  background-position-x: 560px;
+}
+
+.contacts_main_wrapper {
+  min-height: 900px;
+}
+
+.contacts_main_wrapper_header {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 23px;
+  color: #373331;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.contacts_main_content_item_conteiner_header {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  color: #373331;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.contacts_main_content_item {
+  max-width: 450px;
+  margin-bottom: 40px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.contacts_main_content_item_conteiner_adress {
+  padding-left: 25px;
+  background-image: url(../img/pin_contact_icon.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 15px;
+}
+
+.contacts_main_content_item_conteiner_email {
+  padding-left: 25px;
+  background-image: url(../img/envelope_contact_icon.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 15px;
+}
+
+.contacts_main_content_item_conteiner_social {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.contacts_main_content_item_conteiner_social.facebook {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #8e8e8e;
+  background-image: url(../img/fasebook_contact_icon.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts_main_content_item_conteiner_social.twitter {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #8e8e8e;
+  background-image: url(../img/twitter_contact_icon.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts_main_content_item_conteiner_social.instagram {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #8e8e8e;
+  background-image: url(../img/instagram_contact_icon.svg);
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts_main_content_item_conteiner_social.youtube {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #8e8e8e;
+  background-image: url(../img/youtube_contact_icon.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts_main_content_item_conteiner_adress,
+.contacts_main_content_item_conteiner_email,
+.contacts_main_content_item_conteiner_phone {
+  color: #8e8e8e;
+  font-size: 16px;
+}
+
+.contacts_main_wrapper_btn_wrapper {
+  margin-top: 80px;
+}
+
+.contacts_main_wrapper_btn {
+  width: auto;
+  height: auto;
+  padding: 8px 15px;
+  background: #7E50BF;
+  border-radius: 2px;
+  color: #fff;
+}
+
+/* ================== CONTACTS END  ================== */

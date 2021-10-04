@@ -1,0 +1,86 @@
+/* ================== ABOUT US  START  ================== */
+.page-template-page_about_us .breadcrumbs_wrapper {
+  padding-top: 10px;
+}
+
+.about_us_main_wrapper {
+  margin-top: 25px;
+  padding: 0 10%;
+  padding-bottom: 100px;
+  padding-top: 65px;
+  background: url('../img/about_us_bg.png');
+  background-repeat: no-repeat;
+  background-position-x: 25%;
+  background-position-y: 0%;
+  background-size: 70%;
+}
+
+.about_us_main_wrapper .about_us_main_container {
+  text-align: center;
+}
+
+.about_us_main_wrapper .about_us_main_container h1.about_us_header_title {
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 59px;
+  color: #373331;
+  text-transform: uppercase;
+}
+
+.about_us_main_wrapper .about_us_header_sub_title {
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8D8787;
+}
+
+.about_us_first_section {
+  margin-bottom: 85px;
+}
+
+.about_us_first_section_img_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about_us_first_section_img_wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about_us_second_section_text_container,
+.about_us_first_section_text_container {
+  max-width: 460px;
+}
+
+.about_us_header_wreapper {
+  margin-bottom: 40px;
+}
+
+.about_us_header_wreapper p {
+  max-width: 415px;
+}
+
+.about_us_second_section_text,
+.about_us_first_section_text {
+  display: flex;
+  align-items: center;
+}
+
+.about_us_second_section_text_container h2,
+.about_us_first_section_text h2 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #373331;
+  text-align: left;
+}
+
+.about_us_second_section_text_container p,
+.about_us_second_section_text_container h2,
+.about_us_first_section_text p {
+  text-align: left;
+}
+
+/* ================== ABOUT US  END  ================== */

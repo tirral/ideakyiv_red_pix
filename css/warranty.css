@@ -1,0 +1,78 @@
+/* ================== WARRANTY  START  ================== */
+.page-template-page_warranty .breadcrumbs_wrapper {
+  padding-top: 10px;
+}
+
+.warranty_main_wrapper {
+  min-height: 900px;
+}
+
+.warranty_main_wrapper_header {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 23px;
+  color: #373331;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.accordion {
+  max-width: 100%;
+  margin: 0 auto 100px;
+  padding: 0;
+}
+
+.accordion li {
+  position: relative;
+  list-style: none;
+}
+
+.accordion .accordion_content {
+  display: none;
+}
+
+.accordion li p {
+  padding: 5px 0 5px;
+  color: #4A4A4A;
+}
+
+.accordion a {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 3;
+  font-size: 24px;
+  user-select: none;
+}
+
+.accordion a:after {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  position: absolute;
+  right: 10px;
+  content: " ";
+  top: 17px;
+  transform: rotate(45deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion p {
+  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px;
+}
+
+a.active:after {
+  transform: rotate(225deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ================== WARRANTY END ================== */
