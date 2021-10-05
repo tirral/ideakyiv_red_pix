@@ -169,6 +169,9 @@ function ideakyiv_scripts() {
 	wp_enqueue_style('ideakyiv-main_styleCSS', get_template_directory_uri() . '/css/main_style.css', false, NULL, 'all');
 	wp_enqueue_style('ideakyiv-main_mobile_styleCSS', get_template_directory_uri() . '/css/main_mobile_style.css', false, NULL, 'all');
 
+
+	
+  wp_enqueue_script( 'ideakyiv-jquery-uiJS', get_template_directory_uri() . '/lib/jquery-ui/jquery-ui.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ideakyiv-modernizrJS', get_template_directory_uri() . '/lib/slick/modernizr.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ideakyiv-slickJS', get_template_directory_uri() . '/lib/slick/slick.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ideakyiv-wowJS', get_template_directory_uri() . '/lib/wow-js/wow.min.js', array(), _S_VERSION, true );
@@ -178,34 +181,38 @@ function ideakyiv_scripts() {
 	wp_enqueue_script( 'ideakyiv-slim_notifierJS', get_template_directory_uri() . '/lib/slim_notifier/slim_notifier.js', array(), '20151215', true );
 	wp_enqueue_script( 'ideakyiv-stocs-kinetikJS', get_template_directory_uri() . '/lib/stocs-timer/kinetic.js', array(), '20151215', true );
 	wp_enqueue_script( 'ideakyiv-stocs-timerJS', get_template_directory_uri() . '/lib/stocs-timer/jquery.final-countdown.min.js', array(), '20151215', true );
-	wp_enqueue_script( 'winwin-cookieJS', get_template_directory_uri() . '/js/jquery.cookie.js', array(), 2010001, true );
-	wp_enqueue_script( 'winwin-warrantyJS', get_template_directory_uri() . '/js/warranty.js', array(), 2010001, true );
-  wp_enqueue_script( 'winwin-paymentJS', get_template_directory_uri() . '/js/payment.js', array(), 2010001, true );
-	wp_enqueue_script( 'winwin-checkoutJS', get_template_directory_uri() . '/js/checkout.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-cookieJS', get_template_directory_uri() . '/js/jquery.cookie.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-warrantyJS', get_template_directory_uri() . '/js/warranty.js', array(), 2010001, true );
+  wp_enqueue_script( 'ideakyiv-paymentJS', get_template_directory_uri() . '/js/payment.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-checkoutJS', get_template_directory_uri() . '/js/checkout.js', array(), 2010001, true );
 
   $current_language = pll_current_language( 'slug' );
 	if ($current_language == 'de'){
-			wp_enqueue_script( 'winwin-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
-			wp_enqueue_script( 'winwin-lang_de_fixJS', get_template_directory_uri() . '/js/lang_de_fix.js', array(), 2010001, true );
+			wp_enqueue_script( 'ideakyiv-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
+			wp_enqueue_script( 'ideakyiv-lang_de_fixJS', get_template_directory_uri() . '/js/lang_de_fix.js', array(), 2010001, true );
 			wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_de.js', array(), '20151215', true );
 	}
 	if ($current_language == 'en'){
-			wp_enqueue_script( 'winwin-parse_enJS', get_template_directory_uri() . '/js/parse_en.js', array(), 2010001, true );
-			wp_enqueue_script( 'winwin-lang_en_fixJS', get_template_directory_uri() . '/js/lang_en_fix.js', array(), 2010001, true );
+			wp_enqueue_script( 'ideakyiv-parse_enJS', get_template_directory_uri() . '/js/parse_en.js', array(), 2010001, true );
+			wp_enqueue_script( 'ideakyiv-lang_en_fixJS', get_template_directory_uri() . '/js/lang_en_fix.js', array(), 2010001, true );
 		  wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_en.js', array(), '20151215', true );
 	}
 
-  wp_enqueue_script( 'winwin-stockJS', get_template_directory_uri() . '/js/stock.js', array(), 2010001, true );
-  wp_enqueue_script( 'winwin-footerJS', get_template_directory_uri() . '/js/footer.js', array(), 2010001, true );
-	wp_enqueue_script( 'winwin-single_productJS', get_template_directory_uri() . '/js/single_product.js', array(), 2010001, true );
-	wp_enqueue_script( 'winwin-archive_productJS', get_template_directory_uri() . '/js/archive_product.js', array(), 2010001, true );
-	wp_enqueue_script( 'ideakyiv-cookieJS', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
+  wp_enqueue_script( 'ideakyiv-stockJS', get_template_directory_uri() . '/js/stock.js', array(), 2010001, true );
+  wp_enqueue_script( 'ideakyiv-footerJS', get_template_directory_uri() . '/js/footer.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-single_productJS', get_template_directory_uri() . '/js/single_product.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-archive_productJS', get_template_directory_uri() . '/js/archive_product.js', array(), 2010001, true );
+	wp_enqueue_script( 'ideakyiv-mainJS', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
+
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ideakyiv_scripts' );
+
 
 
 /**
@@ -394,6 +401,11 @@ function product_category_term_title_min( $term_title ){
 }
 
 
+
+
+
+
+
 //remove WooCommerce breadcrumbs
 add_action('template_redirect', 'remove_shop_breadcrumbs' );
 function remove_shop_breadcrumbs(){
@@ -540,6 +552,23 @@ function after_add_to_cart_attribute_content(){
 	echo '</div>';
 	echo '</div>';
 }
+
+
+
+// SHOW EMPTY RETING
+add_action('woocommerce_after_shop_loop_item_title', 'ehi_woocommerce_template_single_excerpt', 5);
+function ehi_woocommerce_template_single_excerpt() {
+    echo '</a>';
+    global $product;
+    $rating = $product->get_average_rating();
+    if ( $rating == 0 ) {
+			$rating_html  = '</a><a href="' . get_the_permalink() . '#respond"><div class="star-rating ehi-star-rating"><span style="width:' . (( $rating / 5 ) * 100) . '%"></span></div><span style="font-size: 0.857em;"><em><strong>' . $title . '</strong></em></span></a>';
+			echo $rating_html;
+    }
+    wc_get_template('single-product/short-description.php');
+}
+
+
 
 // ADD IMAGE THUMBNAIL FOR CUSTOM TABLE IN CUSTOM FOLDER START
 function cwUpload($field_name = '', $target_folder = '', $file_name = '', $thumb = FALSE, $thumb_folder = '', $thumb_width = '', $thumb_height = ''){

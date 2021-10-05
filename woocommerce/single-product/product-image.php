@@ -64,7 +64,7 @@ $wrapper_classes   = apply_filters(
 			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	?>
 	</figure>
 			<div id="single_product_lg_img_container_zoom"></div>
-	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
+	   <?php do_action( 'woocommerce_product_thumbnails' ); ?>
 
 	<div class="woocommerce_main_content_wrapper">
 		<?php $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );

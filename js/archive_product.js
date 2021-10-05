@@ -2,7 +2,6 @@
 
 jQuery(document).ready(function($) {
 
-
   /* ==========================================================================
      Range Slider for price filter START
   ========================================================================== */
@@ -42,6 +41,7 @@ jQuery(document).ready(function($) {
   /* ==========================================================================
      Range Slider for product dimensions START
   ========================================================================== */
+
 
   $.widget("custom.rangeslider", {
     options: {
@@ -109,6 +109,8 @@ jQuery(document).ready(function($) {
       }
     }
   });
+
+
   /* ==========================================================================
      Range Slider for product dimensions END
   ========================================================================== */
@@ -123,6 +125,7 @@ jQuery(document).ready(function($) {
   $("[data-range-id = product_depth_range]").rangeslider({
     max: 3000
   });
+
 
 
   // CHANGING VALUES IN THE PRICE SLIDER

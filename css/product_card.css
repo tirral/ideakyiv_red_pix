@@ -230,7 +230,6 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 .product a.button {
-  opacity: 0;
   font-size: 12px !important;
   text-transform: uppercase !important;
   margin: 10px 5px 5px 5px !important;
@@ -371,6 +370,16 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 
 .hide_like_btn {
   display: none;
+}
+
+.cart_content_line {
+  font-size: 12px !important;
+  line-height: 14px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  color: #373331 !important;
+  padding: 10px !important;
+  margin-bottom: 0;
 }
 
 /* ================== PRODUCT CARD  END  ================== */

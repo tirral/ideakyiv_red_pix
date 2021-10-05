@@ -118,7 +118,7 @@
       </div>
 		</div>
     <div class="col-lg-12 header_taxonomy_list_container">
-      <nav>
+      <nav class="taxonomy_navigation">
         <ul class="topmenu">
     <?php
       $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);

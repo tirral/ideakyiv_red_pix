@@ -19,6 +19,12 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 $queried_object = get_queried_object();
+
+// echo '<pre>';
+// print_r($queried_object);
+// echo '</pre>';
+
+
 $terms = get_the_terms( $queried_object->ID, 'product_cat' );
 foreach ($terms as $term) {
     $term_b_name =  $product_cat_id = $term->name;
@@ -89,7 +95,7 @@ foreach ($terms as $term) {
   </div>
 
   <div class="row home_page_main_wrapper">
-    <div class="col-lg-2">
+    <div class="col-lg-2 filter_wrap">
       <?php  get_template_part( 'template-parts/content', 'archive_product_sitebar'); ?>
     </div>
     <div class="col-lg-10 main_product_container">
@@ -122,18 +128,28 @@ foreach ($terms as $term) {
             <div class="cart_wariant_container_variant_block"></div>
           </div>
         </div>
-
       </div>
 
+      <?php
+          $term = get_queried_object();
+          $children = get_terms( $term->taxonomy, array(
+              'parent'    => $term->term_id,
+              'hide_empty' => false
+          ));
+          echo '<ul id="children_taxonomy_wrapper">';
+          if ( $children) {
+              foreach( $children as $subcat ){
+                  echo '<li class="children_taxonomy_wrapper_item" ><a href="' . esc_url(get_term_link($subcat, $subcat->taxonomy)) . '">' . $subcat->name . '</a></li>';
+              }
+          }
+          echo '</ul>'; ?>
 
       <ul class="products columns-4">
           <?php
         $current_page = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
 
-
         if(isset($_GET['orderby'])) {
             $sorting_order = $_GET['orderby'];
-
 
 // =============================================================================
 //                      PARAMETERS FOR SORT BY PRICE START
@@ -159,9 +175,7 @@ foreach ($terms as $term) {
                  'order' => 'asc',
                );
 
-
               } elseif ($sorting_order == 'price-desc'){
-
 
                 $params = array(
                   'order' => 'DESC',
@@ -224,6 +238,7 @@ if ($product_color_val == 'not_set' AND $product_width_range == 'not_set' AND  $
        ) ),
      );
 }
+
 
 // FILTER BY CATEGORY AND COLOR
 if ($product_color_val !='not_set' AND $product_width_range == 'not_set' AND  $product_height_range == 'not_set' AND $product_depth_range == 'not_set' AND $product_price_lower == 'not_set' AND $product_price_upper == 'not_set'){
@@ -2123,7 +2138,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
          <div class="show-more__line"></div>
        </div>
       <?php else :?>
-         <p class="info-message"><?php pll_e('Информация отсутствует'); ?></p>
+         <p class="info-message"><?php pll_e('Keine Artikel, die den angegebenen Parametern entsprechen'); ?></p>
       <?php endif; ?>
     </div>
   </div>

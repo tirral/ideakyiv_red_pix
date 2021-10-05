@@ -93,6 +93,7 @@ $products_colors_new = array();
 </div>
 
 
+
 <div class="sitebar_filter_wrapper_color">
 <div class="title-sidebar_default_second_sub_header"><p><?php pll_e('Abmessungen'); ?></p></div>
 <div class="product_width_range_title">Länge <span>(сm)</span>:</div>
@@ -102,6 +103,8 @@ $products_colors_new = array();
 <div class="product_width_range_title">Tiefe <span>(сm)</span>:</div>
 <section><div id="product_depth_range" class="range-slider js-range" data-range-id="product_depth_range"></div></section>
 </div>
+
+
 
 
 <?php

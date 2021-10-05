@@ -10,8 +10,6 @@
  */
  ?>
 
-
-
   <div class="form_reg_log_wrapper">
     <!-- REGISTER FORM START  -->
     <div class="form_reg_wrap">
@@ -171,8 +169,6 @@
 
       </div>
     </div>
-
-
  <?php wp_footer(); ?>
 </body>
 </html>
