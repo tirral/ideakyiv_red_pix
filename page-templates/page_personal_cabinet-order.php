@@ -46,16 +46,19 @@ $queried_object = get_queried_object(); ?>
   <!-- GET ALL USER INFORMATION END  -->
 
 
-  <div class="row">
+  <div class="row row-no_margin">
       <div class="col-lg-2 cabinet_sitebar_wrapper">
-        <?php if($user_img !='unset'){ ?>
-          <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?> );">
-        <?php } else { ?>
-          <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg);">
-        <?php } ?>
-      </div>
+        <div class="avatar-name">
+            <?php if($user_img !='unset'){ ?>
+              <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?> );">
+            <?php } else { ?>
+              <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg);">
+            <?php } ?>
+          </div>
 
-      <p class="cabinet_sitebar_wrapper_user_name"><?php echo $cuctom_user_name_from_id ?></p>
+          <p class="cabinet_sitebar_wrapper_user_name"><?php echo $cuctom_user_name_from_id ?></p>
+        </div>
+
       <ul class="cabinet_sitebar_wrapper_user_navigation_container">
         <li class="cabinet_sitebar_wrapper_user_navigation_item"><a href="/personal-area/"><?php pll_e('Personal Area'); ?></a></li>
         <li class="cabinet_sitebar_wrapper_user_navigation_item active"><a href="/order/"><?php pll_e('My orders'); ?></a></li>
@@ -66,9 +69,11 @@ $queried_object = get_queried_object(); ?>
       <a href="#" class="cabinet_orders_list_exit"></a>
      <h1 class="cabinet_orders_title"><?php pll_e('My orders'); ?></h1>
 
-     <?php
+
+<?php if(!empty($results_orders_ids)){
+
      foreach ($orders_id as $order_item) {
-        $order = wc_get_order($order_item );
+        $order = wc_get_order($order_item);
         $items = $order->get_items();
         $order_status  = $order->get_status();
         $date_created  = $order->get_date_created();
@@ -80,7 +85,7 @@ $queried_object = get_queried_object(); ?>
             $product = wc_get_product( $product_id  );
             $product_prise =  $product->get_price();
             $product_url = $product->get_permalink();
-          //  $order = wc_get_order( $order_id );
+            //  $order = wc_get_order( $order_id );
 
             $current_language = pll_current_language( 'slug' );
 
@@ -117,8 +122,11 @@ $queried_object = get_queried_object(); ?>
               echo '</div>';
               echo '</div>';
             }
-        }
-     } ?>
+         }
+      }
+    } else {
+      echo '<p class="not_found_result">' . pll_e('Keine Informationen zum Anzeigen') . '</p>';
+    } ?>
     </div>
   </div>
 </div>

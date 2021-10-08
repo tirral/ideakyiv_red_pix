@@ -23,13 +23,13 @@
 }
 
 .breadcrumbs_wrapper .home_page {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-image: url(../img/home_icon.svg);
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-position: 2px 8px;
+  /* display: inline-block; */
+  /* width: 24px; */
+  /* height: 24px; */
+  /* background-image: url(../img/home_icon.svg); */
+  /* background-size: 15px; */
+  /* background-repeat: no-repeat; */
+  /* background-position: 2px 8px; */
 }
 
 .breadcrumbs_wrapper .kb_sep {
@@ -44,7 +44,8 @@
   padding: 0 14px;
 }
 
-.breadcrumbs_wrapper .kb_title, .breadcrumbs_wrapper a {
+.breadcrumbs_wrapper .kb_title,
+.breadcrumbs_wrapper a {
   font-size: 13px;
   line-height: 16px;
   color: #373331;

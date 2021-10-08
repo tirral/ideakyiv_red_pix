@@ -170,7 +170,7 @@ function ideakyiv_scripts() {
 	wp_enqueue_style('ideakyiv-main_mobile_styleCSS', get_template_directory_uri() . '/css/main_mobile_style.css', false, NULL, 'all');
 
 
-	
+
   wp_enqueue_script( 'ideakyiv-jquery-uiJS', get_template_directory_uri() . '/lib/jquery-ui/jquery-ui.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ideakyiv-modernizrJS', get_template_directory_uri() . '/lib/slick/modernizr.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ideakyiv-slickJS', get_template_directory_uri() . '/lib/slick/slick.js', array(), _S_VERSION, true );
@@ -335,9 +335,11 @@ add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
   // Return the number of products you wanna show per page.
-  $cols = 3;
+  $cols = 12;
   return $cols;
 }
+
+
 
 // add counter to basket
 add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
@@ -552,22 +554,6 @@ function after_add_to_cart_attribute_content(){
 	echo '</div>';
 	echo '</div>';
 }
-
-
-
-// SHOW EMPTY RETING
-add_action('woocommerce_after_shop_loop_item_title', 'ehi_woocommerce_template_single_excerpt', 5);
-function ehi_woocommerce_template_single_excerpt() {
-    echo '</a>';
-    global $product;
-    $rating = $product->get_average_rating();
-    if ( $rating == 0 ) {
-			$rating_html  = '</a><a href="' . get_the_permalink() . '#respond"><div class="star-rating ehi-star-rating"><span style="width:' . (( $rating / 5 ) * 100) . '%"></span></div><span style="font-size: 0.857em;"><em><strong>' . $title . '</strong></em></span></a>';
-			echo $rating_html;
-    }
-    wc_get_template('single-product/short-description.php');
-}
-
 
 
 // ADD IMAGE THUMBNAIL FOR CUSTOM TABLE IN CUSTOM FOLDER START
@@ -819,3 +805,26 @@ $current_language = pll_current_language( 'slug' );
 		}
 	}
  // CHANGE BUTTON NAME END
+
+
+
+
+ // SHOW EMPTY RETING
+ function ehi_woocommerce_template_single_excerpt() {
+     echo '</a>';
+     global $product;
+     $rating = $product->get_average_rating();
+     if ( $rating == 0 ) {
+ 			$rating_html  = '</a><a href="' . get_the_permalink() . '#respond"><div class="star-rating ehi-star-rating"><span style="width:' . (( $rating / 5 ) * 100) . '%"></span></div><span style="font-size: 0.857em;"><em><strong>' . $title . '</strong></em></span></a>';
+ 			echo $rating_html;
+     }
+     wc_get_template('single-product/short-description.php');
+ }
+
+
+ add_action('woocommerce_after_shop_loop_item_title','change_loop_ratings_location', 2 );
+ function change_loop_ratings_location(){
+     remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5 );
+     add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 15 );
+		 add_action('woocommerce_after_shop_loop_item_title','ehi_woocommerce_template_single_excerpt', 20 );
+ }

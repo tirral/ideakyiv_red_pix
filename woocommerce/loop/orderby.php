@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div id="woocommerce_ordering" class="product_category_before_loop_function_wrapper">
-
+	<div class="filter_btn"></div>
 	<form class="woocommerce-ordering" method="get">
 		<span class="woocommerce_ordering_text">SORT BY</span>
 		<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">

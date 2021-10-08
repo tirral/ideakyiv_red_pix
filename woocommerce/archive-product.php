@@ -159,7 +159,7 @@ foreach ($terms as $term) {
 
             $params = array(
               'order' => 'DESC',
-              'posts_per_page' => 3,
+              'posts_per_page' => 12,
               'post_type' => 'product',
               'paged' => $current_page,
               'tax_query' => array(
@@ -179,7 +179,7 @@ foreach ($terms as $term) {
 
                 $params = array(
                   'order' => 'DESC',
-                  'posts_per_page' => 3,
+                  'posts_per_page' => 12,
                   'post_type' => 'product',
                   'paged' => $current_page,
                   'tax_query' => array(
@@ -197,7 +197,7 @@ foreach ($terms as $term) {
                } else {
                  $params = array(
                    'order' => 'DESC',
-                   'posts_per_page' => 3,
+                   'posts_per_page' => 12,
                    'post_type' => 'product',
                    'paged' => $current_page,
                    'tax_query' => array(
@@ -225,7 +225,7 @@ if ($product_color_val == 'not_set' AND $product_width_range == 'not_set' AND  $
   // echo $term_b_slug;
   $params = array(
     'order' => 'ASC',
-    'posts_per_page' => 3,
+    'posts_per_page' => 12,
     'post_type' => 'product',
     'paged' => $current_page,
     'tax_query' => array(
@@ -246,7 +246,7 @@ if ($product_color_val !='not_set' AND $product_width_range == 'not_set' AND  $p
   // echo '  -- PRODUCT COLOR - ' . $product_color_val;
   $params = array(
     'order' => 'ASC',
-    'posts_per_page' => 3,
+    'posts_per_page' => 12,
     'post_type' => 'product',
     'paged' => $current_page,
     'tax_query' => array(
@@ -273,7 +273,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
   // echo '  -- WIDTH-- ' . $product_width_range;
   $params = array(
     'order' => 'ASC',
-    'posts_per_page' => 3,
+    'posts_per_page' => 12,
     'post_type' => 'product',
     'paged' => $current_page,
     'tax_query' => array(
@@ -302,7 +302,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
    // echo '--- LOW PRICE --- ' . $product_price_lower;
    $params = array(
      'order' => 'ASC',
-     'posts_per_page' => 3,
+     'posts_per_page' => 12,
      'post_type' => 'product',
      'paged' => $current_page,
      'tax_query' => array(
@@ -337,7 +337,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
     // echo '--- UPPER PRICE --- ' . $product_price_upper;
     $params = array(
       'order' => 'ASC',
-      'posts_per_page' => 3,
+      'posts_per_page' => 12,
       'post_type' => 'product',
       'paged' => $current_page,
       'tax_query' => array(
@@ -373,7 +373,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
      // echo '--- UPPER PRICE --- ' . $product_price_upper;
      $params = array(
        'order' => 'ASC',
-       'posts_per_page' => 3,
+       'posts_per_page' => 12,
        'post_type' => 'product',
        'paged' => $current_page,
        'tax_query' => array(
@@ -408,7 +408,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
    // echo '  -- HEIGHT-- ' . $product_height_range;
    $params = array(
      'order' => 'ASC',
-     'posts_per_page' => 3,
+     'posts_per_page' => 12,
      'post_type' => 'product',
      'paged' => $current_page,
      'tax_query' => array(
@@ -437,7 +437,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
     // echo '--- LOW PRICE --- ' . $product_price_lower;
     $params = array(
       'order' => 'ASC',
-      'posts_per_page' => 3,
+      'posts_per_page' => 12,
       'post_type' => 'product',
       'paged' => $current_page,
       'tax_query' => array(
@@ -472,7 +472,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
      // echo '--- UPPER PRICE --- ' . $product_price_upper;
      $params = array(
        'order' => 'ASC',
-       'posts_per_page' => 3,
+       'posts_per_page' => 12,
        'post_type' => 'product',
        'paged' => $current_page,
        'tax_query' => array(
@@ -508,7 +508,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '--- UPPER PRICE --- ' . $product_price_upper;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -543,7 +543,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
     // echo '  -- LENGHT-- ' . $product_depth_range;
     $params = array(
       'order' => 'ASC',
-      'posts_per_page' => 3,
+      'posts_per_page' => 12,
       'post_type' => 'product',
       'paged' => $current_page,
       'tax_query' => array(
@@ -573,7 +573,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
      // echo '--- LOW PRICE --- ' . $product_price_lower;
      $params = array(
        'order' => 'ASC',
-       'posts_per_page' => 3,
+       'posts_per_page' => 12,
        'post_type' => 'product',
        'paged' => $current_page,
        'tax_query' => array(
@@ -609,7 +609,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '--- UPPER PRICE --- ' . $product_price_upper;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -645,7 +645,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
        // echo '--- UPPER PRICE --- ' . $product_price_upper;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -680,7 +680,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
      // echo '  -- HEIGHT-- ' . $product_height_range;
      $params = array(
        'order' => 'ASC',
-       'posts_per_page' => 3,
+       'posts_per_page' => 12,
        'post_type' => 'product',
        'paged' => $current_page,
        'tax_query' => array(
@@ -716,7 +716,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '--- LOW PRICE --- ' . $product_price_lower;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -758,7 +758,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
        // echo '--- UPPER PRICE --- ' . $product_price_upper;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -801,7 +801,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         // echo '--- UPPER PRICE --- ' . $product_price_upper;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -844,7 +844,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '  -- LENGHT-- ' . $product_depth_range;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -889,7 +889,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
        // echo '--- LOW PRICE --- ' . $product_price_lower;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -939,7 +939,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         // echo '--- UPPER PRICE --- ' . $product_price_upper;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -990,7 +990,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
          // echo '--- UPPER PRICE --- ' . $product_price_upper;
          $params = array(
            'order' => 'ASC',
-           'posts_per_page' => 3,
+           'posts_per_page' => 12,
            'post_type' => 'product',
            'paged' => $current_page,
            'tax_query' => array(
@@ -1038,7 +1038,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
      // echo '  -- WIDTH-- ' . $product_width_range;
      $params = array(
        'order' => 'ASC',
-       'posts_per_page' => 3,
+       'posts_per_page' => 12,
        'post_type' => 'product',
        'paged' => $current_page,
        'tax_query' => array(
@@ -1074,7 +1074,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '--- LOW PRICE --- ' . $product_price_lower;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -1116,7 +1116,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '--- UPPER PRICE --- ' . $product_price_upper;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -1160,7 +1160,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         // echo '--- UPPER PRICE --- ' . $product_price_upper;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -1201,7 +1201,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
       // echo '  -- HEIGHT-- ' . $product_height_range;
       $params = array(
         'order' => 'ASC',
-        'posts_per_page' => 3,
+        'posts_per_page' => 12,
         'post_type' => 'product',
         'paged' => $current_page,
         'tax_query' => array(
@@ -1236,7 +1236,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
        // echo '--- LOW PRICE --- ' . $product_price_lower;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -1277,7 +1277,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         //  echo '--- UPPER PRICE --- ' . $product_price_upper;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -1319,7 +1319,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
           echo '--- LOW PRICE --- ' . $product_price_lower;
          $params = array(
            'order' => 'ASC',
-           'posts_per_page' => 3,
+           'posts_per_page' => 12,
            'post_type' => 'product',
            'paged' => $current_page,
            'tax_query' => array(
@@ -1359,7 +1359,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
        // echo '  -- LENGHT-- ' . $product_depth_range;
        $params = array(
          'order' => 'ASC',
-         'posts_per_page' => 3,
+         'posts_per_page' => 12,
          'post_type' => 'product',
          'paged' => $current_page,
          'tax_query' => array(
@@ -1395,7 +1395,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         // echo '--- LOW PRICE --- ' . $product_price_lower;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -1437,7 +1437,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
          // echo '--- UPPER PRICE --- ' . $product_price_upper;
          $params = array(
            'order' => 'ASC',
-           'posts_per_page' => 3,
+           'posts_per_page' => 12,
            'post_type' => 'product',
            'paged' => $current_page,
            'tax_query' => array(
@@ -1480,7 +1480,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
           // echo '--- UPPER PRICE --- ' . $product_price_upper;
           $params = array(
             'order' => 'ASC',
-            'posts_per_page' => 3,
+            'posts_per_page' => 12,
             'post_type' => 'product',
             'paged' => $current_page,
             'tax_query' => array(
@@ -1522,7 +1522,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
         // echo '  -- HEIGHT-- ' . $product_height_range;
         $params = array(
           'order' => 'ASC',
-          'posts_per_page' => 3,
+          'posts_per_page' => 12,
           'post_type' => 'product',
           'paged' => $current_page,
           'tax_query' => array(
@@ -1566,7 +1566,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
          // echo '--- LOW PRICE --- ' . $product_price_lower;
          $params = array(
            'order' => 'ASC',
-           'posts_per_page' => 3,
+           'posts_per_page' => 12,
            'post_type' => 'product',
            'paged' => $current_page,
            'tax_query' => array(
@@ -1615,7 +1615,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
           // echo '--- UPPER PRICE --- ' . $product_price_upper;
           $params = array(
             'order' => 'ASC',
-            'posts_per_page' => 3,
+            'posts_per_page' => 12,
             'post_type' => 'product',
             'paged' => $current_page,
             'tax_query' => array(
@@ -1666,7 +1666,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
            // echo '--- UPPER PRICE --- ' . $product_price_upper;
            $params = array(
              'order' => 'ASC',
-             'posts_per_page' => 3,
+             'posts_per_page' => 12,
              'post_type' => 'product',
              'paged' => $current_page,
              'tax_query' => array(
@@ -1715,7 +1715,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
          // echo '  -- LENGHT-- ' . $product_depth_range;
          $params = array(
            'order' => 'ASC',
-           'posts_per_page' => 3,
+           'posts_per_page' => 12,
            'post_type' => 'product',
            'paged' => $current_page,
            'tax_query' => array(
@@ -1764,7 +1764,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
           // echo '--- LOW PRICE --- ' . $product_price_lower;
           $params = array(
             'order' => 'ASC',
-            'posts_per_page' => 3,
+            'posts_per_page' => 12,
             'post_type' => 'product',
             'paged' => $current_page,
             'tax_query' => array(
@@ -1819,7 +1819,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
            // echo '--- UPPER PRICE --- ' . $product_price_upper;
            $params = array(
              'order' => 'ASC',
-             'posts_per_page' => 3,
+             'posts_per_page' => 12,
              'post_type' => 'product',
              'paged' => $current_page,
              'tax_query' => array(
@@ -1875,7 +1875,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
             // echo '--- UPPER PRICE --- ' . $product_price_upper;
             $params = array(
               'order' => 'ASC',
-              'posts_per_page' => 3,
+              'posts_per_page' => 12,
               'post_type' => 'product',
               'paged' => $current_page,
               'tax_query' => array(
@@ -1926,7 +1926,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
             // echo '--- LOW PRICE --- ' . $product_price_lower;
             $params = array(
               'order' => 'ASC',
-              'posts_per_page' => 3,
+              'posts_per_page' => 12,
               'post_type' => 'product',
               'paged' => $current_page,
               'tax_query' => array(
@@ -1955,7 +1955,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
               // echo '--- LOW PRICE --- ' . $product_price_lower;
               $params = array(
                 'order' => 'ASC',
-                'posts_per_page' => 3,
+                'posts_per_page' => 12,
                 'post_type' => 'product',
                 'paged' => $current_page,
                 'tax_query' => array(
@@ -1990,7 +1990,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
             // echo '--- UPPER PRICE --- ' . $product_price_upper;
             $params = array(
               'order' => 'ASC',
-              'posts_per_page' => 3,
+              'posts_per_page' => 12,
               'post_type' => 'product',
               'paged' => $current_page,
               'tax_query' => array(
@@ -2019,7 +2019,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
               // echo '--- UPPER PRICE --- ' . $product_price_upper;
               $params = array(
                 'order' => 'ASC',
-                'posts_per_page' => 3,
+                'posts_per_page' => 12,
                 'post_type' => 'product',
                 'paged' => $current_page,
                 'tax_query' => array(
@@ -2057,7 +2057,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
             // echo '--- UPPER PRICE --- ' . $product_price_upper;
             $params = array(
               'order' => 'ASC',
-              'posts_per_page' => 3,
+              'posts_per_page' => 12,
               'post_type' => 'product',
               'paged' => $current_page,
               'tax_query' => array(
@@ -2087,7 +2087,7 @@ if ($product_color_val =='not_set' AND $product_width_range != 'not_set' AND  $p
                // echo '--- UPPER PRICE --- ' . $product_price_upper;
                $params = array(
                  'order' => 'ASC',
-                 'posts_per_page' => 3,
+                 'posts_per_page' => 12,
                  'post_type' => 'product',
                  'paged' => $current_page,
                  'tax_query' => array(

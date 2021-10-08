@@ -227,12 +227,17 @@
 
 #user_information_form p {
   margin-bottom: 26px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-#user_information_form #user_information_form_user_sex {
+/* #user_information_form #user_information_form_user_sex {
   border: none;
   background-color: transparent;
-}
+} */
 
 #profile_user_add_form_main_wrapper {
   display: none;
@@ -259,20 +264,45 @@
   color: #373331
 }
 
+#user_information_form select,
 #user_information_form textarea,
 #user_information_form input {
   border: 0;
   outline: none;
   background: transparent;
-  padding: 5px 10px;
-  color: #4A4A4A;
-  border-bottom: 1px solid #C4C4C4;
-}
-
-#user_information_form textarea {
-  height: 35px;
+  padding: 6px 10px;
+  color: #373331;
+  border-radius: 2px;
+  border: 1px solid #C4C4C4;
+  width: 100%;
 }
 
 #user_information_form {
   margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user_information_form_user_id_wrap {
+  display: none !important;
+}
+
+#user_information_form_user_address_wrap {
+  width: 100% !important;
+}
+
+#user_information_form_user_address {
+  width: 100% !important;
+  resize: none;
+  max-height: 35px;
+  overflow: hidden;
+}
+
+.user_information_form_submite_wrap {
+  width: 100% !important;
+}
+
+#user_information_form_user_img {
+  background: #000;
 }

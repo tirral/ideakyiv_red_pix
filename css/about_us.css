@@ -1,18 +1,42 @@
 /* ================== ABOUT US  START  ================== */
+.page-template-page_about_us {
+  position: relative;
+}
+
 .page-template-page_about_us .breadcrumbs_wrapper {
   padding-top: 10px;
 }
 
+.about_plain {
+  position: absolute;
+  background: url('../img/plain.svg');
+  width: 82px;
+  height: 61px;
+  right: 10%;
+  top: 0;
+  animation: plainAnim 5s ease-in-out infinite;
+}
+
+@keyframes plainAnim {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
 .about_us_main_wrapper {
+  position: relative;
   margin-top: 25px;
   padding: 0 10%;
   padding-bottom: 100px;
   padding-top: 65px;
-  background: url('../img/about_us_bg.png');
-  background-repeat: no-repeat;
-  background-position-x: 25%;
-  background-position-y: 0%;
-  background-size: 70%;
 }
 
 .about_us_main_wrapper .about_us_main_container {

@@ -14,7 +14,10 @@
  <head>
  	<meta charset="<?php bloginfo( 'charset' ); ?>">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
  	<?php wp_head(); ?>
  </head>
 
@@ -118,7 +121,43 @@
       </div>
 		</div>
     <div class="col-lg-12 header_taxonomy_list_container">
+      <div class="header_taxonomy_head">
+        <div class="header_taxonomy_head_info_user">
+          <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+            <!-- GET USER NAME START  -->
+            <?php
+            $cuctom_user_id =  $_COOKIE["cuctom_user_login_id"];
+            $results = $wpdb->get_results("SELECT *  FROM  custom_users WHERE id='$cuctom_user_id'");
+            foreach ($results as $result) {
+                $cuctom_user_name_from_id =  $result->user_name;
+            } ?>
+            <!-- GET USER NAME END  -->
+            <!-- GET ALL USER INFORMATION START -->
+            <?php
+            $cuctom_orders_id =  $_COOKIE["cuctom_user_login_id"];
+            $results_user_info = $wpdb->get_results("SELECT *  FROM  custom_users_information  WHERE 	information_user_id='$cuctom_orders_id'");
+            foreach ($results_user_info as $result_user_info) {
+              $user_img = $result_user_info->information_user_img;
+              $user_email = $result_user_info->information_user_email;
+            } ?>
+            <!-- GET ALL USER INFORMATION END  -->
+            <?php if($user_img !='unset'){ ?>
+              <img src="<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?>" alt="">
+
+              <?php } else { ?>
+                <img src="<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg)" alt="">
+
+              <?php } ?>
+              <div class="header_taxonomy_head_info_user-name-mail">
+                <p class="header_taxonomy_head_name"><?php echo $cuctom_user_name_from_id; ?></p>
+                <p class="header_taxonomy_head_mail"><?php echo $user_email ?></p>
+              </div>
+
+          <?php } ?>
+        </div>
+      </div>
       <nav class="taxonomy_navigation">
+        <div class="categories_drop-down">Categories</div>
         <ul class="topmenu">
     <?php
       $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);

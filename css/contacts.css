@@ -8,7 +8,7 @@
   background-size: 1228px;
   background-repeat: no-repeat;
   background-position-y: 130px;
-  background-position-x: 560px;
+  background-position-x: 100%;
 }
 
 .contacts_main_wrapper {
@@ -163,6 +163,12 @@
   background: #7E50BF;
   border-radius: 2px;
   color: #fff;
+  text-decoration: none;
+}
+
+.contacts_main_wrapper_btn:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* ================== CONTACTS END  ================== */

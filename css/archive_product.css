@@ -248,6 +248,10 @@
   align-items: center;
 }
 
+.pagination .first, .pagination .last {
+  display: none;
+}
+
 #custom_top_filter_select_text {
   height: 28px;
 }

@@ -59,16 +59,16 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				do_action( 'woocommerce_before_shop_loop_item' );
 				do_action( 'woocommerce_before_shop_loop_item_title' );
 				do_action( 'woocommerce_shop_loop_item_title' );
-				if(get_the_content()){
 							echo '<p class="cart_content_line">' . wp_trim_words( get_the_content(), 9, '...' ) . '</p>';
-				}
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 				do_action( 'woocommerce_after_shop_loop_item' );
 			?>
 		</div>
 	<?php
 	$queried_object = get_queried_object();
-	if($queried_object->taxonomy == 'product_cat' || is_page_template('page-templates/page_personal_cabinet-favorits.php')){ ?>
+	  if($queried_object->taxonomy == 'product_cat' ||
+		   is_page_template('page-templates/page_personal_cabinet-favorits.php') ||
+			 is_singular('stock')){ ?>
 			<div class="list_item_variant_block">
 				<div class="list_item_variant_block_img">
 					<?php

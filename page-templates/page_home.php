@@ -45,7 +45,7 @@ get_header();
 
         <div class="col-lg-12 home_page_product_line_wrapper animate__animated animate__fadeIn wow">
            <h1><?php pll_e('Sales leaders'); ?></h1>
-          <div class="home_page_product_line_container">
+          <div class="home_page_product_line_container sales_leaders_block">
             <?php
             $args = array(
               'order' => 'DESC', //ASC

@@ -4,13 +4,13 @@
 }
 
 .payment_main_wrapper {
-  min-height: 900px;
+  min-height: 700px;
 }
 
 .payment_main_wrapper_header {
   font-weight: bold;
   font-size: 28px;
-  line-height: 23px;
+  line-height: 100%;
   color: #373331;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -20,7 +20,9 @@
   display: none;
 }
 
-#reception_btn, #payment_btn, #delivery_btn {
+#reception_btn,
+#payment_btn,
+#delivery_btn {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -66,6 +68,10 @@
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
+}
+
+.tabs_wrapper_header div {
+  cursor: pointer;
 }
 
 .tabs_wrapper_header_text {

@@ -24,6 +24,8 @@ get_header(); ?>
  </div>
 
  <div class="container-fluid about_us_main_wrapper">
+  <div class="about_plain"></div>
+
    <div class="row about_us_main_container">
      <div class="col-lg-12 about_us_header_wreapper">
        <h1 class="about_us_header_title"><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_header_section_title', true ); ?></h1>
@@ -34,7 +36,7 @@ get_header(); ?>
 
     <div class="container-fluid about_us_first_section_wrapper">
       <div class="row about_us_first_section" >
-        <div class="col-lg-6 about_us_first_section_text">
+        <div class="col-lg-6 about_us_first_section_text animate__animated animate__fadeIn wow">
           <div class="about_us_first_section_text_container">
             <h2><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_title', true ); ?></h2>
             <p><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_text', true ); ?></p>
@@ -55,7 +57,7 @@ get_header(); ?>
             <img src="<?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_img', true ); ?>" alt="">
           </div>
         </div>
-        <div class="col-lg-6 about_us_second_section_text">
+        <div class="col-lg-6 about_us_second_section_text animate__animated animate__fadeIn wow">
           <div class="about_us_second_section_text_container">
             <h2><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_title', true ); ?></h2>
             <p><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_text', true ); ?></p>

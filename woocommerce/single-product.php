@@ -89,7 +89,7 @@ get_header(); ?>
 
 	<div class="col-lg-12 home_page_product_line_wrapper">
 		 <h1>Sales leaders</h1>
-		<div class="home_page_product_line_container">
+		<div class="home_page_product_line_container leaders-slider">
 			<?php
 			$args = array(
 				'order' => 'DESC', //ASC
