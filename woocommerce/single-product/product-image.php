@@ -47,14 +47,14 @@ $wrapper_classes   = apply_filters(
 					<?php foreach ( $attachment_ids as $attachment_id ) { ?>
 					<div>
 						<div  class="woocommerce-product-gallery__image--placeholder">
-					  	<img class="sloder_image" src="<?php echo wp_get_attachment_image_url( $attachment_id , 'full' ) ?>" alt="">
+					  	<img class="sloder_image" src="<?php echo wp_get_attachment_image_url( $attachment_id , 'image_630_620' ) ?>" alt="">
 						</div>
 					</div>
 					<?php } ?>
 				</div>
 		<?php	} else if ($product->get_image_id()){
 						$html  = '<div id="single_product_main_img_container" class="woocommerce-product-gallery__image--placeholder">';
-						$html .=  '<img src="' . wp_get_attachment_image_url( $product->get_image_id(), 'full' ) .'" alt="#" id="single_product_main_img" class="wp-post-image" />';
+						$html .=  '<img src="' . wp_get_attachment_image_url( $product->get_image_id(), 'image_630_620' ) .'" alt="#" id="single_product_main_img" class="wp-post-image" />';
 						$html .= '</div>';
 			   	} else {
 						$html  = '<div class="woocommerce-product-gallery__image--placeholder">';

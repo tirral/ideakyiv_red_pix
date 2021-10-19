@@ -1,16 +1,15 @@
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
   $("#city_load_more_out").hide();
 
   $("#city_load_more_out").empty();
-  $("#search input").keyup(function () {
+  $("#search input").keyup(function() {
     var text_val = $("#search input").val();
     var regexp = /^[a-z - ]+$/i;
     if (text_val.match(regexp)) {
       if (text_val === "") {
         $("#city_load_more_out").hide();
       } else {
-        if (!/\S/.test(text_val)) {
-        } else {
+        if (!/\S/.test(text_val)) {} else {
           if (text_val.length >= 3) {
             $("#city_load_more_out").show();
             $("#result").html("");
@@ -23,20 +22,22 @@ jQuery(document).ready(function ($) {
             ourReqest.open(
               "GET",
               "http://tigall.red-pix.com/wp-json/wp/v2/product?_embed&per_page=10&order=asc&search=" +
-                searchField
+              searchField
             );
-            ourReqest.onload = function () {
+            ourReqest.onload = function() {
               var ourData = JSON.parse(ourReqest.responseText);
               $("#city_load_more_out").empty();
               for (var i = 0; i < ourData.length; i++) {
-                result.innerHTML +=
-                  '<div class="archive_news_body_sitebar_container_item serch_items"><div class="archive_news_body_sitebar_container_item_img"><img src="' +
-                  ourData[i]._embedded["wp:featuredmedia"][0].source_url +
-                  '"></div><div class="archive_news_body_sitebar_container_item_text"><a href="' +
-                  ourData[i].link +
-                  '">' +
-                  ourData[i].title.rendered +
-                  "</a></div></div>";
+                if (ourData[i]._embedded["wp:featuredmedia"][0].source_url != null) {
+                  result.innerHTML +=
+                    '<div class="archive_news_body_sitebar_container_item serch_items"><div class="archive_news_body_sitebar_container_item_img"><img src="' +
+                    ourData[i]._embedded["wp:featuredmedia"][0].source_url +
+                    '"></div><div class="archive_news_body_sitebar_container_item_text"><a href="' +
+                    ourData[i].link +
+                    '">' +
+                    ourData[i].title.rendered +
+                    "</a></div></div>";
+                }
                 counter++;
               }
               if (counter == 0) {
@@ -47,8 +48,7 @@ jQuery(document).ready(function ($) {
               }
               if (ourReqest.status != 200) {
                 // обработать ошибку
-              } else {
-              }
+              } else {}
             };
             ourReqest.send();
           }

@@ -43,13 +43,14 @@ function homepage_metaboxes() {
   		'id'   => 'header_slider_img',
   		'type' => 'file',
   		'options' => array(
-  				'url' => false, // Hide the text input for the url
+  			'url' => false, // Hide the text input for the url
   		),
   		'text'    => array(
-  				'add_upload_file_text' => 'Добавить изображение' // Change upload button text. Default: "Add or Upload File"
+  			'add_upload_file_text' => 'Добавить изображение' // Change upload button text. Default: "Add or Upload File"
   		),
   		'preview_size' => 'medium', // Image size to use when previewing in the admin.
   	));
+
   	$cmb->add_group_field( $group_field_id, array(
   		'name'       => __( 'Заголовок слайда', 'cmb2' ),
   		'id'         => 'header_slider_title',

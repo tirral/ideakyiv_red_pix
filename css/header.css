@@ -150,6 +150,10 @@
   margin-left: 20px;
 }
 
+.current-menu-item a {
+  text-decoration: underline;
+}
+
 .header_wrapper_menu #primary-menu {
   margin: 0 auto;
   min-width: 460px;
@@ -494,6 +498,56 @@ nav a {
 .menu_main_item_img {
   width: 50px;
   margin-bottom: 4px;
+}
+
+#header_menu_wohnzimmer-de,
+#header_menu_wohnzimmer-en {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 4px;
+  background-image: url(../img/Living_room.svg);
+  background-size: cover;
+}
+
+#header_menu_schlafzimmer-de,
+#header_menu_schlafzimmer-en {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 4px;
+  background-image: url(../img/Bedroom.svg);
+  background-size: cover;
+}
+
+#header_menu_badezimmer-de,
+#header_menu_badezimmer-en {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 4px;
+  background-image: url(../img/Bathroom.svg);
+  background-size: cover;
+}
+
+#header_menu_buero-de,
+#header_menu_buro-en {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 4px;
+  background-image: url(../img/Office.svg);
+  background-size: cover;
+}
+
+#header_menu_flur-de,
+#header_menu_flur-en {
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin-bottom: 4px;
+  background-image: url(../img/Hallway.svg);
+  background-size: cover;
 }
 
 .topmenu>li>a {

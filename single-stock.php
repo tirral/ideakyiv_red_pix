@@ -114,7 +114,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
      </div>
    </div>
  </div>
- 
+
 
    <div class="row">
      <div class="col-lg-12 favorite_product_wrapper">
@@ -223,26 +223,23 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                   } ?>
                 </ul>
               </div>
-
-
      </div>
    </div>
-
-
-
  </div>
 </div>
-
-
-
- </div> </div>
-
-
+ </div>
+</div>
 </div>
 
- <?php
- endwhile; // End of the loop.
- ?>
+ <?php endwhile;  ?>
+
+
+ <style media="screen">
+   .star-rating{
+     display: none;
+   }
+ </style>
+
  <?php
  get_footer();
 ?>

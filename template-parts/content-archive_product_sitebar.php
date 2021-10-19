@@ -5,6 +5,8 @@ foreach ($terms as $term) {
     $term_b_name =  $product_cat_id = $term->name;
 		$term_b_slug =  $product_cat_id = $term->slug;
 }
+
+
     if(isset($_GET['product_color'])) {
         $product_color_val = $_GET['product_color'];
     } else {
@@ -112,6 +114,9 @@ $products_colors_new = array();
 $product_category_term_title_min =  product_category_term_title_min($term_b_slug);
 $product_category_term_title_max =  product_category_term_title_max($term_b_slug);
 ?>
+
+
+
 <div id="prise_box" style="display:none;">
   <div id="prise_box_min">
     <?php echo $product_category_term_title_min ?>

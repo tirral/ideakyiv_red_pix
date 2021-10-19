@@ -141,5 +141,12 @@ $queried_object = get_queried_object();?>
   </div>
 </div>
 
+
+<style media="screen">
+  .star-rating{
+    display: none;
+  }
+</style>
+
 <?php
 get_footer();

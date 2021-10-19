@@ -16,5 +16,6 @@ get_header();
 	<div class="error404_main_wrapper_text"><?php pll_e('SORRY THE PAGE NOT FOUND'); ?></div>
   <a  href="/" class="error404_main_wrapper_btn"><?php pll_e('BACK TO HOME'); ?></a>
 </div>
+
 <?php
 get_footer();

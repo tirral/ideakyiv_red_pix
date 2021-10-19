@@ -57,9 +57,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="list_item_variant_line">
 		<?php
 				do_action( 'woocommerce_before_shop_loop_item' );
-				do_action( 'woocommerce_before_shop_loop_item_title' );
+        do_action( 'woocommerce_before_shop_loop_item_title' );
 				do_action( 'woocommerce_shop_loop_item_title' );
-							echo '<p class="cart_content_line">' . wp_trim_words( get_the_content(), 9, '...' ) . '</p>';
+				echo '<p class="cart_content_line">' . wp_trim_words( get_the_content(), 9, '...' ) . '</p>';
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 				do_action( 'woocommerce_after_shop_loop_item' );
 			?>
@@ -73,7 +73,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				<div class="list_item_variant_block_img">
 					<?php
 					do_action( 'woocommerce_before_shop_loop_item' );
-					do_action( 'woocommerce_before_shop_loop_item_title' );
+			    do_action( 'woocommerce_before_shop_loop_item_title' );
 					?>
 				</div>
 				<div class="list_item_variant_block_content">

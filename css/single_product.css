@@ -458,6 +458,12 @@
   position: relative;
 }
 
+#single_product_lg_img_container {
+  max-height: 620px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
 #single_product_lg_img_container_zoom {
   display: none;
   background-color: #fff;
@@ -493,6 +499,12 @@
 
 .woocommerce #reviews #comments ol.commentlist {
   padding-left: 0;
+}
+
+.woocommerce #reviews #comments ol.commentlist {
+  max-height: 300px;
+  margin-bottom: 20px;
+  overflow-y: scroll;
 }
 
 .woocommerce #reviews #comments ol.commentlist li img.avatar {

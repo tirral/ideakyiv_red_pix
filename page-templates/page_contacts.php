@@ -3,7 +3,7 @@
 Template Name: Contacts page
 */
 get_header(); ?>
-
+<?php global $tirral_global; ?>
 <div class="container">
   <div class="breadcrumbs_wrapper">
        <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
@@ -30,28 +30,34 @@ get_header(); ?>
           <div class="contacts_main_content_item">
             <div class="contacts_main_content_item_conteiner">
               <div class="contacts_main_content_item_conteiner_header"><?php pll_e('Adress'); ?></div>
-              <div class="contacts_main_content_item_conteiner_adress">Kyiv, Khreshchatyy Yar,  02000</div>
+              <?php $current_language = pll_current_language( 'slug' ); ?>
+              <?php  if($current_language == "de"){ ?>
+                  <p class="contacts_main_content_item_conteiner_adress"><?php echo $tirral_global['footer-contacts-location-city-de'] ?></p>
+              <?php } ?>
+              <?php  if($current_language == "en"){ ?>
+                  <p class="contacts_main_content_item_conteiner_adress"><?php echo $tirral_global['footer-contacts-location-city-en'] ?></p>
+              <?php } ?>
             </div>
             <div class="contacts_main_content_item_conteiner">
               <div class="contacts_main_content_item_conteiner_header">Email</div>
-              <div class="contacts_main_content_item_conteiner_email">hello@company.com</div>
-              <div class="contacts_main_content_item_conteiner_email">hello@company.com</div>
+              <div class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-1'] ?></div>
+              <div class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-2'] ?></div>
             </div>
           </div>
 
           <div class="contacts_main_content_item">
             <div class="contacts_main_content_item_conteiner">
               <div class="contacts_main_content_item_conteiner_header"><?php pll_e('Phone'); ?></div>
-              <div class="contacts_main_content_item_conteiner_phone">+38 (093) 592-27-92</div>
-              <div class="contacts_main_content_item_conteiner_phone">+38 (093) 592-27-92</div>
+              <div class="contacts_main_content_item_conteiner_phone"><?php echo $tirral_global['location-block-tel-1'] ?></div>
+              <div class="contacts_main_content_item_conteiner_phone"><?php echo $tirral_global['location-block-tel-2'] ?></div>
             </div>
             <div class="contacts_main_content_item_conteiner">
               <div class="contacts_main_content_item_conteiner_header"><?php pll_e('Social network'); ?></div>
               <div class="contacts_main_content_item_conteiner_social">
-                <a  href="#" class="contacts_main_content_item_conteiner_social facebook"></a>
-                <a  href="#" class="contacts_main_content_item_conteiner_social twitter"></a>
-                <a  href="#" class="contacts_main_content_item_conteiner_social instagram"></a>
-                <a  href="#" class="contacts_main_content_item_conteiner_social youtube"></a>
+                <a  href="<?php echo $tirral_global['footer-social-link-1'] ?>" class="contacts_main_content_item_conteiner_social facebook" target="_blank"></a>
+                <a  href="<?php echo $tirral_global['footer-social-link-2'] ?>" class="contacts_main_content_item_conteiner_social twitter" target="_blank"></a>
+                <a  href="<?php echo $tirral_global['footer-social-link-3'] ?>" class="contacts_main_content_item_conteiner_social instagram" target="_blank"></a>
+                <a  href="<?php echo $tirral_global['footer-social-link-4'] ?>" class="contacts_main_content_item_conteiner_social youtube" target="_blank"></a>
               </div>
             </div>
           </div>

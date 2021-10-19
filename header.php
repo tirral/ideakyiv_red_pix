@@ -9,11 +9,12 @@
  * @package ideakyiv
  */
  ?>
+
 <!doctype html>
  <html <?php language_attributes(); ?>>
  <head>
  	<meta charset="<?php bloginfo( 'charset' ); ?>">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,21 +158,21 @@
         </div>
       </div>
       <nav class="taxonomy_navigation">
-        <div class="categories_drop-down">Categories</div>
+        <div class="categories_drop-down"><span>Categories</span></div>
         <ul class="topmenu">
+
     <?php
       $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);
       $product_categories = get_terms( 'product_cat', $cat_args );
       if( !empty($product_categories) ){
             foreach ($product_categories as $key => $category) {
              if($category->term_id != 22){ ?>
-
                <li class="menu_main_item">
                  <a href="<?php echo get_term_link($category); ?>" class="active menu_main_item_link">
-                   <img class="menu_main_item_img" src="<?php echo z_taxonomy_image_url($category->term_id); ?>" alt="">
+                   <!-- <img class="menu_main_item_img" src="<?php // echo z_taxonomy_image_url($category->term_id); ?>" alt=""> -->
+                   <span id="header_menu_<?php echo $category->slug; ?>"></span>
                    <span><?php echo $category->name; ?></span>
                  </a>
-
                  <?php
                  $term_id = $category->term_id;
                  $taxonomy_name = 'product_cat';
@@ -186,7 +187,6 @@
                 if($termchildren){
                   echo '</ul>';
                 } ?>
-
                </li>
           <?php } } } ?>
         </ul>

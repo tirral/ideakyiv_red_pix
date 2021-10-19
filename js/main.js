@@ -79,7 +79,7 @@ jQuery(document).ready(function ($) {
   // });
 
   $(
-    ".home_page_main_wrapper .home_page_product_line_container, .leaders-slider"
+    ".home_page_main_wrapper .home_page_product_line_container, .home_page_main_wrapper .leaders-slider"
   ).slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -91,17 +91,25 @@ jQuery(document).ready(function ($) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          arrows: true,
         },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          arrows: true,
+        },
+      },
+      {
+        breakpoint: 321,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
   });
+
   $(".swiper-wrapper").slick({
     dots: true,
     autoplay: true,
@@ -115,6 +123,47 @@ jQuery(document).ready(function ($) {
       },
     ],
   });
+
+  // conditions of slider Sales leaders
+  const lengthOfSlides = $(
+    ".single-product .home_page_product_line_container .product"
+  ).length;
+  if ($(window).width() < 400 && lengthOfSlides <= 2) {
+    $(".single-product .home_page_product_line_container").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: true,
+    });
+  } else if ($(window).width() > 500 && lengthOfSlides >= 4) {
+    $(".single-product .home_page_product_line_container").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+          },
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+          },
+        },
+      ],
+    });
+  } else {
+    $(".single-product .home_page_product_line_container .product").css(
+      "max-width",
+      "190px"
+    );
+  }
 
   $(".cart_wariant_container_variant_line").on("click", function () {
     $(".main_product_container").addClass("container_variant_line");
@@ -173,6 +222,8 @@ jQuery(document).ready(function ($) {
       $(".header_taxonomy_list_container").append($(".header_wrapper_menu"));
       $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
 
+      $(".header_wrapper_menu").after($(".header_wrapper_lang"));
+
       $(".sitebar_container").prepend($(".woocommerce-ordering"));
       $("#primary-menu").prepend($(".header_wrapper_cabinet_icon_container"));
 
@@ -188,7 +239,6 @@ jQuery(document).ready(function ($) {
 
       $("#woocommerce_ordering").prepend("<div class='filter_btn'></div>");
 
-      $(".filter_wrap").prepend($("#custom_top_filter_select"));
       // product
       $(".attribute_content_wrapper").after(
         $(".woocommerce_main_content_wrapper")
@@ -196,13 +246,27 @@ jQuery(document).ready(function ($) {
       $(".woocommerce_main_content_wrapper").after(
         $(".woocommerce_single_product_wrapper")
       );
-      $(".woocommerce div.product p.price").append(
-        $(".woocommerce div.product form.cart .variations")
+      $(".woocommerce div.product p.price").wrap(
+        '<div class="wrap_price-collors" />'
       );
+      // $(".single-product .woocommerce div.product").prepend(
+      //   $(".product_title entry-title")
+      // );
+      // $(".woocommerce div.product p.price").after(
+      //   $(".woocommerce div.product form.cart .variations")
+      // );
+    } else if ($(window).width() <= 991) {
+      $(".filter_wrap").prepend($("#custom_top_filter_select"));
     } else {
       $(".header_wrapper_logo").after($(".header_wrapper_menu"));
       $(".header_taxonomy_list").css("display", "flex");
       $("#woocommerce_ordering").prepend($(".woocommerce-ordering"));
+      $(".header_wrapper_icon_wrapper").prepend($(".header_wrapper_lang"));
+      // product single
+      $(".woocommerce_custom_wrapper_start").prepend(
+        $(".product_title entry-title")
+      );
+      $(".woocommerce_custom_wrapper_start").prepend($(".single_product_btn"));
     }
   }
 
@@ -212,6 +276,8 @@ jQuery(document).ready(function ($) {
       $(".header_taxonomy_list_container").append($(".header_wrapper_menu"));
       $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
 
+      $(".header_wrapper_menu").after($(".header_wrapper_lang"));
+
       $(".sitebar_container").prepend($(".woocommerce-ordering"));
       $("#primary-menu").prepend($(".header_wrapper_cabinet_icon_container"));
 
@@ -219,10 +285,32 @@ jQuery(document).ready(function ($) {
         $(".header_wrapper_cabinet_icon_container_login")
       );
       $(".header_top_wrapper_content").after($(".header_taxonomy_list"));
+      $(".woocommerce div.product p.price").wrap(
+        '<div class="wrap_price-collors" />'
+      );
+      $(".single_product_main_container .content-area").prepend(
+        $(".product_title.entry-title")
+      );
+      $(".single_product_main_container .content-area").prepend(
+        $(".single_product_btn")
+      );
+    } else if ($(window).width() <= 991) {
+      $(".filter_wrap").prepend($("#custom_top_filter_select"));
     } else {
       // $(".header_wrapper_logo").after($(".header_wrapper_menu"));
       $(".header_taxonomy_list").css("display", "flex");
       $("#woocommerce_ordering").prepend($(".woocommerce-ordering"));
+      $(".header_wrapper_icon_wrapper").prepend($(".header_wrapper_lang"));
+      $(".header_wrapper_logo").after($(".header_wrapper_menu"));
+      $(".header_wrapper_search_icon_container").after(
+        $(".header_wrapper_cabinet_icon_container")
+      );
+
+      // product
+      $(".single-product .woocommerce_custom_wrapper_start").prepend(
+        $(".product_title.entry-title")
+      );
+      $(".woocommerce_custom_wrapper_start").prepend($(".single_product_btn"));
     }
     // changeLayoutOnMobile();
   });
@@ -284,43 +372,6 @@ jQuery(document).ready(function ($) {
     $(".burger").trigger("click");
   });
 
-  // stock timer
-  const stokDay = $(".stok_date_day").text();
-  const stokMonth = $(".stok_date_month").text();
-  const stokYear = $(".stok_date_year").text();
-
-  let startDate = new Date("Sep 25 2021 00:00:00 GMT+0300");
-  startDate = startDate.getTime() / 1000;
-
-  let today = new Date();
-  today = today.getTime() / 1000;
-
-  let endDate = new Date(
-    `${stokMonth} ${stokDay} ${stokYear} 00:00:00 GMT+0300`
-  );
-  endDate = endDate.getTime() / 1000;
-  $(".countdown").final_countdown({
-    start: today,
-    end: endDate,
-    now: today,
-    seconds: {
-      borderColor: "#F7F7F7",
-      borderWidth: "6",
-    },
-    minutes: {
-      borderColor: "#F7F7F7",
-      borderWidth: "6",
-    },
-    hours: {
-      borderColor: "#F7F7F7",
-      borderWidth: "6",
-    },
-    days: {
-      borderColor: "#F7F7F7",
-      borderWidth: "6",
-    },
-  });
-
   // product more properties btn
   $(".attribute_content_wrapper").prepend(
     "<div class='more_properties_btn'>Properties</div>"
@@ -335,4 +386,82 @@ jQuery(document).ready(function ($) {
   $(".categories_drop-down").click(() => {
     $(".topmenu").slideToggle();
   });
+
+  // menu categories
+  if ($(window).width() <= 1199) {
+    $(".menu_main_item_link").click(function (e) {
+      e.preventDefault();
+      $(".submenu").slideUp();
+      $(this).next().slideToggle();
+    });
+  }
+
+  // close header on swipe left
+
+  let startX = 0;
+  let endX = 0;
+
+  function handleTouchStart(e) {
+    const x = e.changedTouches[0].clientX;
+    startX = x;
+  }
+
+  function handleTouchEnd(e) {
+    const x = e.changedTouches[0].clientX;
+    endX = x + 100;
+    if ($(".header_taxonomy_list_container").hasClass("open")) {
+      if (startX > endX) {
+        $(".burger").trigger("click");
+      }
+    }
+  }
+
+  document
+    .querySelector(".header_taxonomy_list_container")
+    .addEventListener("touchstart", handleTouchStart, false);
+  document
+    .querySelector(".header_taxonomy_list_container")
+    .addEventListener("touchend", handleTouchEnd, false);
+
+  // stock timer
+
+  try {
+    const stokDay = $(".stok_date_day").text();
+    const stokMonth = $(".stok_date_month").text();
+    const stokYear = $(".stok_date_year").text();
+
+    let startDate = new Date("Sep 25 2021 00:00:00 GMT+0300");
+    startDate = startDate.getTime() / 1000;
+
+    let today = new Date();
+    today = today.getTime() / 1000;
+
+    let endDate = new Date(
+      `${stokMonth} ${stokDay} ${stokYear} 00:00:00 GMT+0300`
+    );
+    endDate = endDate.getTime() / 1000;
+    $(".countdown").final_countdown({
+      start: today,
+      end: endDate,
+      now: today,
+      seconds: {
+        borderColor: "#F7F7F7",
+        borderWidth: "6",
+      },
+      minutes: {
+        borderColor: "#F7F7F7",
+        borderWidth: "6",
+      },
+      hours: {
+        borderColor: "#F7F7F7",
+        borderWidth: "6",
+      },
+      days: {
+        borderColor: "#F7F7F7",
+        borderWidth: "6",
+      },
+    });
+  } catch (error) {
+    console.log("error to start code of stock timer");
+  }
 });

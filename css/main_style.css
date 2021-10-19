@@ -23,6 +23,20 @@
   font-family: RobotoLight, sans-serif;
 }
 
+* {
+  outline: none !important;
+}
+
+.thwvsf-wrapper-ul .thwvsf-wrapper-item-li:hover {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.thwvsf-wrapper-ul .thwvsf-wrapper-item-li.thwvsf-selected {
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+}
+
 .star-rating * {
   font-family: Star, sans-serif !important;
 }
@@ -37,22 +51,26 @@ body {
   overflow-x: hidden;
 }
 
+.woocommerce #reviews #comments ol.commentlist::-webkit-scrollbar,
 .xoo-wsc-body::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 7px;
 }
 
+.woocommerce #reviews #comments ol.commentlist::-webkit-scrollbar-thumb,
 .xoo-wsc-body::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
   background: #EEEEEE;
   border-radius: 9px;
 }
 
+.woocommerce #reviews #comments ol.commentlist::-webkit-scrollbar-thumb:hover,
 .xoo-wsc-body::-webkit-scrollbar-thumb:hover,
 body::-webkit-scrollbar-thumb:hover {
   background: #7E50BF;
 }
 
+.woocommerce #reviews #comments ol.commentlist::-webkit-scrollbar-track,
 .xoo-wsc-body::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
   background: #FFFFFF;
@@ -144,6 +162,32 @@ body::-webkit-scrollbar-track {
 
 .error404 .error404_main_wrapper_btn {
   color: #F3F3F3 !important;
+}
+
+.error404 .feedback_btn_wrapper {
+  display: none;
+}
+
+@media screen and (max-width:767px) {
+  .error404_main_wrapper {
+    margin-top: -140px !important;
+  }
+
+  .error404_main_wrapper_number {
+    font-size: 110px !important;
+    line-height: 110px !important;
+  }
+
+  .error404_main_wrapper_text_lg {
+    font-size: 70px !important;
+    line-height: 70px !important;
+  }
+
+  .error404 .error404_main_wrapper_text {
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 24px !important;
+  }
 }
 
 .xoo-wsc-header {
@@ -322,6 +366,7 @@ body::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   display: none;
+  z-index: 999;
 }
 
 .form_reg_log_wrapper.open {
@@ -339,8 +384,7 @@ body::-webkit-scrollbar-track {
   position: relative;
 }
 
-.cabinet_orders_list_exit,
-.form_exit {
+.cabinet_orders_list_exit {
   background: url('../img/exit.svg');
   width: 20px;
   height: 20px;
@@ -349,6 +393,18 @@ body::-webkit-scrollbar-track {
   top: 20px;
   cursor: pointer;
   background-repeat: no-repeat;
+}
+
+.form_exit {
+  background: url('../img/call_modal_close_icon_svg.svg');
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 16px;
 }
 
 .form_log_wrap {
@@ -397,6 +453,7 @@ body::-webkit-scrollbar-track {
   font-size: 14px;
   line-height: 16px;
   outline: none;
+  border: none !important;
 }
 
 .form_title_block {
@@ -421,4 +478,11 @@ body::-webkit-scrollbar-track {
 #remove_from_favourite,
 #add_to_favourite {
   display: none;
+}
+
+.page-template-page_about_us #page,
+.page-template-page_contacts #page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

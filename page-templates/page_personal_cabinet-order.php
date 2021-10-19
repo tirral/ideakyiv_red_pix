@@ -19,6 +19,8 @@ $queried_object = get_queried_object(); ?>
       $cuctom_user_name_from_id =  $result->user_name;
   } ?>
   <!-- GET USER NAME END  -->
+
+
   <!-- GET ULIST FAVORITE PRODUCT ID START  -->
   <?php
   $cuctom_orders_id =  $_COOKIE["cuctom_user_login_id"];
@@ -28,6 +30,8 @@ $queried_object = get_queried_object(); ?>
       array_push($orders_id, $results_orders_id->order_order_id);
   } ?>
   <!-- GET ULIST FAVORITE PRODUCT ID END  -->
+
+
 
   <!-- GET ALL USER INFORMATION START -->
   <?php
@@ -55,7 +59,6 @@ $queried_object = get_queried_object(); ?>
               <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg);">
             <?php } ?>
           </div>
-
           <p class="cabinet_sitebar_wrapper_user_name"><?php echo $cuctom_user_name_from_id ?></p>
         </div>
 
@@ -71,24 +74,20 @@ $queried_object = get_queried_object(); ?>
 
 
 <?php if(!empty($results_orders_ids)){
-
      foreach ($orders_id as $order_item) {
         $order = wc_get_order($order_item);
         $items = $order->get_items();
         $order_status  = $order->get_status();
         $date_created  = $order->get_date_created();
         $new_data_format = date('d-m-Y H:i', strtotime($date_created));
-
           foreach ($items as $item) {
             $product_id = $item->get_product_id();
+            if($product_id > 0){
             $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 1 );
-            $product = wc_get_product( $product_id  );
+            $product = wc_get_product($product_id);
             $product_prise =  $product->get_price();
             $product_url = $product->get_permalink();
-            //  $order = wc_get_order( $order_id );
-
             $current_language = pll_current_language( 'slug' );
-
             if ($current_language == 'de'){
               echo '<div class="cabinet_product_item">';
               echo '<div class="cabinet_product_item_img_wrapper">';
@@ -104,7 +103,6 @@ $queried_object = get_queried_object(); ?>
               echo '<a href="'.$product_url.'" style="display:block"> Mehr Details </a> ';
               echo '</div>';
               echo '</div>';
-
             }
           	if ($current_language == 'en'){
               echo '<div class="cabinet_product_item">';
@@ -121,6 +119,7 @@ $queried_object = get_queried_object(); ?>
               echo '<a href="'.$product_url.'" style="display:block"> More details </a> ';
               echo '</div>';
               echo '</div>';
+            }
             }
          }
       }

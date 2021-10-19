@@ -61,8 +61,6 @@ jQuery(document).ready(function($) {
       }
     });
 
-
-
     // FORSED CLOSE ZOOM AREA
     $("body").mouseover(function(evt) {
       if (!$(evt.target).closest('#single_product_lg_img_container').length) {
@@ -73,5 +71,8 @@ jQuery(document).ready(function($) {
     });
 
   }
+
+
+
 
 });

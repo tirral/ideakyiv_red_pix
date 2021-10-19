@@ -22,7 +22,23 @@ jQuery(document).ready(function($) {
     var user_name = jQuery("#register_form_user_name").val();
     var user_password = jQuery("#register_form_user_pass").val();
     var user_password_repeat = jQuery("#register_form_user_pass_repeat").val();
-    if (user_password != user_password_repeat) {
+
+    var regexp = /[0-9]/;
+    var regexp_second = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/;
+    if (user_name.match(regexp)) {
+      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZER DARF KEINE NUMMERN HABEN !', 3000, false);
+    } else if (user_name.match(regexp_second)) {
+      alert('Юзернейм не должна содержать символы');
+      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME DARF KEINE BESONDEREN SYMBOLE SEIN !', 3000, false);
+    } else if (user_name.length > 20) {
+      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME MUSS WENIGER ALS 20 ZEICHEN SEIN !', 3000, false);
+    } else if (user_name.length < 2) {
+      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME MUSS MEHR ALS 2 ZEICHEN SEIN !', 3000, false);
+    } else if (user_password.length > 20) {
+      SlimNotifierJs.notification('error', 'Error', 'PASSWORT MUSS WENIGER ALS 20 ZEICHEN SEIN !', 3000, false);
+    } else if (user_password.length < 2) {
+      SlimNotifierJs.notification('error', 'Error', 'PASSWORT MUSS MEHR ALS 2 ZEICHEN SEIN !', 3000, false);
+    } else if (user_password != user_password_repeat) {
       SlimNotifierJs.notification('error', 'Error', 'PASSWORT PASST NICHT ÜBEREIN !', 3000, false);
     } else {
       jQuery.ajax({
