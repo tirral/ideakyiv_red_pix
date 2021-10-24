@@ -17,6 +17,7 @@
 
 
 
+
 defined( 'ABSPATH' ) || exit;
 
 global $product;
@@ -54,17 +55,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		 <div class="like_btn_not_register"></div>
 <?php } ?>
 
+
 		<div class="list_item_variant_line">
 		<?php
 				do_action( 'woocommerce_before_shop_loop_item' );
         do_action( 'woocommerce_before_shop_loop_item_title' );
 				do_action( 'woocommerce_shop_loop_item_title' );
-				echo '<p class="cart_content_line">' . wp_trim_words( get_the_content(), 9, '...' ) . '</p>';
+				echo '<p class="cart_content_line">' . wp_trim_words( get_the_content(), 7, '...' ) . '</p>';
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 				do_action( 'woocommerce_after_shop_loop_item' );
 			?>
 		</div>
 	<?php
+
 	$queried_object = get_queried_object();
 	  if($queried_object->taxonomy == 'product_cat' ||
 		   is_page_template('page-templates/page_personal_cabinet-favorits.php') ||
@@ -73,16 +76,29 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				<div class="list_item_variant_block_img">
 					<?php
 					do_action( 'woocommerce_before_shop_loop_item' );
-			    do_action( 'woocommerce_before_shop_loop_item_title' );
+					do_action( 'woocommerce_before_shop_loop_item_title' );
 					?>
 				</div>
 				<div class="list_item_variant_block_content">
+					<div class="list_item_variant_block_content_header">
 					<?php
 					do_action( 'woocommerce_shop_loop_item_title' );
 					do_action( 'woocommerce_after_shop_loop_item_title' );
-					echo '<p class="cart_content">' . wp_trim_words( get_the_content(), 40, '...' ) . '</p>';
-					do_action( 'woocommerce_after_shop_loop_item' );
 					?>
+					</div>
+				  <?php	if(wp_is_mobile()){ ?>
+						<?php	echo '<p class="cart_content">' . wp_trim_words( get_the_content(), 10, '...' ) . '</p>'; ?>
+					<?php } else {  ?>
+						<?php	echo '<p class="cart_content">' . wp_trim_words( get_the_content(), 30, '...' ) . '</p>'; ?>
+			  	<?php }  ?>
+					<div class="list_item_variant_block_content_footer">
+					<?php
+					do_action( 'woocommerce_shop_loop_item_title' );
+					do_action( 'woocommerce_after_shop_loop_item_title' );
+					?>
+
+					<a href="?add-to-cart=811" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo $product->id ?>" data-product_sku="" aria-label="<?php echo $product->name ?>" rel="nofollow">Kaufen</a>
+					</div>
 				</div>
 			</div>
 	<?php } ?>

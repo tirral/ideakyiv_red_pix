@@ -111,7 +111,15 @@
           <!-- </a> -->
           </div>
         </div>
+
+
+        <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+      <div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
+
+      <?php } else { ?>
         <div class="header_wrapper_search_content">
+      <?php }  ?>
+
           <form id="search" class="search_article_wrapper">
              <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   id="search_article_wrapper_input">
              <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
@@ -119,6 +127,10 @@
           <div id="city_load_more_out" style="color: #000">
         </div>
         </div>
+
+
+
+
       </div>
 		</div>
     <div class="col-lg-12 header_taxonomy_list_container">

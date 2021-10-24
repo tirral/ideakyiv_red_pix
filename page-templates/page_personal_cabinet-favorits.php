@@ -65,10 +65,10 @@ $queried_object = get_queried_object();?>
                             <a href="<?php echo get_site_url();?>/personal-cabinet-favorits/">Standardsortierung</a>
                           </li>
                           <li>
-                            <a href="<?php echo get_site_url();?>/personal-cabinet-favorits/?orderby=price">Nach Preis sortiert: niedrig zu hoch</a>
+                            <a href="<?php echo get_site_url();?>/personal-cabinet-favorits/?orderby=price">Niedrig zu hoch</a>
                           </li>
                           <li>
-                            <a href="<?php echo get_site_url();?>/personal-cabinet-favorits/?orderby=price-desc">Nach Preis sortiert: hoch zu niedrig</a>
+                            <a href="<?php echo get_site_url();?>/personal-cabinet-favorits/?orderby=price-desc">Hoch zu niedrig</a>
                           </li>
                         </ul>
                       </div>

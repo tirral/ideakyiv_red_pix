@@ -5,14 +5,15 @@
 
 .page-template-page_contacts {
   background-image: url(../img/contacts_bg.png);
-  background-size: 1228px;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position-y: 130px;
+  background-position-y: 110px;
   background-position-x: 100%;
 }
 
 .contacts_main_wrapper {
   min-height: 900px;
+  flex: 1 1 auto;
 }
 
 .contacts_main_wrapper_header {

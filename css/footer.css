@@ -106,7 +106,7 @@
 }
 
 .footer_information_wrapper p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 16px;
   color: #F7F7F7;
   margin-bottom: 8px;
@@ -253,8 +253,10 @@
 
 @-webkit-keyframes pulse-animation {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 0 0px rgba(126, 80, 191, 0.2);
+    ;
+    box-shadow: 0 0 0 0px rgba(126, 80, 191, 0.2);
+    ;
   }
 
   100% {
@@ -265,8 +267,10 @@
 
 @keyframes pulse-animation {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 0 0px rgba(126, 80, 191, 0.2);
+    ;
+    box-shadow: 0 0 0 0px rgba(126, 80, 191, 0.2);
+    ;
   }
 
   100% {
@@ -550,6 +554,68 @@
 
 .feedback_modal_wrapper_body_cover span.wpcf7-not-valid-tip {
   display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .feedback_modal_container_close_btn {
+    position: absolute;
+    top: -6px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    background-image: url(//tigall.red-pix.com/wp-content/themes/ideakyiv/css/../img/call_modal_close_icon_svg.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .feedback_modal_container {
+    min-height: 460px !important;
+  }
+
+  .feedback_modal_container {
+    height: 460px !important;
+  }
+
+  .feedback_modal_container_main_content_img_wrapper {
+    width: 175px;
+    height: 152px;
+    margin: 24px auto 10px auto;
+    background-image: url(//tigall.red-pix.com/wp-content/themes/ideakyiv/css/../img/elvog_img.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .feedback_modal_container_main_content_text_wrapper_header {
+    margin: 10px 20px 2px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    color: #241637;
+  }
+
+  .feedback_modal_container_main_content_text_wrapper_text {
+    margin: 10px auto 0px auto;
+    max-width: 410px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #a28787;
+    padding: 0 34px;
+  }
+
+  #callback_form_wrapper_fild_container input {
+    border: none;
+    width: 278px;
+    height: 47px;
+    background: #ebe3f7;
+    border-radius: 2px;
+    margin-right: 17px;
+    padding-left: 48px;
+  }
 }
 
 /* ================== FOOTER END  ================== */

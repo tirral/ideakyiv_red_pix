@@ -116,6 +116,8 @@
 
 .title-sidebar_default_second_sub_header p {
   margin-bottom: 14px;
+  font-weight: 800;
+  font-size: 16px;
 }
 
 .sitebar_filter_wrapper_price .ui-slider.ui-widget-content .ui-slider-handle {
@@ -276,6 +278,7 @@
   border-radius: 5px;
   pointer-events: none;
   -webkit-appearance: none;
+  background-color: #7E50BF !important;
 }
 
 .price-field input[type=range]::-webkit-slider-thumb {
@@ -310,9 +313,9 @@
   border: 0;
   outline: 0;
   border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  margin-top: -4px;
+  height: 16px;
+  width: 16px;
+  margin-top: -8px;
   background-color: #7E50BF;
   cursor: pointer;
   cursor: pointer;
@@ -389,9 +392,9 @@
   display: flex;
   justify-content: space-between;
   color: #555555;
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.2em;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 7px;
   max-width: 148px;
 }
@@ -410,9 +413,7 @@
   margin: 0 10px;
 }
 
-.price-wrap #one,
-.price-wrap #two {
-  width: 30px;
+.price-wrap #one, .price-wrap #two {
   text-align: left;
   margin: 0;
   padding: 0;
@@ -420,9 +421,17 @@
   background: 0;
   border: 0;
   outline: 0;
-  color: #555555;
-  font-size: 12px;
-  font-weight: 400;
+  color: #555;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.price-wrap #one {
+  width: 30px;
+}
+
+.price-wrap #two {
+  width: 45px;
 }
 
 .price-wrap label {
@@ -477,12 +486,12 @@
 
 .range-slider .range-slider--slide::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 9px;
-  width: 9px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background: #7E50BF;
   cursor: pointer;
-  margin-top: -4px;
+  margin-top: -7px;
   /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
@@ -506,7 +515,7 @@
 
 .range-slider .range-slider--slide::-webkit-slider-runnable-track {
   width: 100%;
-  height: 1px;
+  height: 2px;
   cursor: pointer;
   background: #7E50BF;
   border-radius: 1.3px;
@@ -514,7 +523,7 @@
 
 .range-slider .range-slider--slide::-moz-range-track {
   width: 100%;
-  height: 5px;
+  height: 10px;
   cursor: pointer;
   background: #7E50BF;
   border-radius: 1.3px;
@@ -545,8 +554,8 @@
   justify-content: center;
   align-items: center;
   min-width: 2rem;
-  color: #555555;
-  font-size: 12px;
+  color: #555;
+  font-size: 17px;
   line-height: 1;
   border-radius: 4px;
   padding: 7px 10px;
@@ -561,9 +570,13 @@
 }
 
 .product_category_sitebar_list_item_wrapper {
+  font-family: 'Roboto';
+  font-weight: 600;
   position: relative;
   padding-left: 18px;
-  font-size: 12px;
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0.6px;
 }
 
 .product_category_sitebar_list_item_wrapper input {
@@ -579,8 +592,8 @@
   position: absolute;
   top: 4px;
   left: 0;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-image: url(../img/chec_not_active.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -595,11 +608,11 @@
 }
 
 .sitebar_filter_wrapper_color_item {
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   border-radius: 2px;
-  margin-right: 6px;
-  margin-bottom: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .sitebar_filter_wrapper_color_item.active {
@@ -641,12 +654,13 @@
 
 .product_width_range_title {
   color: #555555;
-  font-size: 10px;
-  font-weight: bolder;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .product_width_range_title span {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* ================== SITEBAR END  ================== */

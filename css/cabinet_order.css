@@ -238,7 +238,6 @@
   border: none;
   background-color: transparent;
 } */
-
 #profile_user_add_form_main_wrapper {
   display: none;
 }
@@ -305,4 +304,143 @@
 
 #user_information_form_user_img {
   background: #000;
+}
+
+@media screen and (min-width: 767px) {
+  .avatar_name_mobile_exit {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cabinet_sitebar_wrapper_user_navigation_item {
+    padding: 10px 15px 15px 15px !important;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:first-child a {
+    display: block;
+    position: relative;
+    height: 34px;
+    padding-top: 26px;
+    text-decoration: none !important;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:first-child a:after {
+    content: ' ';
+    position: absolute;
+    width: 30px;
+    height: 21px;
+    top: 0px;
+    left: 50%;
+    margin-left: -15px;
+    background-image: url(//tigall.red-pix.com/wp-content/themes/ideakyiv/css/../img/admin_icon_1.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:nth-child(2) a {
+    display: block;
+    position: relative;
+    height: 34px;
+    padding-top: 26px;
+    text-decoration: none !important;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:nth-child(2) a:after {
+    content: ' ';
+    position: absolute;
+    width: 30px;
+    height: 17px;
+    top: 0;
+    left: 50%;
+    margin-left: -15px;
+    background-image: url(../img/admin_icon_2.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:nth-child(3) a {
+    display: block;
+    position: relative;
+    height: 34px;
+    padding-top: 26px;
+    text-decoration: none !important;
+  }
+
+  .cabinet_sitebar_wrapper_user_navigation_item:nth-child(3) a:after {
+    content: ' ';
+    position: absolute;
+    width: 30px;
+    height: 17px;
+    top: 0;
+    left: 50%;
+    margin-left: -15px;
+    background-image: url(../img/admin_icon_3.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .cabinet_orders_list_exit_desctop {
+    display: none;
+  }
+
+  .cabinet_orders_list_exit {
+    background: url(../img/exit_mobile.svg) !important;
+    width: 24px !important;
+    height: 24px !important;
+    position: absolute !important;
+    right: 13px !important;
+    top: 0px !important;
+    cursor: pointer !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+.personal_area_breadcrumbs {
+  max-width: 1135px;
+  margin: 8px auto 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .personal_area_breadcrumbs {
+    width: 100%;
+    margin: 8px auto 0 auto;
+    padding-left: 47px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .personal_area_breadcrumbs {
+    width: 100%;
+    margin: 10px auto 0 auto;
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .personal_area_breadcrumbs {
+    width: 100%;
+    margin: 8px auto 0 auto;
+    padding-left: 15px;
+  }
+}
+
+.personal_area_breadcrumbs a,
+.personal_area_breadcrumbs .kb_sep,
+.personal_area_breadcrumbs span {
+  color: #fff !important;
+}
+
+.personal_area_breadcrumbs .kb_sep {
+  background-image: url(../img/bredclumbs_chewron_white.svg);
+}
+
+@media screen and (max-width: 414px) {
+  #personal_cabinet_wrapper {
+    min-height: 675px;
+    padding: 26px 0;
+  }
 }

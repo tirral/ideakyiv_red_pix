@@ -19,6 +19,13 @@ function product_metaboxes() {
 		'show_names'    => true,
 	) );
 
+
+	$cmb->add_field( array(
+	    'name' => 'Product materials',
+	    'id' => 'product_material',
+	    'type' => 'textarea_small'
+	));
+
 	$cmb->add_field( array(
 		'name'    => 'Packing height',
 		'id'      => 'product_packing_height',

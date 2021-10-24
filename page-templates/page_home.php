@@ -6,6 +6,7 @@ get_header(); ?>
 
 <?php
 if ( wp_is_mobile() ) { ?>
+
   <div class="swiper mySwiper home_page_main_container_header_slider">
      <div class="swiper-wrapper">
        <?php
@@ -43,28 +44,55 @@ if ( wp_is_mobile() ) { ?>
              </div>
            </div>
           <?php } ?>
-
      </div>
      <div class="swiper-button-next"></div>
      <div class="swiper-button-prev"></div>
    </div>
 
-
+   <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+   		<!-- GET ULIST FAVORITE PRODUCT ID START  -->
+   		<?php
+   		$cuctom_user_id =  $_COOKIE["cuctom_user_login_id"];
+   		$products_id = array();
+   		$results = $wpdb->get_results("SELECT *  FROM  custom_users_favourite WHERE user_id='$cuctom_user_id'");
+   		foreach ($results as $result) {
+   		    array_push($products_id, $result->product_id);
+   		} ?>
+   		<!-- GET ULIST FAVORITE PRODUCT ID END  -->
+    <?php } ?>
+  <?php
+  foreach($products_id as $products_id_var){ ?>
+   <span class="product_id_favorite" foo = "<?php echo $products_id_var ?>"></span>
+  <?php } ?>
    <div class="container home_page_main_container">
      <div class="row home_page_main_wrapper">
-
       <div class="col-lg-12 home_page_product_line_wrapper ">
         <h1 class="sales_leaders_title"><?php pll_e('Sales leaders'); ?></h1>
         <div id="sales_leaders_container" class="home_page_product_line_container sales_leaders_block">
         </div>
+        <div id="container_plaseholder_wrapper">
+          <div id="container_plaseholder">
+            <div class="loader_new_container">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+              <div id="container_plaseholder_text"><?php pll_e('Beladung'); ?></div>
+          </div>
+        </div>
       </div>
-
       <div class="col-lg-12 home_page_product_line_wrapper">
         <h1><?php pll_e('New items'); ?></h1>
         <div id="new_items_container" class="home_page_product_line_container">
         </div>
-      </div>
+        <div id="container_plaseholder_wrapper_second">
+          <div id="container_plaseholder_second">
+            <div class="loader_new_container_second">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+              <div id="container_plaseholder_text_second"><?php pll_e('Beladung'); ?></div>
+          </div>
 
+        </div>
+      </div>
      </div>
    </div>
 
@@ -171,6 +199,10 @@ if ( wp_is_mobile() ) { ?>
 }
 </style>
 <?php } ?>
+
+
+
+
 
 <?php
 get_footer();

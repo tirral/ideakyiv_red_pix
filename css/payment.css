@@ -68,6 +68,10 @@
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
+  background-image: url(../img/line.svg);
+  background-repeat: no-repeat;
+  background-position: 280px 33px;
+  background-size: 44px;
 }
 
 .tabs_wrapper_header div {
@@ -89,13 +93,16 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   text-align: center;
   line-height: 55px;
   margin-left: 12px;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .active .tabs_wrapper_header_icon {
@@ -107,19 +114,18 @@
   background-repeat: no-repeat;
   color: #fff;
   text-align: center;
-  line-height: 82px;
   margin-left: 12px;
   font-size: 34px;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .active .tabs_wrapper_header_text {
   color: #7E50BF;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #reception_btn:hover .tabs_wrapper_header_icon {
@@ -131,7 +137,6 @@
   background-repeat: no-repeat;
   color: #fff;
   text-align: center;
-  line-height: 82px;
   margin-left: 12px;
   font-size: 34px;
 }
@@ -144,14 +149,15 @@
   width: 80px;
   height: 80px;
   background-image: url(../img/polygon_active.svg);
-  background-size: contain;
+  /* background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   color: #fff;
   text-align: center;
-  line-height: 82px;
   margin-left: 12px;
   font-size: 34px;
+  transform: scale(1.1);
+  transition: .2s;
 }
 
 #payment_btn:hover .tabs_wrapper_header_text {
@@ -174,6 +180,12 @@
 
 #delivery_btn:hover .tabs_wrapper_header_text {
   color: #7E50BF;
+}
+
+@media screen and (min-width: 3500px) {
+  .page-template-page_payment #page {
+    min-height: 90vh;
+  }
 }
 
 /* ================== PAYMENT  END  ================== */

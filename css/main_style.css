@@ -41,7 +41,7 @@
   font-family: Star, sans-serif !important;
 }
 
-.woocommerce .star-rating span::before {
+.star-rating span::before {
   color: #f2d600;
 }
 
@@ -91,6 +91,15 @@ body::-webkit-scrollbar-track {
   background-size: cover;
 }
 
+@media screen and (max-width: 1024px) {
+  .error404 {
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .error404 .header_container {
   display: none;
 }
@@ -124,7 +133,8 @@ body::-webkit-scrollbar-track {
 }
 
 .error404 .error404_main_wrapper_number {
-  font-weight: bold;
+  font-family: 'Roboto';
+  font-weight: 500;
   font-size: 180px;
   line-height: 180px;
   letter-spacing: 0.04em;
@@ -132,7 +142,8 @@ body::-webkit-scrollbar-track {
 }
 
 .error404 .error404_main_wrapper_text_lg {
-  font-weight: bold;
+  font-family: 'Roboto';
+  font-weight: 400;
   font-size: 105px;
   line-height: 105px;
   letter-spacing: 0.04em;
@@ -140,6 +151,7 @@ body::-webkit-scrollbar-track {
 }
 
 .error404 .error404_main_wrapper_text {
+  font-family: 'Roboto';
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
@@ -179,8 +191,10 @@ body::-webkit-scrollbar-track {
   }
 
   .error404_main_wrapper_text_lg {
-    font-size: 70px !important;
-    line-height: 70px !important;
+    font-size: 66px !important;
+    line-height: 65px !important;
+    letter-spacing: -2px !important;
+    margin-top: -12px;
   }
 
   .error404 .error404_main_wrapper_text {
@@ -384,6 +398,14 @@ body::-webkit-scrollbar-track {
   position: relative;
 }
 
+@media screen and (max-width:414px) {
+
+  .form_reg_wrap,
+  .form_log_wrap {
+    padding: 16px;
+  }
+}
+
 .cabinet_orders_list_exit {
   background: url('../img/exit.svg');
   width: 20px;
@@ -466,6 +488,12 @@ body::-webkit-scrollbar-track {
   font-size: 18px;
   line-height: 21px;
   margin-right: 10px;
+}
+
+@media screen and (max-width:414px) {
+  .form_title {
+    margin-left: 10px;
+  }
 }
 
 .form_tumbler {

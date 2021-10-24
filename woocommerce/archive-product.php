@@ -111,10 +111,10 @@ foreach ($terms as $term) {
                     <a href="<?php echo get_site_url();?>/product-category/<?php echo $term_b_slug ?>/">Standardsortierung</a>
                   </li>
                   <li>
-                    <a href="<?php echo get_site_url();?>/product-category/<?php echo $term_b_slug ?>/?orderby=price">Nach Preis sortiert: niedrig zu hoch</a>
+                    <a href="<?php echo get_site_url();?>/product-category/<?php echo $term_b_slug ?>/?orderby=price">Niedrig zu hoch</a>
                   </li>
                   <li>
-                    <a href="<?php echo get_site_url();?>/product-category/<?php echo $term_b_slug ?>/?orderby=price-desc">Nach Preis sortiert: hoch zu niedrig</a>
+                    <a href="<?php echo get_site_url();?>/product-category/<?php echo $term_b_slug ?>/?orderby=price-desc">Hoch zu niedrig</a>
                   </li>
                 </ul>
               </div>

@@ -1,27 +1,19 @@
 "use strict";
-jQuery(window).on("load", function () {
+jQuery(window).on("load", function() {
   new WOW().init();
   var product_cart_wariant_val = jQuery.cookie("product_cart_wariant");
   if (product_cart_wariant_val == "variant_line") {
     jQuery(".main_product_container").addClass("container_variant_line");
+    jQuery("body").addClass("product_container_variant_line");
   } else {
     jQuery(".main_product_container").removeClass("container_variant_line");
+    jQuery("body").removeClass("product_container_variant_line");
   }
 });
 
-jQuery(document).ready(function ($) {
-  // COLOR FILTER TO CATEGORY PAGES START
-  // $('.custon_color_filter').on('click', function() {
-  //   $('.sitebar_filter_wrapper_color input:checkbox').prop('checked', false);
-  //   var color_name = $(this).attr("id");
-  //   var color_name_lower = color_name.toLowerCase();
-  //   console.log(color_name_lower);
-  //   $('[data-term-slug="' + color_name_lower + '"]').find('input[type=checkbox]').prop('checked', true);
-  // });
-  // COLOR FILTER TO CATEGORY PAGES END
-
+jQuery(document).ready(function($) {
   // burger menu
-  $(".burger-header").click(function () {
+  $(".burger-header").click(function() {
     $(".header_taxonomy_list_container").toggleClass("open");
     $(".burger-header .line-first").toggleClass("first-transform");
     $(".burger-header .line-second").toggleClass("second-transform");
@@ -33,51 +25,40 @@ jQuery(document).ready(function ($) {
     $(".header_taxonomy_list_head").toggleClass("open");
   });
 
-  $(".header_wrapper_basket_icon_container").on("click", function () {
+  $(".header_wrapper_basket_icon_container").on("click", function() {
     $(".xoo-wsc-basket").click();
   });
 
-  $(".header_wrapper_lang").on("click", function () {
+  $(".header_wrapper_lang").on("click", function() {
     $(".language_flag_container").toggleClass("open");
   });
 
-  $(".woocommerce_main_content_wrapper_more_btn").on("click", function () {
+  $(".woocommerce_main_content_wrapper_more_btn").on("click", function() {
     $(".woocommerce_main_content_wrapper_text").addClass("open");
     $(".woocommerce_main_content_wrapper_more_btn").removeClass("open");
     $(".woocommerce_main_content_wrapper_less_btn").addClass("open");
   });
 
-  $(".woocommerce_main_content_wrapper_less_btn").on("click", function () {
+  $(".woocommerce_main_content_wrapper_less_btn").on("click", function() {
     $(".woocommerce_main_content_wrapper_text").removeClass("open");
     $(".woocommerce_main_content_wrapper_more_btn").addClass("open");
     $(".woocommerce_main_content_wrapper_less_btn").removeClass("open");
   });
 
   // TAXONOMY PAGE START
-  $(".cart_wariant_container_variant_line").on("click", function () {
+  $(".cart_wariant_container_variant_line").on("click", function() {
     $.cookie("product_cart_wariant", "variant_line", {
       expires: 7,
       path: "/",
     });
   });
 
-  $(".cart_wariant_container_variant_block").on("click", function () {
+  $(".cart_wariant_container_variant_block").on("click", function() {
     $.cookie("product_cart_wariant", "variant_block", {
       expires: 7,
       path: "/",
     });
   });
-  // var swiper = new Swiper(".mySwiper", {
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  //   // pagination: {
-  //   //   el: ".swiper-pagination",
-  //   //   type: "bullets",
-  //   // },
-  // });
-
   $(
     ".home_page_main_wrapper .home_page_product_line_container, .home_page_main_wrapper .leaders-slider"
   ).slick({
@@ -85,8 +66,7 @@ jQuery(document).ready(function ($) {
     slidesToScroll: 1,
     dots: false,
     arrows: true,
-    responsive: [
-      {
+    responsive: [{
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
@@ -114,21 +94,19 @@ jQuery(document).ready(function ($) {
     dots: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: false,
-        },
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        arrows: false,
       },
-    ],
+    }, ],
   });
 
   // conditions of slider Sales leaders
   const lengthOfSlides = $(
     ".single-product .home_page_product_line_container .product"
   ).length;
-  if ($(window).width() < 400 && lengthOfSlides <= 2) {
+  if ($(window).width() < 420 && lengthOfSlides >= 2) {
     $(".single-product .home_page_product_line_container").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -141,22 +119,20 @@ jQuery(document).ready(function ($) {
       slidesToScroll: 1,
       dots: false,
       arrows: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: true,
-          },
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-          },
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: true,
         },
-      ],
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      }, ],
     });
   } else {
     $(".single-product .home_page_product_line_container .product").css(
@@ -165,12 +141,14 @@ jQuery(document).ready(function ($) {
     );
   }
 
-  $(".cart_wariant_container_variant_line").on("click", function () {
+  $(".cart_wariant_container_variant_line").on("click", function() {
     $(".main_product_container").addClass("container_variant_line");
+    $("body").addClass("product_container_variant_line");
   });
 
-  $(".cart_wariant_container_variant_block").on("click", function () {
+  $(".cart_wariant_container_variant_block").on("click", function() {
     $(".main_product_container").removeClass("container_variant_line");
+    $("body").removeClass("product_container_variant_line");
   });
 
   // $(".wpfFilterButton.wpfButton, .wpfFilterContent li").on(
@@ -203,15 +181,13 @@ jQuery(document).ready(function ($) {
     variableWidth: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-        },
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
       },
-    ],
+    }, ],
   });
   // SINGLE PRODUCT PAGE end
 
@@ -338,7 +314,7 @@ jQuery(document).ready(function ($) {
   });
 
   // form swicher
-  $(".form_tumbler").click(function () {
+  $(".form_tumbler").click(function() {
     $(".form_reg_wrap").show();
     $(".form_log_wrap").show();
     $(this).parent().parent().toggle();
@@ -348,7 +324,7 @@ jQuery(document).ready(function ($) {
     $(".form_reg_log_wrapper").addClass("open");
   });
 
-  $(".like_btn_not_register").click(() => {
+  $(document).on("click", ".like_btn_not_register", function() {
     $(".form_reg_log_wrapper").addClass("open");
   });
 
@@ -372,10 +348,17 @@ jQuery(document).ready(function ($) {
     $(".burger").trigger("click");
   });
 
-  // product more properties btn
-  $(".attribute_content_wrapper").prepend(
-    "<div class='more_properties_btn'>Properties</div>"
-  );
+  if (document.documentElement.lang === "de-DE") {
+    // product more properties btn
+    $(".attribute_content_wrapper").prepend(
+      "<div class='more_properties_btn'>Eigenschaften</div>"
+    );
+  } else {
+    // product more properties btn
+    $(".attribute_content_wrapper").prepend(
+      "<div class='more_properties_btn'>Properties</div>"
+    );
+  }
 
   $(".more_properties_btn").click(() => {
     $(".more_properties_btn").toggleClass("open");
@@ -389,7 +372,7 @@ jQuery(document).ready(function ($) {
 
   // menu categories
   if ($(window).width() <= 1199) {
-    $(".menu_main_item_link").click(function (e) {
+    $(".menu_main_item_link").click(function(e) {
       e.preventDefault();
       $(".submenu").slideUp();
       $(this).next().slideToggle();

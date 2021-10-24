@@ -10,6 +10,23 @@ get_header();
 
 $queried_object = get_queried_object(); ?>
 
+
+<div class="breadcrumbs_wrapper personal_area_breadcrumbs">
+     <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+       <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="<?php echo get_home_url(); ?>/" itemprop="item">
+           <span class="home_page" itemprop="name">Home</span>
+           <meta itemprop="position" content="1">
+         </a>
+       </span>
+       <span class="kb_sep"></span>
+       <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+         <span class="kb_title" itemprop="name"><?php pll_e('Persönlicher'); ?></span>
+         <meta itemprop="position" content="3">
+       </span>
+   </div>
+ </div>
+
 <div id="personal_cabinet_wrapper" class="container ">
   <!-- GET USER NAME START  -->
   <?php
@@ -48,13 +65,19 @@ $queried_object = get_queried_object(); ?>
 
   <div class="row row-no_margin">
       <div class="col-lg-2 cabinet_sitebar_wrapper">
-      <?php if($user_img !='unset'){ ?>
-          <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?> );">
-        <?php } else { ?>
-          <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg);">
-        <?php } ?>
-      </div>
-      <p class="cabinet_sitebar_wrapper_user_name"><?php echo $cuctom_user_name_from_id ?></p>
+        <div class="avatar-name">
+          <div class="avatar_name_mobile_exit">
+            <a href="#" class="avatar_name_mobile_exit_btn cabinet_orders_list_exit"></a>
+          </div>
+            <?php if($user_img !='unset'){ ?>
+              <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?> );">
+            <?php } else { ?>
+              <div class="cabinet_sitebar_wrapper_image" style="background-image: url(<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg);">
+            <?php } ?>
+          </div>
+          <p class="cabinet_sitebar_wrapper_user_name"><?php echo $cuctom_user_name_from_id ?></p>
+        </div>
+
       <ul class="cabinet_sitebar_wrapper_user_navigation_container">
         <li class="cabinet_sitebar_wrapper_user_navigation_item active"><a href="/personal-area/"><?php pll_e('Personal Area'); ?></a></li>
         <li class="cabinet_sitebar_wrapper_user_navigation_item "><a href="/order/"><?php pll_e('My orders'); ?></a></li>
@@ -62,7 +85,7 @@ $queried_object = get_queried_object(); ?>
       </ul>
     </div>
     <div class="col-lg-10 cabinet_profile_wrapper">
-      <a href="#" class="cabinet_orders_list_exit"></a>
+      <a href="#" class="cabinet_orders_list_exit cabinet_orders_list_exit_desctop"></a>
      <h1 class="cabinet_orders_title"><?php pll_e('Personal Area'); ?></h1>
     <div id="profile_user_info_main_wrapper" class="container-fluid">
       <div class="row">

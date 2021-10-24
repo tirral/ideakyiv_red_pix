@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
             path: "/",
           });
           SlimNotifierJs.notification('success', 'Successfully', 'YOU ARE LOG IN !', 3000, false);
-          location.reload();
+          window.location.href = 'http://tigall.red-pix.com/en/order-2/';
         } else {
           SlimNotifierJs.notification('error', 'Error', 'YOU ARE NOT LOG IN !', 3000, false);
         }

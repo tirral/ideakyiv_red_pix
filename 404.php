@@ -10,8 +10,10 @@
 get_header();
  ?>
 
+
+
 <div class="error404_main_wrapper">
-	<div class="error404_main_wrapper_number">400</div>
+	<div class="error404_main_wrapper_number">404</div>
 	<div class="error404_main_wrapper_text_lg"><?php pll_e('ERROR'); ?></div>
 	<div class="error404_main_wrapper_text"><?php pll_e('SORRY THE PAGE NOT FOUND'); ?></div>
   <a  href="/" class="error404_main_wrapper_btn"><?php pll_e('BACK TO HOME'); ?></a>

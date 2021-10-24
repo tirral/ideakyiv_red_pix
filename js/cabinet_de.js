@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
             path: "/",
           });
           SlimNotifierJs.notification('success', 'Successfully', 'DU LOGGST DICH EIN !', 3000, false);
-          location.reload();
+          window.location.href = 'http://tigall.red-pix.com/order/';
         } else {
           SlimNotifierJs.notification('error', 'Error', 'SIE SIND NICHT ANMELDEN !', 3000, false);
         }
@@ -131,7 +131,24 @@ jQuery(document).ready(function($) {
   // REGISTER FORM END
 
   // ADD TO FAVORITE START
-  $('.like_btn').on('click', function() {
+  // $('.like_btn').on('click', function() {
+  //   var data_user_id = $(this).closest('li').attr("data-user_id");
+  //   var data_product_id = $(this).closest('li').attr("data-product_id");
+  //   $('#add_to_favourite_user_id').val(data_user_id);
+  //   $('#add_to_favourite_product_id').val(data_product_id);
+  //   $(this).removeClass('show_like_btn');
+  //   $(this).addClass('hide_like_btn');
+  //   $(this).next('.remowe_like_btn').removeClass('hide_like_btn');
+  //   $(this).next('.remowe_like_btn').addClass('show_like_btn');
+  //   if ($(".header_wrapper_favorite_icon_container").hasClass("not_isset_product")) {
+  //     $(".header_wrapper_favorite_icon_container").removeClass("not_isset_product");
+  //     $(".header_wrapper_favorite_icon_container").addClass("isset_product");
+  //   }
+  //   $('#add_to_favourite_submitme').click();
+  // });
+
+
+  $(document).on("click", ".like_btn", function() {
     var data_user_id = $(this).closest('li').attr("data-user_id");
     var data_product_id = $(this).closest('li').attr("data-product_id");
     $('#add_to_favourite_user_id').val(data_user_id);
@@ -146,6 +163,7 @@ jQuery(document).ready(function($) {
     }
     $('#add_to_favourite_submitme').click();
   });
+
 
   jQuery(document).on("click", "#add_to_favourite_submitme", function(event) {
     event.preventDefault();
@@ -173,7 +191,19 @@ jQuery(document).ready(function($) {
 
 
   // REMOVE FROM FAVORITE START
-  $('.remowe_like_btn').on('click', function() {
+  // $('.remowe_like_btn').on('click', function() {
+  //   var data_user_id = $(this).closest('li').attr("data-user_id");
+  //   var data_product_id = $(this).closest('li').attr("data-product_id");
+  //   $('#remove_from_favourite_user_id').val(data_user_id);
+  //   $('#remove_from_favourite_product_id').val(data_product_id);
+  //   $(this).removeClass('show_like_btn');
+  //   $(this).addClass('hide_like_btn');
+  //   $(this).prev('.like_btn').removeClass('hide_like_btn');
+  //   $(this).prev('.like_btn').addClass('show_like_btn');
+  //   $('#remove_from_favourite_submitme').click();
+  // });
+
+  $(document).on("click", ".remowe_like_btn", function() {
     var data_user_id = $(this).closest('li').attr("data-user_id");
     var data_product_id = $(this).closest('li').attr("data-product_id");
     $('#remove_from_favourite_user_id').val(data_user_id);

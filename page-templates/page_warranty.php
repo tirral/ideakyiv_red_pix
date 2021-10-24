@@ -8,7 +8,7 @@ get_header(); ?>
        <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
           <a href="<?php echo get_home_url(); ?>/" itemprop="item">
-             <span class="home_page" itemprop="name"></span>
+             <span class="home_page" itemprop="name">Home</span>
              <meta itemprop="position" content="1">
            </a>
          </span>

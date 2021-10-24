@@ -16,11 +16,13 @@
   display: none;
 }
 
-.page-template-page_checkout .col2-set .col-2, .page-template-page_checkout .col2-set .col-2 {
+.page-template-page_checkout .col2-set .col-2,
+.page-template-page_checkout .col2-set .col-2 {
   width: 45% !important;
 }
 
-.page-template-page_checkout .col2-set .col-1, .page-template-page_checkout .col2-set .col-1 {
+.page-template-page_checkout .col2-set .col-1,
+.page-template-page_checkout .col2-set .col-1 {
   width: 53% !important;
 }
 
@@ -178,10 +180,11 @@
   padding-bottom: 16px;
   border-bottom: 2px solid #C4C4C4;
   font-size: 18px;
-  color: #C4C4C4;
+  color: #000;
 }
 
-.page-template-page_checkout .form-row label, .page-template-page_checkout form .form-row label {
+.page-template-page_checkout .form-row label,
+.page-template-page_checkout form .form-row label {
   font-size: 18px;
   color: #C4C4C4;
 }
@@ -194,7 +197,7 @@
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   font-size: 18px !important;
-  color: #C4C4C4 !important;
+  color: #000 !important;
   padding-bottom: 16px;
   padding-left: 0;
   text-transform: uppercase;
@@ -264,17 +267,56 @@
   text-align: center;
 }
 
+@media screen and (max-width:1199px) {
+  .woocommerce-order-received .thankyou_main_container {
+    position: absolute;
+    width: 100% !important;
+    height: 300px;
+    top: 50%;
+    margin-top: -220px;
+    left: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+#add_order {
+  display: none;
+}
+
 .woocommerce-order-received .thankyou_main_container_icon {
   width: 194px;
   height: 130px;
   background-image: url(../img/thankyou_icon.svg);
   margin: 0 auto 50px auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width:1199px) {
+  .woocommerce-order-received .thankyou_main_container_icon {
+    width: 110px;
+    height: 111px;
+    background-image: url(../img/thankyou_icon.svg);
+    margin: 0 auto 16px auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 .woocommerce-order-received .thankyou_main_container_text {
   font-size: 16px;
   text-align: center;
   color: #FFFFFF;
+}
+
+@media screen and (max-width:1199px) {
+  .woocommerce-order-received .thankyou_main_container_text {
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 20px;
+  }
 }
 
 .page-template-page_checkout .woocommerce-Price-amount.amount {

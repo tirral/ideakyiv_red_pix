@@ -174,19 +174,21 @@ if ( wp_is_mobile() ) {
   wp_enqueue_script( 'ideakyiv-slickJS', get_template_directory_uri() . '/lib/slick/slick.js', array(), _S_VERSION, true );
   wp_enqueue_script( 'ideakyiv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
   wp_enqueue_script( 'ideakyiv-cookieJS', get_template_directory_uri() . '/js/jquery.cookie.js', array(), 2010001, true );
+
   $current_language = pll_current_language( 'slug' );
   if ($current_language == 'de'){
       wp_enqueue_script( 'ideakyiv-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
       wp_enqueue_script( 'ideakyiv-lang_de_fixJS', get_template_directory_uri() . '/js/lang_de_fix.js', array(), 2010001, true );
       wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_de.js', array(), '20151215', true );
+      wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_de.js', array(), 2010001, true );
   }
   if ($current_language == 'en'){
       wp_enqueue_script( 'ideakyiv-parse_enJS', get_template_directory_uri() . '/js/parse_en.js', array(), 2010001, true );
       wp_enqueue_script( 'ideakyiv-lang_en_fixJS', get_template_directory_uri() . '/js/lang_en_fix.js', array(), 2010001, true );
       wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_en.js', array(), '20151215', true );
+      wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_en.js', array(), 2010001, true );
   }
    wp_enqueue_script( 'ideakyiv-footerJS', get_template_directory_uri() . '/js/footer.js', array(), 2010001, true );
-   wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile.js', array(), 2010001, true );
    wp_enqueue_script( 'ideakyiv-mainJS', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 
 } else {
@@ -220,7 +222,6 @@ if ( wp_is_mobile() ) {
    wp_enqueue_script( 'ideakyiv-mainJS', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 
 }
-
 
   wp_enqueue_style('ideakyiv-bootstrapCSS', get_template_directory_uri() . '/lib/bootstrap/css/bootstrap.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-slickCSS', get_template_directory_uri() . '/lib/slick/slick.css', false, NULL, 'all');
@@ -308,18 +309,11 @@ if ( wp_is_mobile() ) {
  }
 
 
-
-
-
-
-
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ideakyiv_scripts' );
-
 
 
 /**
@@ -391,9 +385,12 @@ require get_template_directory() . '/inc/metaboxes/stock-metaboxes.php';
 			pll_register_string('ideakyiv_string_50', 'Edite data', 'ideakyiv', false);
 			pll_register_string('ideakyiv_string_51', 'Rückkopplung', 'ideakyiv', false);
 			pll_register_string('ideakyiv_string_52', 'Hinterlassen Sie Ihre Telefonnummer und unser Operator wird Sie innerhalb von 5 Minuten kontaktieren!', 'ideakyiv', false);
+      pll_register_string('ideakyiv_string_53', 'Beladung', 'ideakyiv', false);
 		}
 	}
 add_action('after_setup_theme', 'ideakyiv_after_setup_theme');
+
+
 
 
 /**
@@ -577,9 +574,48 @@ add_action('woocommerce_single_product_summary', 'woocommerce_template_single_me
 add_action('woocommerce_single_product_summary',  'woocommerce_product_tabs_header' , 15);
 function woocommerce_product_tabs_header(){
 	global $product;
-	echo  '<span class="product_material">Material: ' . $product->get_attribute('pa_materials') . '</span>';
-	echo '<span class="product_weight">Weight: ' . $product->weight . ' kg</span>';
+  $product_weight = $product->weight;
+
+
+$current_language = pll_current_language( 'slug' );
+  if($current_language == "de"){
+    if (wc_product_sku_enabled() && ( $product->get_sku())){
+        echo  '<span class="sku_wrapper">Code: ' .  $product->get_sku() . '</span>';
+    } else {
+        echo  '<span class="sku_wrapper">Code: Unscharf </span>';
+    }
+    if(get_post_meta( $product->id, 'product_material', true )){
+        echo  '<span class="product_material">Material: ' .  get_post_meta( $product->id, 'product_material', true ) . '</span>';
+    } else {
+        echo  '<span class="product_material">Material: Unscharf </span>';
+    }
+    if($product->weight){
+        echo '<span class="product_weight_value"> Gewicht: ' . $product_weight . ' kg</span>';
+    } else {
+        echo '<span class="product_weight_value"> Gewicht: Unscharf </span>';
+    }
+  }
+  if($current_language == "en"){
+    if (wc_product_sku_enabled() && ( $product->get_sku())){
+        echo  '<span class="sku_wrapper">Code: ' .  $product->get_sku() . '</span>';
+    } else {
+        echo  '<span class="sku_wrapper">Code: Unset </span>';
+    }
+    if(get_post_meta( $product->id, 'product_material', true )){
+        echo  '<span class="product_material">Material: ' .  get_post_meta( $product->id, 'product_material', true ) . '</span>';
+    } else {
+        echo  '<span class="product_material">Material: Unset </span>';
+    }
+    if($product->weight){
+        echo '<span class="product_weight_value"> Weight: ' . $product_weight . ' kg</span>';
+    } else {
+        echo '<span class="product_weight_value"> Weight: Unset </span>';
+    }
+  }
+
 }
+
+
 
 add_action('woocommerce_single_product_summary',  'woocommerce_custom_wrapper_end' , 25);
 function woocommerce_custom_wrapper_end(){
@@ -589,12 +625,6 @@ function woocommerce_custom_wrapper_end(){
 add_action('woocommerce_single_product_summary',  'after_add_to_cart_new_content' , 35);
 function after_add_to_cart_new_content(){
 	echo '<div class="after_btn_info_wrapper">';
-	// echo '<div class="after_btn_info_element_1_container">';
-	// echo '<div class="after_btn_info_element_1_container_icon">';
-	// echo '</div>';
-	// echo '<div class="after_btn_info_element_1_container_text"> Von natürliche Materialien';
-	// echo '</div>';
-	// echo '</div>';
 	echo '<div class="after_btn_info_element_2_container">';
 	echo '<div class="after_btn_info_element_2_container_icon">';
 	echo '</div>';
@@ -940,3 +970,19 @@ $current_language = pll_current_language( 'slug' );
      add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 15 );
 		 add_action('woocommerce_after_shop_loop_item_title','ehi_woocommerce_template_single_excerpt', 20 );
  }
+
+
+ function wpse_modify_taxonomy() {
+     // get the arguments of the already-registered taxonomy
+     $language_args = get_taxonomy( 'language' ); // returns an object
+
+     // make changes to the args
+     // in this example there are three changes
+     // again, note that it's an object
+     $language_args->show_in_rest = true;
+
+     // re-register the taxonomy
+     register_taxonomy( 'language', 'product', (array) $language_args );
+ }
+ // hook it up to 11 so that it overrides the original register_taxonomy function
+ add_action( 'init', 'wpse_modify_taxonomy', 11 );

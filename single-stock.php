@@ -64,6 +64,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                 <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
+                            <div id="canvas-way-days" class="clock-canvas-way"></div>
                             <div id="canvas-days" class="clock-canvas"></div>
 
                             <div class="text">
@@ -76,6 +77,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                 <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
+                            <div id="canvas-way-hours" class="clock-canvas-way"></div>
                             <div id="canvas-hours" class="clock-canvas"></div>
 
                             <div class="text">
@@ -88,6 +90,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                 <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
+                            <div id="canvas-way-minutes" class="clock-canvas-way"></div>
                             <div id="canvas-minutes" class="clock-canvas"></div>
 
                             <div class="text">
@@ -101,6 +104,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                     <div class="wrap">
                         <div class="inner">
                             <div id="canvas-seconds" class="clock-canvas"></div>
+                            <div id="canvas-way-seconds" class="clock-canvas-way"></div>
 
                             <div class="text">
                                 <p class="val">0</p>
@@ -131,10 +135,10 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                      <a href="<?php echo  get_permalink()?>">Standardsortierung</a>
                    </li>
                    <li>
-                     <a href="<?php echo  get_permalink()?>?orderby=price">Nach Preis sortiert: niedrig zu hoch</a>
+                     <a href="<?php echo  get_permalink()?>?orderby=price">Niedrig zu hoch</a>
                    </li>
                    <li>
-                     <a href="<?php echo  get_permalink()?>?orderby=price-desc">Nach Preis sortiert: hoch zu niedrig</a>
+                     <a href="<?php echo  get_permalink()?>?orderby=price-desc">Hoch zu niedrig</a>
                    </li>
                  </ul>
                </div>
