@@ -85,7 +85,7 @@
 <?php } ?>
 
   <footer class="footer_container">
-    
+
       <?php   if( wp_is_mobile() ) { ?>
       <div class="footer_container_img"></div>
       <?php } else { ?>
@@ -110,6 +110,7 @@
             </div>
           </div>
           <?php global $tirral_global; ?>
+
           <div class="col-lg-12">
             <div class="footer_information_wrapper">
               <div class="footer_information_wrapper_phone_wrapper">
@@ -146,6 +147,7 @@
         </div>
       </div>
     </footer>
+
 
     <div class="feedback_btn_wrapper">
       <div class="feedback_btn_container">

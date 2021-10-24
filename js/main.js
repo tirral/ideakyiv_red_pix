@@ -4,21 +4,36 @@ jQuery(window).on("load", function() {
   var product_cart_wariant_val = jQuery.cookie("product_cart_wariant");
   if (product_cart_wariant_val == "variant_line") {
     jQuery(".main_product_container").addClass("container_variant_line");
-    jQuery("body").addClass("product_container_variant_line");
   } else {
     jQuery(".main_product_container").removeClass("container_variant_line");
-    jQuery("body").removeClass("product_container_variant_line");
   }
 });
 
 jQuery(document).ready(function($) {
   // burger menu
   $(".burger-header").click(function() {
+
     $(".header_taxonomy_list_container").toggleClass("open");
     $(".burger-header .line-first").toggleClass("first-transform");
     $(".burger-header .line-second").toggleClass("second-transform");
     $(".burger-header .line-third").toggleClass("third-transform");
+    $("body").toggleClass("overflow-hidden");
+
+    $("#city_load_more_out").empty();
+    $("#city_load_more_out").hide();
+    $("#search input").val('');
+
   });
+
+
+
+  $(document).on("click", ".city_load_more_out_close_icon_icon", function() {
+    $("#city_load_more_out").empty();
+    $("#city_load_more_out").hide();
+    $("#search input").val('');
+  });
+
+
 
   $(".header_taxonomy_list_head").click(() => {
     $(".header_taxonomy_list").slideToggle();
@@ -93,7 +108,7 @@ jQuery(document).ready(function($) {
   $(".swiper-wrapper").slick({
     dots: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 6000,
     responsive: [{
       breakpoint: 1024,
       settings: {
@@ -143,12 +158,10 @@ jQuery(document).ready(function($) {
 
   $(".cart_wariant_container_variant_line").on("click", function() {
     $(".main_product_container").addClass("container_variant_line");
-    $("body").addClass("product_container_variant_line");
   });
 
   $(".cart_wariant_container_variant_block").on("click", function() {
     $(".main_product_container").removeClass("container_variant_line");
-    $("body").removeClass("product_container_variant_line");
   });
 
   // $(".wpfFilterButton.wpfButton, .wpfFilterContent li").on(

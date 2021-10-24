@@ -10,11 +10,22 @@ jQuery(document).ready(function($) {
     $.cookie("cuctom_user_login_id", null, {
       path: '/'
     });
-    SlimNotifierJs.notification('error', 'Error', 'DU BIST AUS DEINEM KABINETT !', 3000, false);
+    if ($(".custom_alert_wrapper")[0]) {
+      $('.custom_alert_wrapper').remove();
+    }
+    setTimeout(function() {
+      if (document.documentElement.lang === "de-DE") {
+        $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">DU BIST AUS DEINEM KABINETT !</div><div class="custom_alert_container_icon"></div></div>');
+      } else {
+        $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">YOU ARE OUT OF YOUR CABINET !</div><div class="custom_alert_container_icon"></div></div>');
+      }
+    }, 600);
+    setTimeout(function() {
+      $('.custom_alert_wrapper').remove();
+    }, 3000);
     document.location.href = 'http://tigall.red-pix.com/';
   });
   // EXIT FROM PERSONAL CABINET END
-
 
   // REGISTER FORM START
   jQuery(document).on("click", "#register_form_submitme", function(event) {
@@ -22,24 +33,115 @@ jQuery(document).ready(function($) {
     var user_name = jQuery("#register_form_user_name").val();
     var user_password = jQuery("#register_form_user_pass").val();
     var user_password_repeat = jQuery("#register_form_user_pass_repeat").val();
-
     var regexp = /[0-9]/;
     var regexp_second = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/;
     if (user_name.match(regexp)) {
-      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZER DARF KEINE NUMMERN HABEN !', 3000, false);
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">DER BENUTZER DARF KEINE NUMMERN HABEN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">THE USER MUST NOT HAVE NUMBERS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
+
     } else if (user_name.match(regexp_second)) {
-      alert('Юзернейм не должна содержать символы');
-      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME DARF KEINE BESONDEREN SYMBOLE SEIN !', 3000, false);
+
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">DER BENUTZERNAME DARF KEINE BESONDEREN SYMBOLE SEIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">THE USERNAME CANNOT BE SPECIAL SYMBOLS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
+
     } else if (user_name.length > 20) {
-      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME MUSS WENIGER ALS 20 ZEICHEN SEIN !', 3000, false);
+
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">DER BENUTZERNAME MUSS WENIGER ALS 20 ZEICHEN SEIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">THE USERNAME MUST BE LESS THAN 20 CHARACTERS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
+
     } else if (user_name.length < 2) {
-      SlimNotifierJs.notification('error', 'Error', 'DER BENUTZERNAME MUSS MEHR ALS 2 ZEICHEN SEIN !', 3000, false);
+
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">DER BENUTZERNAME MUSS MEHR ALS 2 ZEICHEN SEIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">USERNAME MUST BE MORE THAN 2 CHARACTERS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
     } else if (user_password.length > 20) {
-      SlimNotifierJs.notification('error', 'Error', 'PASSWORT MUSS WENIGER ALS 20 ZEICHEN SEIN !', 3000, false);
+
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORT MUSS WENIGER ALS 20 ZEICHEN SEIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORD MUST BE LESS THAN 20 CHARACTERS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
+
     } else if (user_password.length < 2) {
-      SlimNotifierJs.notification('error', 'Error', 'PASSWORT MUSS MEHR ALS 2 ZEICHEN SEIN !', 3000, false);
+
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORT MUSS MEHR ALS 2 ZEICHEN SEIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORD MUST BE MORE THAN 2 CHARACTERS !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
     } else if (user_password != user_password_repeat) {
-      SlimNotifierJs.notification('error', 'Error', 'PASSWORT PASST NICHT ÜBEREIN !', 3000, false);
+      if ($(".custom_alert_wrapper")[0]) {
+        $('.custom_alert_wrapper').remove();
+      }
+      setTimeout(function() {
+        if (document.documentElement.lang === "de-DE") {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORT PASST NICHT ÜBEREIN !</div><div class="custom_alert_container_icon"></div></div>');
+        } else {
+          $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">PASSWORD DOES NOT MATCH !</div><div class="custom_alert_container_icon"></div></div>');
+        }
+      }, 600);
+      setTimeout(function() {
+        $('.custom_alert_wrapper').remove();
+      }, 3000);
     } else {
       jQuery.ajax({
         type: "POST",
@@ -57,7 +159,19 @@ jQuery(document).ready(function($) {
         },
         success: function(data) {
           if (data) {
-            SlimNotifierJs.notification('error', 'Error', 'BENUTZER BEREITS ISSET !', 3000, false);
+            if ($(".custom_alert_wrapper")[0]) {
+              $('.custom_alert_wrapper').remove();
+            }
+            setTimeout(function() {
+              if (document.documentElement.lang === "de-DE") {
+                $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">BENUTZER BEREITS ISSET !</div><div class="custom_alert_container_icon"></div></div>');
+              } else {
+                $('body').append('<div class="custom_alert_wrapper alert_eror"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">USER ALREADY ISSET !</div><div class="custom_alert_container_icon"></div></div>');
+              }
+            }, 600);
+            setTimeout(function() {
+              $('.custom_alert_wrapper').remove();
+            }, 3000);
           } else {
             jQuery.ajax({
               type: "POST",
@@ -74,7 +188,19 @@ jQuery(document).ready(function($) {
                 console.log('REPEAT PASSWORD - ' + jQuery("#register_form_user_pass_repeat").val());
               },
               success: function() {
-                SlimNotifierJs.notification('success', 'Successfully', 'SIE HABEN SUSSEX REGISTRIERT !', 3000, false);
+                if ($(".custom_alert_wrapper")[0]) {
+                  $('.custom_alert_wrapper').remove();
+                }
+                setTimeout(function() {
+                  if (document.documentElement.lang === "de-DE") {
+                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">SIE HABEN SUSSEX REGISTRIERT !</div><div class="custom_alert_container_icon"></div></div>');
+                  } else {
+                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU REGISTERED SUSSEX !</div><div class="custom_alert_container_icon"></div></div>');
+                  }
+                }, 600);
+                setTimeout(function() {
+                  $('.custom_alert_wrapper').remove();
+                }, 3000);
               },
               error: function() {
                 // alert("error");
@@ -117,10 +243,34 @@ jQuery(document).ready(function($) {
             expires: 7,
             path: "/",
           });
-          SlimNotifierJs.notification('success', 'Successfully', 'DU LOGGST DICH EIN !', 3000, false);
+          if ($(".custom_alert_wrapper")[0]) {
+            $('.custom_alert_wrapper').remove();
+          }
+          setTimeout(function() {
+            if (document.documentElement.lang === "de-DE") {
+              $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">DU LOGGST DICH EIN ! !</div><div class="custom_alert_container_icon"></div></div>');
+            } else {
+              $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU ARE LOG IN ! !</div><div class="custom_alert_container_icon"></div></div>');
+            }
+          }, 600);
+          setTimeout(function() {
+            $('.custom_alert_wrapper').remove();
+          }, 3000);
           window.location.href = 'http://tigall.red-pix.com/order/';
         } else {
-          SlimNotifierJs.notification('error', 'Error', 'SIE SIND NICHT ANMELDEN !', 3000, false);
+          if ($(".custom_alert_wrapper")[0]) {
+            $('.custom_alert_wrapper').remove();
+          }
+          setTimeout(function() {
+            if (document.documentElement.lang === "de-DE") {
+              $('body').append('<div class="custom_alert_wrapper alert_danger"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">SIE SIND NICHT ANMELDEN ! !</div><div class="custom_alert_container_icon"></div></div>');
+            } else {
+              $('body').append('<div class="custom_alert_wrapper alert_danger"><div class="custom_alert_container_status">Error!</div><div class="custom_alert_container_text">YOU ARE NOT LOG IN ! !</div><div class="custom_alert_container_icon"></div></div>');
+            }
+          }, 600);
+          setTimeout(function() {
+            $('.custom_alert_wrapper').remove();
+          }, 3000);
         }
       },
       error: function() {
@@ -130,24 +280,9 @@ jQuery(document).ready(function($) {
   });
   // REGISTER FORM END
 
+
+
   // ADD TO FAVORITE START
-  // $('.like_btn').on('click', function() {
-  //   var data_user_id = $(this).closest('li').attr("data-user_id");
-  //   var data_product_id = $(this).closest('li').attr("data-product_id");
-  //   $('#add_to_favourite_user_id').val(data_user_id);
-  //   $('#add_to_favourite_product_id').val(data_product_id);
-  //   $(this).removeClass('show_like_btn');
-  //   $(this).addClass('hide_like_btn');
-  //   $(this).next('.remowe_like_btn').removeClass('hide_like_btn');
-  //   $(this).next('.remowe_like_btn').addClass('show_like_btn');
-  //   if ($(".header_wrapper_favorite_icon_container").hasClass("not_isset_product")) {
-  //     $(".header_wrapper_favorite_icon_container").removeClass("not_isset_product");
-  //     $(".header_wrapper_favorite_icon_container").addClass("isset_product");
-  //   }
-  //   $('#add_to_favourite_submitme').click();
-  // });
-
-
   $(document).on("click", ".like_btn", function() {
     var data_user_id = $(this).closest('li').attr("data-user_id");
     var data_product_id = $(this).closest('li').attr("data-product_id");
@@ -163,8 +298,6 @@ jQuery(document).ready(function($) {
     }
     $('#add_to_favourite_submitme').click();
   });
-
-
   jQuery(document).on("click", "#add_to_favourite_submitme", function(event) {
     event.preventDefault();
     jQuery.ajax({
@@ -180,7 +313,19 @@ jQuery(document).ready(function($) {
         console.log('PRODUCT ID - ' + jQuery("#add_to_favourite_product_id").val());
       },
       success: function() {
-        SlimNotifierJs.notification('info', 'Information', 'PRODUKT ZU FAVORITEN HINZUFÜGEN !', 3000, false);
+        if ($(".custom_alert_wrapper")[0]) {
+          $('.custom_alert_wrapper').remove();
+        }
+        setTimeout(function() {
+          if (document.documentElement.lang === "de-DE") {
+            $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Information!</div><div class="custom_alert_container_text">PRODUKT ZU FAVORITEN HINZUFÜGEN !</div><div class="custom_alert_container_icon"></div></div>');
+          } else {
+            $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Information!</div><div class="custom_alert_container_text">PRODUCT ADD TO FAVORITE !</div><div class="custom_alert_container_icon"></div></div>');
+          }
+        }, 600);
+        setTimeout(function() {
+          $('.custom_alert_wrapper').remove();
+        }, 3000);
       },
       error: function() {
         // alert("error");
@@ -189,19 +334,7 @@ jQuery(document).ready(function($) {
   });
   // ADD TO FAVORITE END
 
-
   // REMOVE FROM FAVORITE START
-  // $('.remowe_like_btn').on('click', function() {
-  //   var data_user_id = $(this).closest('li').attr("data-user_id");
-  //   var data_product_id = $(this).closest('li').attr("data-product_id");
-  //   $('#remove_from_favourite_user_id').val(data_user_id);
-  //   $('#remove_from_favourite_product_id').val(data_product_id);
-  //   $(this).removeClass('show_like_btn');
-  //   $(this).addClass('hide_like_btn');
-  //   $(this).prev('.like_btn').removeClass('hide_like_btn');
-  //   $(this).prev('.like_btn').addClass('show_like_btn');
-  //   $('#remove_from_favourite_submitme').click();
-  // });
 
   $(document).on("click", ".remowe_like_btn", function() {
     var data_user_id = $(this).closest('li').attr("data-user_id");
@@ -214,7 +347,6 @@ jQuery(document).ready(function($) {
     $(this).prev('.like_btn').addClass('show_like_btn');
     $('#remove_from_favourite_submitme').click();
   });
-
   jQuery(document).on("click", "#remove_from_favourite_submitme", function(event) {
     event.preventDefault();
     jQuery.ajax({
@@ -230,7 +362,19 @@ jQuery(document).ready(function($) {
         console.log('PRODUCT ID - ' + jQuery("#remove_from_favourite_product_id").val());
       },
       success: function() {
-        SlimNotifierJs.notification('warning', 'Warning', 'PRODUKT AUS FAVORITEN ENTFERNT !', 3000, false);
+        if ($(".custom_alert_wrapper")[0]) {
+          $('.custom_alert_wrapper').remove();
+        }
+        setTimeout(function() {
+          if (document.documentElement.lang === "de-DE") {
+            $('body').append('<div class="custom_alert_wrapper alert_danger"><div class="custom_alert_container_status">Warning!</div><div class="custom_alert_container_text">PRODUKT AUS FAVORITEN ENTFERNT !</div><div class="custom_alert_container_icon"></div></div>');
+          } else {
+            $('body').append('<div class="custom_alert_wrapper alert_danger"><div class="custom_alert_container_status">Warning!</div><div class="custom_alert_container_text">PRODUCT REMOVED FROM FAVORITE !</div><div class="custom_alert_container_icon"></div></div>');
+          }
+        }, 600);
+        setTimeout(function() {
+          $('.custom_alert_wrapper').remove();
+        }, 3000);
         if ($("body").hasClass("page-template-page_personal_cabinet-favorits")) {
           document.location.reload();
         }
@@ -243,15 +387,12 @@ jQuery(document).ready(function($) {
   // REMOVE FROM FAVORITE END
 
 
-
   // SAVE ORDER TO DB START
   if ($("body").hasClass("woocommerce-order-received")) {
-
     var data_user_id_order = $('#data_user_id_order').attr("data-user_id_order");
     var data_order_id_order = $('#data_order_id_order').attr("data-order_id_order");
     $('#add_order_user_id').val(data_user_id_order);
     $('#add_order_order_id').val(data_order_id_order);
-
     jQuery.ajax({
       type: "POST",
       url: "http://tigall.red-pix.com/wp-admin/admin-ajax.php",
@@ -265,13 +406,24 @@ jQuery(document).ready(function($) {
         console.log('ORDER ID - ' + jQuery("#add_order_order_id").val());
       },
       success: function() {
-        SlimNotifierJs.notification('info', 'Information', 'BESTELLEN ZUM SCHRANK HINZUFÜGEN !', 3000, false);
+        if ($(".custom_alert_wrapper")[0]) {
+          $('.custom_alert_wrapper').remove();
+        }
+        setTimeout(function() {
+          if (document.documentElement.lang === "de-DE") {
+            $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Information!</div><div class="custom_alert_container_text">BESTELLEN ZUM SCHRANK HINZUFÜGEN !</div><div class="custom_alert_container_icon"></div></div>');
+          } else {
+            $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Information!</div><div class="custom_alert_container_text">ORDER ADD TO CABINET !</div><div class="custom_alert_container_icon"></div></div>');
+          }
+        }, 600);
+        setTimeout(function() {
+          $('.custom_alert_wrapper').remove();
+        }, 3000);
       },
       error: function() {
         // alert("error");
       },
     });
-
   }
   // SAVE ORDER TO DB END
 });
