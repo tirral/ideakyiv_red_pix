@@ -187,20 +187,44 @@ jQuery(document).ready(function($) {
                 console.log('USER PASSWORD - ' + jQuery("#register_form_user_pass").val());
                 console.log('REPEAT PASSWORD - ' + jQuery("#register_form_user_pass_repeat").val());
               },
-              success: function() {
+              success: function(data) {
+                console.log(data);
+                $.cookie("cuctom_user_login", "login", {
+                  expires: 7,
+                  path: "/",
+                });
+                $.cookie("cuctom_user_login_id", data, {
+                  expires: 7,
+                  path: "/",
+                });
                 if ($(".custom_alert_wrapper")[0]) {
                   $('.custom_alert_wrapper').remove();
                 }
                 setTimeout(function() {
                   if (document.documentElement.lang === "de-DE") {
-                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">SIE HABEN SUSSEX REGISTRIERT !</div><div class="custom_alert_container_icon"></div></div>');
+                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">DU LOGGST DICH EIN ! !</div><div class="custom_alert_container_icon"></div></div>');
                   } else {
-                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU REGISTERED SUSSEX !</div><div class="custom_alert_container_icon"></div></div>');
+                    $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU ARE LOG IN ! !</div><div class="custom_alert_container_icon"></div></div>');
                   }
                 }, 600);
                 setTimeout(function() {
                   $('.custom_alert_wrapper').remove();
                 }, 3000);
+                window.location.href = 'http://tigall.red-pix.com/order/';
+
+                // if ($(".custom_alert_wrapper")[0]) {
+                //   $('.custom_alert_wrapper').remove();
+                // }
+                // setTimeout(function() {
+                //   if (document.documentElement.lang === "de-DE") {
+                //     $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">SIE HABEN SUSSEX REGISTRIERT !</div><div class="custom_alert_container_icon"></div></div>');
+                //   } else {
+                //     $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU REGISTERED SUSSEX !</div><div class="custom_alert_container_icon"></div></div>');
+                //   }
+                // }, 600);
+                // setTimeout(function() {
+                //   $('.custom_alert_wrapper').remove();
+                // }, 3000);
               },
               error: function() {
                 // alert("error");
@@ -246,6 +270,8 @@ jQuery(document).ready(function($) {
           if ($(".custom_alert_wrapper")[0]) {
             $('.custom_alert_wrapper').remove();
           }
+
+
           setTimeout(function() {
             if (document.documentElement.lang === "de-DE") {
               $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">DU LOGGST DICH EIN ! !</div><div class="custom_alert_container_icon"></div></div>');
@@ -253,10 +279,14 @@ jQuery(document).ready(function($) {
               $('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">YOU ARE LOG IN ! !</div><div class="custom_alert_container_icon"></div></div>');
             }
           }, 600);
+
           setTimeout(function() {
             $('.custom_alert_wrapper').remove();
           }, 3000);
+
           window.location.href = 'http://tigall.red-pix.com/order/';
+
+
         } else {
           if ($(".custom_alert_wrapper")[0]) {
             $('.custom_alert_wrapper').remove();

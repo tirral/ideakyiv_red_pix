@@ -40,8 +40,8 @@ get_header(); ?>
             </div>
             <div class="contacts_main_content_item_conteiner">
               <div class="contacts_main_content_item_conteiner_header">Email</div>
-              <div class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-1'] ?></div>
-              <div class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-2'] ?></div>
+              <a href="mailto:mcenter.ml@<?php echo $tirral_global['footer-contacts-mail-address-1'] ?>" class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-1'] ?></a>
+              <a href="mailto:mcenter.ml@<?php echo $tirral_global['footer-contacts-mail-address-2'] ?>" class="contacts_main_content_item_conteiner_email"><?php echo $tirral_global['footer-contacts-mail-address-2'] ?></a>
             </div>
           </div>
 

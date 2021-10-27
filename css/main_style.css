@@ -51,6 +51,10 @@ body {
   overflow-x: hidden;
 }
 
+.overflow-hidden {
+  overflow-y: hidden;
+}
+
 .woocommerce #reviews #comments ol.commentlist::-webkit-scrollbar,
 .xoo-wsc-body::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -380,7 +384,7 @@ body::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   display: none;
-  z-index: 999;
+  z-index: 99999;
 }
 
 .form_reg_log_wrapper.open {

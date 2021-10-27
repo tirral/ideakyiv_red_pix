@@ -19,21 +19,17 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 $queried_object = get_queried_object();
-
 // echo '<pre>';
 // print_r($queried_object);
 // echo '</pre>';
-
-
 $terms = get_the_terms( $queried_object->ID, 'product_cat' );
 foreach ($terms as $term) {
     $term_b_name =  $product_cat_id = $term->name;
 		$term_b_slug =  $product_cat_id = $term->slug;
-}
-?>
+} ?>
+
 
 <div class="container archive_product_main_container">
-
   <div class="breadcrumbs_wrapper">
        <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
@@ -49,11 +45,34 @@ foreach ($terms as $term) {
            <meta itemprop="position" content="2">
          </span>
          </span>
+         <?php
+         $current_language = pll_current_language( 'slug' );
+         $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+         $parent = get_term_by( 'id', $term->parent, get_query_var( 'taxonomy' ) );
+         if($parent){ ?>
          <span class="kb_sep"></span>
-         <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-           <span class="kb_title" itemprop="name"><?php echo $queried_object->name; ?></span>
-           <meta itemprop="position" content="3">
-         </span>
+           <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <?php if($current_language == 'en'){ ?>
+               <a href="<?php echo get_home_url(); ?>/en/product-category/<?php echo $parent->slug?>" itemprop="item">
+            <?php } else { ?>
+               <a href="<?php echo get_home_url(); ?>/product-category/<?php echo $parent->slug?>" itemprop="item">
+            <?php } ?>
+               <span class="home_page" itemprop="name"><?php echo $parent->name ?></span>
+               <meta itemprop="position" content="3">
+             </a>
+           </span>
+           <span class="kb_sep"></span>
+           <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+             <span class="kb_title" itemprop="name"><?php echo $queried_object->name; ?></span>
+             <meta itemprop="position" content="4">
+           </span>
+        <?php } else { ?>
+           <span class="kb_sep"></span>
+           <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+             <span class="kb_title" itemprop="name"><?php echo $queried_object->name; ?></span>
+             <meta itemprop="position" content="3">
+           </span>
+        <?php } ?>
      </div>
    </div>
 

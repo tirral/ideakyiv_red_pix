@@ -125,12 +125,12 @@ li.product .star-rating {
   width: 100%;
   object-fit: cover;
   margin-bottom: 11px;
-  height: 140px;
+  height: 186px;
 }
 
 .page-template-page_personal_cabinet-favorits .product img,
 .tax-product_cat .product img {
-  height: 130px !important;
+  height: 186px !important;
 }
 
 .archive .container_variant_line .product img {
@@ -340,6 +340,8 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   max-width: 192px !important;
 }
 
+.stock-template-default .container_variant_line .list_item_variant_block .list_item_variant_block_img img,
+.page-template-page_personal_cabinet-favorits .container_variant_line .list_item_variant_block .list_item_variant_block_img img,
 .archive .container_variant_line .list_item_variant_block .list_item_variant_block_img img {
   margin-bottom: 0px !important;
 }
@@ -753,7 +755,8 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
     margin: 0 !important;
   }
 
-  .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product {
     margin-right: 0px !important;
   }
 
@@ -805,6 +808,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   text-align: center !important;
   color: #373331 !important;
   padding: 10px 15px !important;
+  min-height: 52px !important;
 }
 
 /* ================== PRODUCT CARD  END  ================== */

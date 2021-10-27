@@ -115,8 +115,15 @@ defined( 'ABSPATH' ) || exit;
 			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			  <td id="btn_plaseholder">
 			  <?php wc_cart_totals_order_total_html(); ?>
+
 				<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Kostenpflichtig bestellen" data-value="Kostenpflichtig bestellen">
+					<?php $current_language = pll_current_language( 'slug' );
+					if($current_language == "de"){ ?>
 					Kostenpflichtig bestellen
+					<?php }
+					if($current_language == "en"){ ?>
+					Make order
+					<?php	}	?>
 				</button>
 				</td>
 		</tr>

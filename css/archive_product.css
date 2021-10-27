@@ -424,6 +424,14 @@
 }
 
 @media screen and (max-width:1024px) {
+  .archive .home_page_main_wrapper {
+    padding-top: 10px;
+  }
+
+  .archive_product_main_container {
+    padding-bottom: 40px;
+  }
+
   .cart_wariant_container_text {
     display: none;
   }

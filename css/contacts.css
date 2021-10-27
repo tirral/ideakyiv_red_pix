@@ -12,8 +12,9 @@
 }
 
 .contacts_main_wrapper {
-  min-height: 900px;
+  min-height: auto;
   flex: 1 1 auto;
+  padding-bottom: 40px;
 }
 
 .contacts_main_wrapper_header {
@@ -71,6 +72,8 @@
   background-repeat: no-repeat;
   background-position: left;
   background-size: 15px;
+  display: block;
+  color: #8e8e8e !important;
 }
 
 .contacts_main_content_item_conteiner_social {

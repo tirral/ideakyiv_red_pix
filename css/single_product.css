@@ -138,6 +138,7 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 1;
+  cursor: pointer;
 }
 
 .single-product .remowe_like_btn {
@@ -151,6 +152,7 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 1;
+  cursor: pointer;
 }
 
 .single_product_btn li {
@@ -204,6 +206,7 @@
   line-height: 53px !important;
   margin-left: 50px !important;
   margin-top: 20px !important;
+  cursor: pointer !important;
 }
 
 .single-product a.added_to_cart {
@@ -444,6 +447,7 @@
   line-height: 21px;
   text-decoration-line: underline;
   color: #7E50BF;
+  cursor: pointer;
 }
 
 .single-product .woocommerce_main_content_wrapper_more_btn.open,
@@ -518,12 +522,16 @@
 }
 
 .woocommerce #review_form #respond textarea {
-  border: 1px solid #DEDCDC;
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dedcdc;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .1);
   border-radius: 2px;
   resize: none;
-  background: #FFFFFF;
+  background: #fff;
   height: 90px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8D8787;
 }
 
 .woocommerce #respond input#submit {
@@ -546,7 +554,7 @@
   padding: 17px 8px;
   position: relative;
   cursor: pointer;
-  margin-bottom: 33px;
+  /* margin-bottom: 33px; */
 }
 
 .more_properties_btn::after {
@@ -651,6 +659,239 @@
   font-size: 19px;
   font-family: 'Roboto';
   padding-top: 5px;
+}
+
+.attribute_content_item_container {
+  padding-top: 30px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+  margin: 0 10px 0 80px;
+  border: 1px solid #e4e1e3;
+  border-radius: 4px;
+  padding: 1em 1em 0;
+  background-color: #fff;
+}
+
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+  width: 70px;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.woocommerce #reviews #comments ol.commentlist {
+  max-height: 214px;
+  margin-bottom: 56px;
+  overflow-y: scroll;
+}
+
+.comment-form label[for=comment] {
+  display: none;
+}
+
+.comment-form label[for=author] {
+  display: none;
+}
+
+.comment-form label[for=email] {
+  display: none;
+}
+
+.comment-form-author {
+  float: left;
+}
+
+.comment-form-author input {
+  width: 300px;
+  margin-right: 30px;
+  background: #FFFFFF;
+  border: 1px solid #DEDCDC;
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: 40px;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8D8787;
+}
+
+.comment-form-email input {
+  width: 300px;
+  background: #FFFFFF;
+  border: 1px solid #DEDCDC;
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: 40px;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8D8787;
+}
+
+.comment-form-comment {
+  margin-bottom: 0px !important;
+}
+
+.comment-form-cookies-consent {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+#reply-title, #email-notes, #email-notes span, .comment-notes {
+  font-size: 14px;
+  line-height: 16px;
+  color: #4A4A4A;
+}
+
+.comment-notes {
+  margin-bottom: 25px !important;
+}
+
+.comment-form-rating label[for=rating] {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #4A4A4A;
+  margin-bottom: 14px !important;
+}
+
+.comment-form-rating .stars {
+  margin-bottom: 20px !important;
+}
+
+.comment-form .comment-form-cookies-consent {
+  margin-top: 30px !important;
+}
+
+label[for=wp-comment-cookies-consent] {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8d8787;
+  margin-left: 36px;
+  margin-bottom: 0px !important;
+}
+
+input#wp-comment-cookies-consent {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+input#wp-comment-cookies-consent:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/chec_not_active.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input#wp-comment-cookies-consent:checked::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  width: 16px;
+  background-image: url(../img/chec_active.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-submit {
+  margin-top: 22px !important;
+}
+
+.woocommerce #respond .form-submit input#submit {
+  font-size: 100%;
+  margin: 0;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  padding: 13px 54px;
+  font-weight: 700;
+  border-radius: 3px;
+  left: auto;
+  color: #fff;
+  background-color: #7e50bf !important;
+  border: 0;
+  display: inline-block;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+  padding-top: 10px !important;
+}
+
+.meta .woocommerce-review__verified.verified {
+  display: none;
+}
+
+.meta .woocommerce-review__dash {
+  display: none;
+}
+
+.meta .woocommerce-review__published-date {
+  font-size: 14px;
+  line-height: 16px;
+  color: #8d8787;
+  padding-left: 30px;
+}
+
+@media screen and (max-width:1024px) {
+  .woocommerce #reviews #comments ol.commentlist li .comment-text {
+    padding-left: 20px !important;
+    padding-right: 10px !important;
+  }
+
+  .comment-form-author {
+    width: 100% !important;
+  }
+
+  .comment-form-email {
+    width: 100% !important;
+  }
+
+  .comment-form-author input {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .comment-form-email input {
+    width: 100% !important;
+  }
+}
+
+.woocommerce div.product form.cart .button {
+  vertical-align: middle;
+  float: left;
+  cursor: pointer !important;
 }
 
 /* ================== SINGLE PRODUCT END  ================== */

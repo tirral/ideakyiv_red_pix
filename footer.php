@@ -120,8 +120,8 @@
               </div>
               <div class="footer_information_wrapper_maile_wrapper">
                 <p class="footer_information_wrapper_maile_wrapper_title"><?php pll_e('Email'); ?></p>
-                <p class="footer_information_wrapper_maile_wrapper_text"><?php echo $tirral_global['footer-contacts-mail-address-1'] ?></p>
-                <p class="footer_information_wrapper_maile_wrapper_text"><?php echo $tirral_global['footer-contacts-mail-address-2'] ?></p>
+                <a href="mailto:mcenter.ml@<?php echo $tirral_global['footer-contacts-mail-address-1'] ?>" class="footer_information_wrapper_maile_wrapper_text"><?php echo $tirral_global['footer-contacts-mail-address-1'] ?></a>
+                <a href="mailto:mcenter.ml@<?php echo $tirral_global['footer-contacts-mail-address-2'] ?>" class="footer_information_wrapper_maile_wrapper_text"><?php echo $tirral_global['footer-contacts-mail-address-2'] ?></a>
               </div>
               <div class="footer_information_wrapper_adress_wrapper">
                 <p class="footer_information_wrapper_adress_wrapper_title"><?php pll_e('Adress'); ?></p>
@@ -185,27 +185,21 @@
 
 
 
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-  setTimeout(function(){
-    $.ajax({
-        url: "http://tigall.red-pix.com/wp-content/themes/ideakyiv/lib/slim_notifier/slim_notifier.js",
-        dataType: "script",
-        cache: true
-    });
-  }, 1500);
-})
-</script>
-
-
-
 <?php $current_language = pll_current_language( 'slug' ); ?>
+
   <?php  if($current_language == "de"){ ?>
     <script type="text/javascript">
       document.addEventListener('wpcf7mailsent', function(event) {
+
+        if (jQuery(".custom_alert_wrapper")[0]) {
+          jQuery('.custom_alert_wrapper').remove();
+        }
         setTimeout(function() {
-          SlimNotifierJs.notification('success', 'Erfolgreich', 'VIELEN DANK! IHR BRIEF ERFOLGREICH GESENDET !', 3000, false);
-        }, 1000);
+            jQuery('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Erfolgreich!</div><div class="custom_alert_container_text">VIELEN DANK! IHR BRIEF ERFOLGREICH GESENDET !</div><div class="custom_alert_container_icon"></div></div>');
+        }, 600);
+        setTimeout(function() {
+          jQuery('.custom_alert_wrapper').remove();
+        }, 3000);
         setTimeout(function() {
         var el = document.getElementsByClassName('feedback_modal_container_close_btn');
           for (var i=0;i<el.length; i++) {
@@ -215,19 +209,28 @@ jQuery(document).ready(function($) {
       }, false);
     </script>
   <?php }
+
+
+
   if($current_language == "en"){ ?>
     <script type="text/javascript">
-      document.addEventListener('wpcf7mailsent', function(event) {
-        setTimeout(function() {
-          SlimNotifierJs.notification('success', 'Successfully', 'THANKS! YOUR LETTER SENT SUCCESSFULLY !', 3000, false);
-        }, 1000);
-        setTimeout(function() {
-        var el = document.getElementsByClassName('feedback_modal_container_close_btn');
-          for (var i=0;i<el.length; i++) {
-          el[i].click();
-        }
-      }, 4000);
+    if (jQuery(".custom_alert_wrapper")[0]) {
+      jQuery('.custom_alert_wrapper').remove();
+    }
+    setTimeout(function() {
+        jQuery('body').append('<div class="custom_alert_wrapper alert_success"><div class="custom_alert_container_status">Successfully!</div><div class="custom_alert_container_text">THANKS! YOUR LETTER SENT SUCCESSFULLY !</div><div class="custom_alert_container_icon"></div></div>');
+    }, 600);
+    setTimeout(function() {
+      jQuery('.custom_alert_wrapper').remove();
+    }, 3000);
+    setTimeout(function() {
+    var el = document.getElementsByClassName('feedback_modal_container_close_btn');
+      for (var i=0;i<el.length; i++) {
+      el[i].click();
+    }
+  }, 4000);
       }, false);
+
     </script>
   <?php } ?>
 

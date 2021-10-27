@@ -568,6 +568,7 @@ a .home_page_product_line_wrapper_first_container_item_text {
     line-height: 19px !important;
   }
 
+  .stock-template-default .list_item_variant_block a.add_to_cart_button.ajax_add_to_cart,
   .page-template-page_personal_cabinet-favorits .list_item_variant_block a.add_to_cart_button.ajax_add_to_cart,
   .woocommerce .list_item_variant_block a.add_to_cart_button.ajax_add_to_cart {
     font-size: 16px !important;

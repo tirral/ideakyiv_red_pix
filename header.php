@@ -134,6 +134,7 @@
       </div>
 		</div>
     <div class="col-lg-12 header_taxonomy_list_container">
+
       <div class="header_taxonomy_head">
         <div class="header_taxonomy_head_info_user">
           <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
@@ -169,10 +170,10 @@
           <?php } ?>
         </div>
       </div>
+
       <nav class="taxonomy_navigation">
         <div class="categories_drop-down"><span>Categories</span></div>
         <ul class="topmenu">
-
     <?php
       $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);
       $product_categories = get_terms( 'product_cat', $cat_args );
@@ -206,6 +207,26 @@
     </div>
  	</div>
  </div>
+
+<div class="mobile_category_container">
+  <div class="mobile_category_wrapper">
+  <?php
+    $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);
+    $product_categories = get_terms( 'product_cat', $cat_args );
+    if( !empty($product_categories) ){
+          foreach ($product_categories as $key => $category) {
+           if($category->term_id != 22){ ?>
+               <a href="<?php echo get_term_link($category); ?>" class="mobile_category_wrapper_item">
+                 <span id="header_menu_<?php echo $category->slug; ?>" class="mobile_category_wrapper_item_img"></span>
+                 <span class="mobile_category_wrapper_item_text"><?php echo $category->name; ?></span>
+               </a>
+        <?php } } } ?>
+  </div>
+</div>
+
+
+
+
  <style media="screen">
    .lang-item-ru{
      display: none;

@@ -1,4 +1,8 @@
 /* ================== CHECKOUT  START  ================== */
+.page-template-page_checkout .home_page_main_wrapper {
+  padding-top: 0px;
+}
+
 .page-template-page_checkout .breadcrumbs_wrapper {
   padding-top: 10px;
 }
@@ -338,6 +342,12 @@
 
 .thankyou_main_container_btn:hover {
   color: #F3F3F3;
+}
+
+@media screen and (max-width:1024px) {
+  .page-template-page_checkout .woocommerce-info {
+    margin-bottom: 0px !important;
+  }
 }
 
 /* ================== CHECKOUT  START  ================== */

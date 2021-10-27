@@ -39,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		} ?>
 		<!-- GET ULIST FAVORITE PRODUCT ID END  -->
 
-		<li data-user_id="<?php echo $_COOKIE["cuctom_user_login_id"] ?>" data-product_id="<?php echo $product->id ?>" <?php wc_product_class( '', $product ); ?>>
+		<li id="product_cart" data-user_id="<?php echo $_COOKIE["cuctom_user_login_id"] ?>" data-product_id="<?php echo $product->id ?>" <?php wc_product_class( '', $product ); ?>>
 
 		<!-- CHECK IF THE PRODUCT IS IN  FAVORITE AD WARIANT OF BUTTON START   -->
 			<?php if (in_array($product->id, $products_id)) { ?>

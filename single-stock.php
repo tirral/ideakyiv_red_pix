@@ -60,7 +60,9 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
       <p class="end-stok"><?php echo get_post_meta( get_the_ID(), 'stock_time_end', true ); ?></p>
       <p class="stok-timet_title">До конца акции осталось:</p>
         <div class="countdown countdown-container container">
+
             <div class="clock row">
+
                 <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
@@ -74,6 +76,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                         </div><!-- /.inner -->
                     </div><!-- /.wrap -->
                 </div><!-- /.clock-item -->
+
                 <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
@@ -87,6 +90,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                         </div><!-- /.inner -->
                     </div><!-- /.wrap -->
                 </div><!-- /.clock-item -->
+
                 <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
@@ -100,6 +104,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                         </div><!-- /.inner -->
                     </div><!-- /.wrap -->
                 </div><!-- /.clock-item -->
+
                 <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
                     <div class="wrap">
                         <div class="inner">
@@ -113,6 +118,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
                         </div><!-- /.inner -->
                     </div><!-- /.wrap -->
                 </div><!-- /.clock-item -->
+
             </div><!-- /.clock -->
         </div><!-- /.countdown-wrapper -->
      </div>

@@ -42,7 +42,7 @@ get_header(); ?>
             <p><?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_text', true ); ?></p>
           </div>
         </div>
-        <div class="col-lg-6 about_us_first_section_img">
+        <div class="col-lg-6 about_us_first_section_img animate__animated animate__zoomIn wow">
           <div class="about_us_first_section_img_wrapper">
             <img src="<?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_img', true ); ?>" alt="">
           </div>
@@ -52,7 +52,7 @@ get_header(); ?>
 
     <div class="container-fluid about_us_second_section_wrapper">
       <div class="row about_us_second_section" >
-        <div class="col-lg-6 about_us_second_section_img">
+        <div class="col-lg-6 about_us_second_section_img animate__animated animate__zoomIn wow">
           <div class="about_us_first_section_img_wrapper">
             <img src="<?php echo get_post_meta( get_the_ID(), 'about_us_metabox_section_1_img', true ); ?>" alt="">
           </div>
