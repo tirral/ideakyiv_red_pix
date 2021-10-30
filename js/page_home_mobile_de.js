@@ -8,15 +8,15 @@ jQuery(window).load(function() {
       var bg_image = jQuery(this).attr("data-url");
       jQuery(this).css('background-image', 'url(' + bg_image + ')');
     });
-  }, 6000);
+  }, 4000);
 
   function slickCarouselleaders() {
     jQuery("#sales_leaders_container").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       dots: false,
       arrows: true,
       responsive: [{
-          breakpoint: 768,
+          breakpoint: 767,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -32,6 +32,9 @@ jQuery(window).load(function() {
       ],
     });
   }
+
+
+
 
   function destroyCarouselleaders() {
     if (jQuery('#sales_leaders_container').hasClass('slick-initialized')) {
@@ -209,23 +212,24 @@ jQuery(window).load(function() {
         destroyCarouselleaders();
         slickCarouselleaders();
 
-      }, 3000);
+      }, 2000);
 
 
-    }, 4000);
+    }, 2000);
 
-  }, 8000);
+  }, 5000);
+
 
 
 
 
   function slickCarouselnewitems() {
     jQuery("#new_items_container").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       dots: false,
       arrows: true,
       responsive: [{
-          breakpoint: 768,
+          breakpoint: 767,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -416,11 +420,11 @@ jQuery(window).load(function() {
       setTimeout(function() {
         destroyCarouselnewitems();
         slickCarouselnewitems();
+        jQuery('body').addClass('loaded');
+      }, 2000);
 
-      }, 3000);
-
-    }, 4000);
-  }, 12000);
+    }, 2000);
+  }, 9000);
 
 
 });

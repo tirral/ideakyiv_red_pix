@@ -96,7 +96,7 @@ $products_colors_new = array();
 
 
 
-<div class="sitebar_filter_wrapper_color">
+<div class="sitebar_filter_wrapper_color sitebar_filter_wrapper_color_gabarit">
 <div class="title-sidebar_default_second_sub_header"><p><?php pll_e('Abmessungen'); ?></p></div>
 <div class="product_width_range_title">Länge <span>(сm)</span>:</div>
 <section><div id="product_width_range" class="range-slider js-range" data-range-id="product_width_range"></div></section>

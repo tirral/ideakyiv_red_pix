@@ -12,6 +12,8 @@ get_header();
 <?php
 while ( have_posts() ) :
   the_post(); ?>
+<div class="work_area">
+
 
 <?php
 $data = get_post_meta( get_the_ID(), 'stock_time_end', true );
@@ -21,7 +23,7 @@ echo '<p class="stok_date_day">' .  $data_pieces[0] . '<p>';
 echo '<p class="stok_date_month">' .  $data_mon[(intval($data_pieces[1]))-1] . '<p>';
 echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
 ?>
-
+</div>
 
 <div class="container archive_product_main_container">
 
@@ -128,7 +130,7 @@ echo '<p class="stok_date_year">' .  $data_pieces[2] . '<p>';
 
    <div class="row">
      <div class="col-lg-12 favorite_product_wrapper">
-       <br><br>
+      
        <div id="woocommerce_ordering" class="product_category_before_loop_function_wrapper">
          <div id="custom_top_filter_select">
            <div id="custom_top_filter_select_text"><?php pll_e('SORT BY'); ?></div>

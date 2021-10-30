@@ -1,4 +1,8 @@
 /* ================== SITEBAR START  ================== */
+.sitebar_filter_wrapper_color_gabarit {
+  display: none;
+}
+
 .custon_color_filter_wrapper {
   padding-left: 0;
   margin-bottom: 16px;
@@ -638,9 +642,9 @@
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;

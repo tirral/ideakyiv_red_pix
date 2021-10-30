@@ -60,3 +60,355 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+.about_plain {
+  background-repeat: no-repeat !important;
+}
+
+.single-stock .favorite_product_wrapper {
+  margin-top: 40px;
+}
+
+#favorite_product_wrapper_header {
+  margin-bottom: 30px;
+}
+
+.page-template-page_personal_cabinet-favorits #woocommerce_ordering {
+  margin-bottom: 30px;
+}
+
+.page-template-page_checkout .woocommerce-error {
+  display: none;
+}
+
+.work_area p {
+  height: 0px;
+  display: none;
+}
+
+@media screen and (max-width:1199px) {
+  .plug_product_cart_wrapper {
+    margin-right: 12px !important;
+  }
+
+  .home_page_product_line_wrapper {
+    max-width: 900px !important;
+  }
+
+  .home_page_product_line_container .slick-next {
+    right: -34px !important;
+  }
+
+  .home_page_product_line_container .slick-prev {
+    left: -34px !important;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .single-product div.product div.images img {
+    margin-bottom: 0;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100% !important;
+    object-fit: contain;
+  }
+
+  .single-product .entry-summary, .single-product #single_product_lg_img_wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .about_us_first_section_text,
+  .about_us_second_section_text,
+  .about_us_first_section_img,
+  .about_us_second_section_img {
+    max-width: 100% !important;
+    width: 100% !important;
+    flex: 100% !important;
+  }
+
+  .about_us_first_section_text,
+  .about_us_second_section_text {
+    padding: 10px 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about_us_first_section_text p,
+  .about_us_second_section_text p {
+    padding: 10px 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about_us_second_section_text_container, .about_us_first_section_text_container {
+    max-width: 700px !important;
+  }
+
+  .home_page_main_container {
+    margin-top: 30px !important;
+  }
+
+  #sales_leaders_container, #new_items_container {
+    min-height: 200px !important;
+  }
+
+  #children_taxonomy_wrapper {
+    margin: 20px 0 !important;
+  }
+
+  #favorite_product_wrapper_header {
+    margin-bottom: 20px;
+  }
+
+  .page-template-page_personal_cabinet-favorits #woocommerce_ordering {
+    margin-bottom: 20px;
+  }
+
+  .stock_desc {
+    margin-bottom: 20px !important;
+  }
+
+  .single-stock .favorite_product_wrapper {
+    margin-top: 20px !important;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .home_page_product_line_container .slick-next {
+    right: -25px !important;
+  }
+
+  .home_page_product_line_container .slick-prev {
+    left: -25px !important;
+  }
+
+  .page-template-page_about_us .about_us_main_wrapper {
+    padding-bottom: 20px !important;
+  }
+}
+
+@media screen and (max-width:640px) {}
+
+@media screen and (max-width:414px) {
+  .single-stock .favorite_product_wrapper {
+    margin-top: 0px !important;
+  }
+
+  .single-stock #woocommerce_ordering {
+    margin-bottom: 0px;
+    margin-top: 9px;
+  }
+
+  .home_page_product_line_container .slick-next {
+    right: -14px !important;
+    transform: scale(0.8) !important;
+  }
+
+  .home_page_product_line_container .slick-prev {
+    left: -14px !important;
+    top: 53% !important;
+    transform: scale(.8) translateY(-50%) rotate(180deg) !important;
+  }
+
+  .about_plain {
+    top: -20px !important;
+    right: 60% !important;
+  }
+
+  .payment_main_wrapper_header {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .home_page_product_line_container li {
+    width: 280px !important;
+  }
+}
+
+#preloader_wrapper {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7e50bf;
+  z-index: 999999;
+}
+
+/* The Loader */
+#loader-wrapper {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+}
+
+.no-js #loader-wrapper {
+  display: none;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 180px;
+  height: 180px;
+  margin: -90px 0 0 -90px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #7e50bf;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+  z-index: 11;
+}
+
+#loader_img {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 52%;
+  width: 110px;
+  height: 28px;
+  margin: -75px 28px 0 -45px;
+  background-image: url(//tigall.red-pix.com/wp-content/themes/ideakyiv/./img/header_logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 99999;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #7e50bf;
+  -webkit-animation: spin-reverse 1s linear infinite;
+  animation: spin-reverse 1s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #7e50bf;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #E5E5E5;
+  z-index: 10;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded styles */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+a>* {
+  outline: none;
+}
+
+@media screen and (max-width:640px) {
+  #custom_top_filter_select_body_item_wrapper {
+    width: 165px !important;
+  }
+}
+
+.product_category_sitebar_list_item_wrapper input {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  -ms-appearance: none !important;
+  -o-appearance: none !important;
+  appearance: none !important;
+  display: none !important;
+  opacity: 0 !important;
+}

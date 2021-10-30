@@ -51,8 +51,8 @@ $queried_object = get_queried_object();?>
 
           <div class="row">
             <div class="col-lg-12 favorite_product_wrapper">
-              <h1>Favorites</h1>
-              <br><br>
+              <h1 id="favorite_product_wrapper_header">Favorites</h1>
+
               <div id="woocommerce_ordering" class="product_category_before_loop_function_wrapper">
                 <div id="custom_top_filter_select">
                   <div id="custom_top_filter_select_text"><?php pll_e('SORT BY'); ?></div>
@@ -83,7 +83,7 @@ $queried_object = get_queried_object();?>
                   </div>
                 </div>
               </div>
-              <br>
+            
               <?php
               $sorting_order = $_GET['orderby'];
               if($sorting_order == 'price'){

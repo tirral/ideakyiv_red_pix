@@ -114,10 +114,10 @@ foreach ($terms as $term) {
   </div>
 
   <div class="row home_page_main_wrapper">
-    <div class="col-lg-2 filter_wrap">
+    <div class="col-lg-3 filter_wrap">
       <?php  get_template_part( 'template-parts/content', 'archive_product_sitebar'); ?>
     </div>
-    <div class="col-lg-10 main_product_container">
+    <div class="col-lg-9 main_product_container">
       <div id="woocommerce_ordering" class="product_category_before_loop_function_wrapper">
         <div id="custom_top_filter_select">
           <div id="custom_top_filter_select_text"><?php pll_e('SORT BY'); ?></div>
@@ -155,13 +155,15 @@ foreach ($terms as $term) {
               'parent'    => $term->term_id,
               'hide_empty' => false
           ));
-          echo '<ul id="children_taxonomy_wrapper">';
+
           if ( $children) {
+              echo '<ul id="children_taxonomy_wrapper">';
               foreach( $children as $subcat ){
                   echo '<li class="children_taxonomy_wrapper_item" ><a href="' . esc_url(get_term_link($subcat, $subcat->taxonomy)) . '">' . $subcat->name . '</a></li>';
               }
-          }
-          echo '</ul>'; ?>
+                        echo '</ul>';
+          }?>
+
 
       <ul class="products columns-4">
           <?php

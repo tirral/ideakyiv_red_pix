@@ -8,15 +8,15 @@ jQuery(window).load(function() {
       var bg_image = jQuery(this).attr("data-url");
       jQuery(this).css('background-image', 'url(' + bg_image + ')');
     });
-  }, 6000);
+  }, 4000);
 
   function slickCarouselleaders() {
     jQuery("#sales_leaders_container").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       dots: false,
       arrows: true,
       responsive: [{
-          breakpoint: 768,
+          breakpoint: 767,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -78,7 +78,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   } else {
                     result.innerHTML +=
@@ -97,7 +97,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   }
                 } else {
@@ -118,7 +118,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   } else {
                     result.innerHTML +=
@@ -137,7 +137,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   }
                 }
@@ -161,7 +161,7 @@ jQuery(window).load(function() {
                     '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                     '</div>' +
                     '</div>' +
-                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                     '</li>';
                 } else {
                   result.innerHTML +=
@@ -179,7 +179,7 @@ jQuery(window).load(function() {
                     '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                     '</div>' +
                     '</div>' +
-                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                     '</li>';
                 }
               }
@@ -190,7 +190,7 @@ jQuery(window).load(function() {
       }
       if (counter == 0) {
         $("#sales_leaders_container").append(
-          '<p class="sory_no_match">We sorry, there are no matches in the search results.</p>'
+          '<p class="sory_no_match">Es tut uns leid, es gibt keine Übereinstimmungen in den Suchergebnissen.</p>'
         );
       }
       if (ourReqest.status != 200) {
@@ -198,21 +198,34 @@ jQuery(window).load(function() {
       } else {}
     };
     ourReqest.send();
+
     setTimeout(function() {
-      jQuery('#container_plaseholder_wrapper').hide();
-      destroyCarouselleaders();
-      slickCarouselleaders();
-    }, 4000);
-  }, 8000);
+      jQuery('#container_plaseholder_wrapper #container_plaseholder').remove();
+      jQuery('#container_plaseholder_wrapper #container_plaseholder_text').remove();
+      jQuery('#container_plaseholder_wrapper .loader_new_container').remove();
+
+
+      setTimeout(function() {
+        destroyCarouselleaders();
+        slickCarouselleaders();
+
+      }, 2000);
+
+
+    }, 2000);
+
+  }, 6000);
+
+
 
 
   function slickCarouselnewitems() {
     jQuery("#new_items_container").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       dots: false,
       arrows: true,
       responsive: [{
-          breakpoint: 768,
+          breakpoint: 767,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -274,7 +287,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   } else {
                     result.innerHTML +=
@@ -293,7 +306,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   }
                 } else {
@@ -314,7 +327,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   } else {
                     result.innerHTML +=
@@ -333,7 +346,7 @@ jQuery(window).load(function() {
                       '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                       '</div>' +
                       '</div>' +
-                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                      '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                       '</li>';
                   }
                 }
@@ -357,7 +370,7 @@ jQuery(window).load(function() {
                     '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                     '</div>' +
                     '</div>' +
-                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                     '</li>';
                 } else {
                   result.innerHTML +=
@@ -375,7 +388,7 @@ jQuery(window).load(function() {
                     '<span style="width:' + (ourData[i]._wc_average_rating) * 20 + '%"></span>' +
                     '</div>' +
                     '</div>' +
-                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Kaufen</a>' +
+                    '<a href="?add-to-cart=' + ourData[i].id + '" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' + ourData[i].id + '">Buy</a>' +
                     '</li>';
                 }
               }
@@ -386,7 +399,7 @@ jQuery(window).load(function() {
       }
       if (counter == 0) {
         $("#new_items_container").append(
-          '<p class="sory_no_match">We sorry, there are no matches in the search results.</p>'
+          '<p class="sory_no_match">Es tut uns leid, es gibt keine Übereinstimmungen in den Suchergebnissen.</p>'
         );
       }
       if (ourReqest.status != 200) {
@@ -395,11 +408,19 @@ jQuery(window).load(function() {
     };
     ourReqest.send();
     setTimeout(function() {
-      jQuery('#container_plaseholder_wrapper_second').hide();
-      destroyCarouselnewitems();
-      slickCarouselnewitems();
-    }, 4000);
-  }, 12000);
+      jQuery('#container_plaseholder_wrapper_second #container_plaseholder_second').remove();
+      jQuery('#container_plaseholder_wrapper_second #container_plaseholder_text_second').remove();
+      jQuery('#container_plaseholder_wrapper_second .loader_new_container_second').remove();
+
+
+      setTimeout(function() {
+        destroyCarouselnewitems();
+        slickCarouselnewitems();
+
+      }, 2000);
+
+    }, 2000);
+  }, 8000);
 
 
 });

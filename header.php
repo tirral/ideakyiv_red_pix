@@ -22,8 +22,22 @@
  	<?php wp_head(); ?>
  </head>
 
- <?php if( is_front_page() ) { ?>
-    <body class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
+ <?php if( is_front_page() ) {
+   if ( wp_is_mobile() ) { ?>
+    <body  class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
+
+<div id="loader-wrapper">
+    <div id="loader_img"></div>
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
+
+
+
+  <?php  } else { ?>
+      <body class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
+  <?php  } ?>
  <?php } else { ?>
  	<body <?php body_class(); ?>>
  <?php } ?>
@@ -78,7 +92,9 @@
         <div class="header_wrapper_search_icon_container"></div>
 
         <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
-        <a  href="/order/" class="header_wrapper_cabinet_icon_container_login"><?php pll_e('Kabinett'); ?></a>
+        <li>
+          <a  href="/order/" class="header_wrapper_cabinet_icon_container_login"><?php pll_e('Kabinett'); ?></a>
+        </li>
         <?php } else { ?>
         <div class="header_wrapper_cabinet_icon_container"><?php pll_e('Kabinett'); ?></div>
         <?php } ?>
@@ -96,7 +112,7 @@
              <a  href="/personal-cabinet-favorits/" class="header_wrapper_favorite_icon_container not_isset_product"></a>
           <?php } ?>
         <?php } else { ?>
-        <div class="header_wrapper_favorite_icon_container"></div>
+        <div class="header_wrapper_favorite_icon_container like_btn_not_register"></div>
         <?php } ?>
         <div class="header_wrapper_basket_icon_container">
           <div class="s-header__basket-wr woocommerce">
@@ -183,7 +199,7 @@
                <li class="menu_main_item">
                  <a href="<?php echo get_term_link($category); ?>" class="active menu_main_item_link">
                    <!-- <img class="menu_main_item_img" src="<?php // echo z_taxonomy_image_url($category->term_id); ?>" alt=""> -->
-                   <span id="header_menu_<?php echo $category->slug; ?>"></span>
+                   <span id="header_menu_mob_<?php echo $category->slug; ?>"></span>
                    <span><?php echo $category->name; ?></span>
                  </a>
                  <?php
@@ -207,22 +223,43 @@
     </div>
  	</div>
  </div>
-
-<div class="mobile_category_container">
-  <div class="mobile_category_wrapper">
-  <?php
+<?php if (wp_is_mobile()) { ?>
+  <div class="topmenu-wrap">
+    <div class="topmenu-first"></div>
+    <ul class="topmenu">
+    <?php
     $cat_args = array('orderby' => 'name', 'order' => 'asc', 'hide_empty' => false, 'childless'  => 0, 'child_of'   => 0, 'parent' => 0,);
     $product_categories = get_terms( 'product_cat', $cat_args );
     if( !empty($product_categories) ){
           foreach ($product_categories as $key => $category) {
-           if($category->term_id != 22){ ?>
-               <a href="<?php echo get_term_link($category); ?>" class="mobile_category_wrapper_item">
-                 <span id="header_menu_<?php echo $category->slug; ?>" class="mobile_category_wrapper_item_img"></span>
-                 <span class="mobile_category_wrapper_item_text"><?php echo $category->name; ?></span>
-               </a>
+            if($category->term_id != 22){ ?>
+              <li class="menu_main_item">
+                <a href="<?php echo get_term_link($category); ?>" class="active menu_main_item_link">
+                  <!-- <img class="menu_main_item_img" src="<?php // echo z_taxonomy_image_url($category->term_id); ?>" alt=""> -->
+                  <span id="header_menu_mob_<?php echo $category->slug; ?>"></span>
+                  <span><?php echo $category->name; ?></span>
+                </a>
+                <?php
+                $term_id = $category->term_id;
+                $taxonomy_name = 'product_cat';
+                $termchildren = get_term_children( $term_id, $taxonomy_name );
+                if($termchildren){
+                  echo '<ul class="submenu">';
+                }
+                foreach ( $termchildren as $child ) {
+                    $term = get_term_by( 'id', $child, $taxonomy_name ); ?>
+                      <li><a href="<?php echo get_term_link( $child, $taxonomy_name ) ?>"><?php echo $term->name ?></a></li>
+              <?php }
+              if($termchildren){
+                echo '</ul>';
+              } ?>
+              </li>
         <?php } } } ?>
+    </ul>
   </div>
-</div>
+
+
+<?php } ?>
 
 
 
