@@ -160,7 +160,7 @@ li.product .star-rating {
   color: #4A4A4A;
   padding: 0 10px;
   font-weight: 600;
-  min-height: 24px;
+  min-height: 40px;
 }
 
 .woocommerce .products .star-rating {
@@ -295,6 +295,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   color: #7E50BF !important;
   font-size: 16px !important;
   line-height: 19px !important;
+  display: block !important;
 }
 
 .product a.button:hover {

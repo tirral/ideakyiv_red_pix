@@ -9,7 +9,7 @@
 }
 
 .home_page_main_wrapper {
-  padding-top: 40px;
+  padding-top: 5px !important;
   display: flex;
   justify-content: center;
 }

@@ -163,9 +163,12 @@ function ideakyiv_scripts() {
 
  if ( is_front_page()) {
 
+
 if ( wp_is_mobile() ) {
   wp_enqueue_style('ideakyiv-bootstrapCSS', get_template_directory_uri() . '/lib/bootstrap/css/bootstrap.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-slickCSS', get_template_directory_uri() . '/lib/slick/slick.css', false, NULL, 'all');
+  // wp_enqueue_style('ideakyiv-owlCSS', get_template_directory_uri() . '/lib/owl/owl.carousel.min.css', false, NULL, 'all');
+  // wp_enqueue_style('ideakyiv-defaultCSS', get_template_directory_uri() . '/lib//owl/owl.theme.default.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-headerCSS', get_template_directory_uri() . '/css/header.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-footerCSS', get_template_directory_uri() . '/css/footer.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-home_pageCSS', get_template_directory_uri() . '/css/home_page.css', false, NULL, 'all');
@@ -173,25 +176,30 @@ if ( wp_is_mobile() ) {
   wp_enqueue_style('ideakyiv-main_styleCSS', get_template_directory_uri() . '/css/main_style.css', false, NULL, 'all');
   wp_enqueue_style('ideakyiv-main_mobile_styleCSS', get_template_directory_uri() . '/css/main_mobile_style.css', false, NULL, 'all');
   wp_enqueue_script( 'ideakyiv-slickJS', get_template_directory_uri() . '/lib/slick/slick.js', array(), _S_VERSION, true );
+  // wp_enqueue_script( 'ideakyiv-owlJS', get_template_directory_uri() . '/lib/owl/owl.carousel.min.js', array(), _S_VERSION, true );
+
   wp_enqueue_script( 'ideakyiv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
   wp_enqueue_script( 'ideakyiv-cookieJS', get_template_directory_uri() . '/js/jquery.cookie.js', array(), 2010001, true );
-    wp_enqueue_script( 'ideakyiv-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
+  wp_enqueue_script( 'ideakyiv-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
   wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_de.js', array(), '20151215', true );
   wp_enqueue_script( 'ideakyiv-lang_de_fixJS', get_template_directory_uri() . '/js/lang_de_fix.js', array(), 2010001, true );
+  wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_de.js', array(), 2010001, true );
 
   $current_language = pll_current_language( 'slug' );
   if ($current_language == 'de'){
       // wp_enqueue_script( 'ideakyiv-parse_geJS', get_template_directory_uri() . '/js/parse_de.js', array(), 2010001, true );
       // wp_enqueue_script( 'ideakyiv-lang_de_fixJS', get_template_directory_uri() . '/js/lang_de_fix.js', array(), 2010001, true );
       // wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_de.js', array(), '20151215', true );
-      wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_de.js', array(), 2010001, true );
+      // wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_de.js', array(), 2010001, true );
   }
   if ($current_language == 'en'){
       // wp_enqueue_script( 'ideakyiv-parse_enJS', get_template_directory_uri() . '/js/parse_en.js', array(), 2010001, true );
       // wp_enqueue_script( 'ideakyiv-lang_en_fixJS', get_template_directory_uri() . '/js/lang_en_fix.js', array(), 2010001, true );
       // wp_enqueue_script( 'ideakyiv-cabinetJS', get_template_directory_uri() . '/js/cabinet_en.js', array(), '20151215', true );
-      wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_en.js', array(), 2010001, true );
+      // wp_enqueue_script( 'ideakyiv-page_home_mobileJS', get_template_directory_uri() . '/js/page_home_mobile_en.js', array(), 2010001, true );
   }
+
+  
    wp_enqueue_script( 'ideakyiv-footerJS', get_template_directory_uri() . '/js/footer.js', array(), 2010001, true );
    wp_enqueue_script( 'ideakyiv-mainJS', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 

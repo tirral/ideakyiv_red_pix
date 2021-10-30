@@ -2,8 +2,6 @@
 jQuery(window).on("load", function() {
   new WOW().init();
 
-
-
   var product_cart_wariant_val = jQuery.cookie("product_cart_wariant");
   if (product_cart_wariant_val == "variant_line") {
     jQuery(".main_product_container").addClass("container_variant_line");
@@ -12,11 +10,10 @@ jQuery(window).on("load", function() {
     jQuery(".main_product_container").removeClass("container_variant_line");
     jQuery("body").removeClass("product_container_variant_line");
   }
-
-
 });
 
 jQuery(document).ready(function($) {
+  // $("div.slick-track").replaceWith($("<ul>" + this.innerHTML + "</ul>"));
   // burger menu
   $(".burger-header").click(function() {
     $(".header_taxonomy_list_container").toggleClass("open");
@@ -75,25 +72,29 @@ jQuery(document).ready(function($) {
       path: "/",
     });
   });
-  $(
-    ".home_page_main_wrapper .home_page_product_line_container, .home_page_main_wrapper .leaders-slider"
-  ).slick({
+
+
+  // if ($(window).width() > 1025) {
+  $(".home_page_main_wrapper .home_page_product_line_container, .home_page_main_wrapper .leaders-slider").slick({
     slidesToShow: 4,
-    slidesToScroll: 1,
+    infinite: true,
+    slidesToScroll: 4,
     dots: false,
     arrows: true,
     responsive: [{
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
+          arrows: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
+          arrows: true,
         },
       },
       {
@@ -101,10 +102,34 @@ jQuery(document).ready(function($) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
     ],
   });
+  // }
+
+
+  // if ($(window).width() < 1025) {
+  //   $('.owl-carousel').owlCarousel({
+  //     loop: true,
+  //     margin: 10,
+  //     nav: true,
+  //     responsive: {
+  //       321: {
+  //         items: 1
+  //       },
+  //       414: {
+  //         items: 2
+  //       },
+  //       1024: {
+  //         items: 3
+  //       }
+  //     }
+  //   })
+  // }
+
+
 
   $(".swiper-wrapper").slick({
     dots: true,
@@ -114,6 +139,20 @@ jQuery(document).ready(function($) {
       breakpoint: 1024,
       settings: {
         arrows: false,
+      },
+    }, ],
+  });
+
+  $(".topmenu-wrap .topmenu").slick({
+    dots: false,
+    arrows: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 325,
+      settings: {
+        slidesToShow: 2,
       },
     }, ],
   });
@@ -212,7 +251,7 @@ jQuery(document).ready(function($) {
     if ($(window).width() <= 1199) {
       $(".header_taxonomy_list_container").append($(".taxonomy_navigation"));
       $(".header_taxonomy_list_container").append($(".header_wrapper_menu"));
-      $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
+      // $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
 
       $(".header_wrapper_menu").after($(".header_wrapper_lang"));
 
@@ -221,6 +260,9 @@ jQuery(document).ready(function($) {
 
       $("#primary-menu").prepend(
         $(".header_wrapper_cabinet_icon_container_login")
+      );
+      $(".header_wrapper_cabinet_icon_container_login").wrap(
+        "<li class='menu-item menu-item-type-custom menu-item-object-custom'></li>"
       );
       $(".single_product_main_container .content-area").prepend(
         $(".product_title.entry-title")
@@ -266,7 +308,7 @@ jQuery(document).ready(function($) {
     if ($(window).width() <= 1199) {
       $(".header_taxonomy_list_container").append($(".taxonomy_navigation"));
       $(".header_taxonomy_list_container").append($(".header_wrapper_menu"));
-      $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
+      // $(".header_taxonomy_head").append($(".header_wrapper_search_content"));
 
       $(".header_wrapper_menu").after($(".header_wrapper_lang"));
 
@@ -390,12 +432,15 @@ jQuery(document).ready(function($) {
   if ($(window).width() <= 1199) {
     $(".menu_main_item_link").click(function(e) {
       e.preventDefault();
-      $(".submenu").slideUp();
+      // $(".topmenu-wrap").toggleClass("open-item");
+      $(".menu_main_item_link").not($(this)).next().slideUp();
       $(this).next().slideToggle();
     });
   }
 
   // close header on swipe left
+
+
 
   let startX = 0;
   let endX = 0;

@@ -86,10 +86,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 @media screen and (max-width:1199px) {
-  .plug_product_cart_wrapper {
-    margin-right: 12px !important;
-  }
-
   .home_page_product_line_wrapper {
     max-width: 900px !important;
   }
@@ -411,4 +407,67 @@ a>* {
   appearance: none !important;
   display: none !important;
   opacity: 0 !important;
+}
+
+@media screen and (max-width:1024px) {
+  #sales_leaders_container .slick-slide {
+    margin-right: 20px !important;
+    width: 196px !important;
+    height: 391px !important;
+  }
+
+  #new_items_container .slick-slide {
+    margin-right: 20px !important;
+    width: 196px !important;
+    height: 391px !important;
+  }
+
+  .dum_img {
+    height: 391px !important;
+  }
+
+  #plug_product_cart_wrapper_1 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_2 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_3 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_4 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_5 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_6 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_7 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_8 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_9 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_10 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_11 .plug_product_cart_wrapper,
+  #plug_product_cart_wrapper_12 .plug_product_cart_wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 391px !important;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #sales_leaders_container .slick-slide {
+    margin-right: 20px !important;
+    width: 210px !important;
+    height: 391px !important;
+  }
+
+  #new_items_container .slick-slide {
+    margin-right: 20px !important;
+    width: 210px !important;
+    height: 391px !important;
+  }
+}
+
+@media screen and (max-width:414px) {
+  #sales_leaders_container .slick-slide {
+    margin-right: 16px !important;
+    width: 174px !important;
+    height: 391px !important;
+  }
+
+  #new_items_container .slick-slide {
+    margin-right: 16px !important;
+    width: 174px !important;
+    height: 391px !important;
+  }
 }

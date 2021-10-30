@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
   $("#city_load_more_out").empty();
   $("#search input").keyup(function() {
 
+
     console.log($("#search input").val());
 
     if (document.documentElement.lang === "de-DE") {

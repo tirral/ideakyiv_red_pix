@@ -64,37 +64,64 @@ if ( wp_is_mobile() ) { ?>
   foreach($products_id as $products_id_var){ ?>
    <span class="product_id_favorite" foo = "<?php echo $products_id_var ?>"></span>
   <?php } ?>
+
+
+<span data-counter="1" data-post_id="325"></span>
+
+
    <div class="container home_page_main_container">
      <div class="row home_page_main_wrapper">
       <div class="col-lg-12 home_page_product_line_wrapper ">
         <h1 class="sales_leaders_title"><?php pll_e('Sales leaders'); ?></h1>
+
         <div id="sales_leaders_container" class="home_page_product_line_container sales_leaders_block">
-        </div>
-        <div id="container_plaseholder_wrapper">
-          <div id="container_plaseholder">
-            <div class="loader_new_container">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-              <div id="container_plaseholder_text"><?php pll_e('Beladung'); ?></div>
+          <div id="plug_product_cart_wrapper_1">
+           <img  class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+         </div>
+          <div  id="plug_product_cart_wrapper_2">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_3">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_4">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_5">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_6">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
           </div>
         </div>
       </div>
       <div class="col-lg-12 home_page_product_line_wrapper">
         <h1><?php pll_e('New items'); ?></h1>
         <div id="new_items_container" class="home_page_product_line_container">
-        </div>
-        <div id="container_plaseholder_wrapper_second">
-          <div id="container_plaseholder_second">
-            <div class="loader_new_container_second">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-              <div id="container_plaseholder_text_second"><?php pll_e('Beladung'); ?></div>
+          <div id="plug_product_cart_wrapper_7">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+         </div>
+          <div  id="plug_product_cart_wrapper_8">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
           </div>
-
+          <div  id="plug_product_cart_wrapper_9">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_10">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_11">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_12">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
         </div>
+
       </div>
      </div>
    </div>
+
 
 <?php } else { ?>
 <div class="swiper mySwiper home_page_main_container_header_slider animate__animated animate__fadeIn wow">

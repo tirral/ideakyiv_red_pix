@@ -26,14 +26,13 @@
    if ( wp_is_mobile() ) { ?>
     <body  class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
 
-<div id="loader-wrapper">
-    <div id="loader_img"></div>
-  <div id="loader"></div>
-  <div class="loader-section section-left"></div>
-  <div class="loader-section section-right"></div>
-</div>
 
-
+    <div id="loader-wrapper">
+      <div id="loader_img"></div>
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
 
   <?php  } else { ?>
       <body class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
@@ -57,7 +56,11 @@
 	 			<a href="<?php echo get_home_url(); ?>"></a>
 	 		</div>
 	 		<div class="header_wrapper_menu">
+
 	 			<nav id="site-navigation" class="main-navigation">
+
+
+
 	 				<?php
 	 				wp_nav_menu(
 	 					array(
@@ -92,9 +95,7 @@
         <div class="header_wrapper_search_icon_container"></div>
 
         <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
-        <li>
-          <a  href="/order/" class="header_wrapper_cabinet_icon_container_login"><?php pll_e('Kabinett'); ?></a>
-        </li>
+        <a  href="/order/" class="header_wrapper_cabinet_icon_container_login"><?php pll_e('Kabinett'); ?></a>
         <?php } else { ?>
         <div class="header_wrapper_cabinet_icon_container"><?php pll_e('Kabinett'); ?></div>
         <?php } ?>
@@ -128,21 +129,24 @@
           </div>
         </div>
 
+<?php if ( wp_is_mobile() ) {}else{?>
+  <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+<div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
+<?php } else { ?>
+  <div class="header_wrapper_search_content">
+<?php }  ?>
+    <form id="search" class="search_article_wrapper">
+               <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   autocomplete="off" id="search_article_wrapper_input">
+       <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
+    </form>
+    <div id="city_load_more_out" style="color: #000">
+  </div>
+  </div>
+<?php } ?>
 
-        <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
-      <div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
 
-      <?php } else { ?>
-        <div class="header_wrapper_search_content">
-      <?php }  ?>
 
-          <form id="search" class="search_article_wrapper">
-             <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   id="search_article_wrapper_input">
-             <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
-          </form>
-          <div id="city_load_more_out" style="color: #000">
-        </div>
-        </div>
+
 
 
 
@@ -152,7 +156,13 @@
     <div class="col-lg-12 header_taxonomy_list_container">
 
       <div class="header_taxonomy_head">
+
+
+
+
+
         <div class="header_taxonomy_head_info_user">
+
           <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
             <!-- GET USER NAME START  -->
             <?php
@@ -186,6 +196,26 @@
           <?php } ?>
         </div>
       </div>
+
+
+      <?php if ( wp_is_mobile() ) {?>
+        <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+      <div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
+      <?php } else { ?>
+        <div class="header_wrapper_search_content">
+      <?php }  ?>
+          <form id="search" class="search_article_wrapper">
+                     <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   autocomplete="off" id="search_article_wrapper_input">
+             <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
+          </form>
+
+        </div>
+            <div id="city_load_more_out" style="color: #000"></div> 
+      <?php } ?>
+
+
+
+
 
       <nav class="taxonomy_navigation">
         <div class="categories_drop-down"><span>Categories</span></div>
