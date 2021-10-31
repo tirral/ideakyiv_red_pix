@@ -51,6 +51,7 @@ function homepage_metaboxes() {
   		'preview_size' => 'medium', // Image size to use when previewing in the admin.
   	));
 
+
   	$cmb->add_group_field( $group_field_id, array(
   		'name'       => __( 'Заголовок слайда', 'cmb2' ),
   		'id'         => 'header_slider_title',
@@ -78,5 +79,68 @@ function homepage_metaboxes() {
   		'id'   => 'header_slider_btn_url',
   		'type' => 'text',
   	));
+
+
+    $cmb->add_field( array(
+  		'name' => 'ID ПОПУЛЯРНЫХ ТОВАРОВ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ',
+  		'type' => 'title',
+  		'id'   => 'home_page_popular_product_title'
+  	));
+
+
+
+    $group_field_id = $cmb->add_field( array(
+  		'id'          => 'home_page_popular_product',
+  		'type'        => 'group',
+  			'options'     => array(
+  			'group_title'   => __( 'ID  {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+  			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+  			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+  			'sortable'      => true, // beta
+  		),
+  	));
+
+  	$cmb->add_group_field( $group_field_id, array(
+  		'name'       => __( 'ID товара', 'cmb2' ),
+  		'id'         => 'home_page_popular_product_id',
+  		'type'       => 'text',
+  		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+  	));
+
+
+    $cmb->add_field( array(
+  		'name' => 'ID НОВЫХ ТОВАРОВ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ',
+  		'type' => 'title',
+  		'id'   => 'home_page_new_product_title'
+  	));
+
+    $group_field_id = $cmb->add_field( array(
+  		'id'          => 'home_page_new_product',
+  		'type'        => 'group',
+  			'options'     => array(
+  			'group_title'   => __( 'ID  {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+  			'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+  			'remove_button' => __( 'Remove Entry', 'cmb2' ),
+  			'sortable'      => true, // beta
+  		),
+  	));
+
+  	$cmb->add_group_field( $group_field_id, array(
+  		'name'       => __( 'ID товара', 'cmb2' ),
+  		'id'         => 'home_page_new_product_id',
+  		'type'       => 'text',
+  		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+  	));
+
+
+
+
+
+
+
+
+
+
+
 
    }

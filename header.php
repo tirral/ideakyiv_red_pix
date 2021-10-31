@@ -25,26 +25,27 @@
  <?php if( is_front_page() ) {
    if ( wp_is_mobile() ) { ?>
     <body  class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
-
-
     <div id="loader-wrapper">
       <div id="loader_img"></div>
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
-
-  <?php  } else { ?>
-      <body class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
-  <?php  } ?>
- <?php } else { ?>
- 	<body <?php body_class(); ?>>
- <?php } ?>
-
+    <?php } else { ?>
+        <body class="archive post-type-archive post-type-archive-product logged-in admin-bar theme-store_rp woocommerce woocommerce-page woocommerce-js hfeed customize-support">
+    <?php  } ?>
+   <?php } else { ?>
+   	<body <?php body_class(); ?>>
+   <?php } ?>
  <?php wp_body_open(); ?>
  <div id="page" class="site">
 
- <div class="container-fluid header_container">
+  <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+ <div id="header_user_login" class="container-fluid header_container">
+<?php } else { ?>
+<div id="header_user_not_login" class="container-fluid header_container">
+<?php } ?>
+
  	<div class="row header_wrapper">
   	<div class="col-lg-12 header_top_wrapper_content">
       <div class="burger burger-header">
@@ -56,18 +57,13 @@
 	 			<a href="<?php echo get_home_url(); ?>"></a>
 	 		</div>
 	 		<div class="header_wrapper_menu">
-
 	 			<nav id="site-navigation" class="main-navigation">
-
-
-
 	 				<?php
 	 				wp_nav_menu(
 	 					array(
 	 						'theme_location' => 'menu-1',
 	 						'menu_id'        => 'primary-menu',
-	 					)
-	 				);?>
+	 					));?>
 	 			</nav>
 	 		</div>
       <div class="header_wrapper_icon_wrapper">
@@ -82,7 +78,7 @@
               <?php  } ?>
               <?php  if($current_language == "en"){ ?>
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="20" height="14" style="width: 20px; height: 14px;">
-               <?php  } ?>
+               <?php } ?>
               </div>
               <div class="language_flag_container">
   	   					<?php	if(function_exists('pll_the_languages')){
@@ -93,13 +89,11 @@
   	 			</div>
   	 		</div>
         <div class="header_wrapper_search_icon_container"></div>
-
         <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
         <a  href="/order/" class="header_wrapper_cabinet_icon_container_login"><?php pll_e('Kabinett'); ?></a>
         <?php } else { ?>
         <div class="header_wrapper_cabinet_icon_container"><?php pll_e('Kabinett'); ?></div>
         <?php } ?>
-
         <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
           <!-- GET ULIST FAVORITE PRODUCT ID START  -->
           <?php
@@ -128,41 +122,26 @@
           <!-- </a> -->
           </div>
         </div>
+        <?php if ( wp_is_mobile() ) {}else{?>
+          <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
+        <div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
+        <?php } else { ?>
+          <div class="header_wrapper_search_content">
+        <?php }  ?>
 
-<?php if ( wp_is_mobile() ) {}else{?>
-  <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
-<div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
-<?php } else { ?>
-  <div class="header_wrapper_search_content">
-<?php }  ?>
-    <form id="search" class="search_article_wrapper">
-               <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   autocomplete="off" id="search_article_wrapper_input">
-       <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
-    </form>
-    <div id="city_load_more_out" style="color: #000">
-  </div>
-  </div>
-<?php } ?>
-
-
-
-
-
-
-
-
+            <form id="search" class="search_article_wrapper">
+                 <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   autocomplete="off" id="search_article_wrapper_input">
+               <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
+            </form>
+            <div id="city_load_more_out" style="color: #000">
+          </div>
+          </div>
+        <?php } ?>
       </div>
 		</div>
     <div class="col-lg-12 header_taxonomy_list_container">
-
       <div class="header_taxonomy_head">
-
-
-
-
-
         <div class="header_taxonomy_head_info_user">
-
           <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
             <!-- GET USER NAME START  -->
             <?php
@@ -183,21 +162,16 @@
             <!-- GET ALL USER INFORMATION END  -->
             <?php if($user_img !='unset'){ ?>
               <img src="<?php echo get_template_directory_uri() ?>/user-img/user-img-thumb/<?php echo $user_img; ?>" alt="">
-
               <?php } else { ?>
                 <img src="<?php echo get_template_directory_uri() ?>/img/user_cabinet_unset.svg)" alt="">
-
               <?php } ?>
               <div class="header_taxonomy_head_info_user-name-mail">
                 <p class="header_taxonomy_head_name"><?php echo $cuctom_user_name_from_id; ?></p>
                 <p class="header_taxonomy_head_mail"><?php echo $user_email ?></p>
               </div>
-
           <?php } ?>
         </div>
       </div>
-
-
       <?php if ( wp_is_mobile() ) {?>
         <?php if($_COOKIE["cuctom_user_login"] == 'login'){ ?>
       <div class=" header_wrapper_search_content header_taxonomy_head_info_user_user_login">
@@ -208,15 +182,9 @@
                      <input  type="text"  name="answer" placeholder="<?php pll_e('Finden Produkt'); ?>"   autocomplete="off" id="search_article_wrapper_input">
              <input type="submit" value="<?php pll_e('Suche'); ?>" id="search_article_wrapper_btn" disabled></p>
           </form>
-
         </div>
-            <div id="city_load_more_out" style="color: #000"></div> 
+            <div id="city_load_more_out" style="color: #000"></div>
       <?php } ?>
-
-
-
-
-
       <nav class="taxonomy_navigation">
         <div class="categories_drop-down"><span>Categories</span></div>
         <ul class="topmenu">
@@ -287,13 +255,7 @@
         <?php } } } ?>
     </ul>
   </div>
-
-
 <?php } ?>
-
-
-
-
  <style media="screen">
    .lang-item-ru{
      display: none;

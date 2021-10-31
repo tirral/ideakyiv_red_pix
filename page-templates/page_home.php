@@ -65,16 +65,30 @@ if ( wp_is_mobile() ) { ?>
    <span class="product_id_favorite" foo = "<?php echo $products_id_var ?>"></span>
   <?php } ?>
 
+    <?php
+    $entries = get_post_meta( get_the_ID(), 'home_page_popular_product', true );
+    foreach ((array) $entries as $key => $entry ) {
+    $home_page_popular_product_id =  '';
+    $home_page_popular_product_id = ( $entry['home_page_popular_product_id'] ); ?>
+    <span id="home_page_popular_product_id_<?php echo ($key +1) ?>" data-id="<?php echo $home_page_popular_product_id;  ?>"></span>
+    <?php }
+    $entries_new = get_post_meta( get_the_ID(), 'home_page_new_product', true );
+    foreach ((array) $entries_new as $key => $entrie_new ) {
+    $home_page_new_product_id =  '';
+    $home_page_new_product_id = ( $entrie_new['home_page_new_product_id'] ); ?>
+    <span id="home_page_new_product_id_<?php echo ($key +1) ?>" data-id="<?php echo $home_page_new_product_id;  ?>"></span>
+    <?php } ?>
 
-<span data-counter="1" data-post_id="325"></span>
 
 
    <div class="container home_page_main_container">
      <div class="row home_page_main_wrapper">
+
       <div class="col-lg-12 home_page_product_line_wrapper ">
         <h1 class="sales_leaders_title"><?php pll_e('Sales leaders'); ?></h1>
 
         <div id="sales_leaders_container" class="home_page_product_line_container sales_leaders_block">
+
           <div id="plug_product_cart_wrapper_1">
            <img  class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
          </div>
@@ -93,11 +107,6 @@ if ( wp_is_mobile() ) { ?>
           <div  id="plug_product_cart_wrapper_6">
            <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
           </div>
-        </div>
-      </div>
-      <div class="col-lg-12 home_page_product_line_wrapper">
-        <h1><?php pll_e('New items'); ?></h1>
-        <div id="new_items_container" class="home_page_product_line_container">
           <div id="plug_product_cart_wrapper_7">
            <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
          </div>
@@ -116,6 +125,51 @@ if ( wp_is_mobile() ) { ?>
           <div  id="plug_product_cart_wrapper_12">
            <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
           </div>
+
+         <div style="clear: both"></div>
+
+        </div>
+      </div>
+      <div class="col-lg-12 home_page_product_line_wrapper">
+        <h1><?php pll_e('New items'); ?></h1>
+        <div id="new_items_container" class="home_page_product_line_container">
+          <div id="plug_product_cart_wrapper_13">
+           <img  class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+         </div>
+          <div  id="plug_product_cart_wrapper_14">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_15">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_16">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_17">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_18">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div id="plug_product_cart_wrapper_19">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+         </div>
+          <div  id="plug_product_cart_wrapper_20">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_21">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_22">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_23">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div  id="plug_product_cart_wrapper_24">
+           <img class="dum_img" src="<?php echo get_template_directory_uri()?>/img/img_slider_bg.jpg" alt="">
+          </div>
+          <div style="clear: both"></div>
         </div>
 
       </div>

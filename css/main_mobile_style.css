@@ -268,10 +268,17 @@
     margin-bottom: 0;
   }
 
-  .header_wrapper_search_content {
+  #header_user_login .header_wrapper_search_content {
     position: static;
     display: block !important;
     width: 100%;
+  }
+
+  #header_user_not_login .header_wrapper_search_content {
+    display: block !important;
+    width: 240px;
+    left: 50%;
+    margin-left: -75px;
   }
 
   .header_wrapper_search_content.header_taxonomy_head_info_user_user_login {
@@ -303,6 +310,7 @@
 
   .header_taxonomy_head_info_user {
     display: flex;
+    min-height: 50px;
   }
 
   .header_taxonomy_head_info_user img {
@@ -1414,7 +1422,7 @@
     right: 16px;
     width: 16px;
     height: 20px;
-    background-image: url(//tigall.red-pix.com/wp-content/themes/ideakyiv/css/../img/call_modal_close_icon_svg.svg);
+    background-image: url(../img/close_modal_serch.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -1980,6 +1988,13 @@
     margin-left: 7px !important;
     margin-bottom: 30px !important;
   }
+
+  #header_user_not_login .header_wrapper_search_content {
+    display: block !important;
+    width: 240px;
+    left: 50%;
+    margin-left: -90px;
+  }
 }
 
 @media screen and (max-width:481px) {
@@ -2075,6 +2090,12 @@
   /*.woocommerce ul.products {*/
   /*  justify-content: center !important;*/
   /*}*/
+  #header_user_not_login .header_wrapper_search_content {
+    display: block !important;
+    width: 240px;
+    left: 50%;
+    margin-left: -100px;
+  }
 }
 
 @media screen and (max-width:374px) {

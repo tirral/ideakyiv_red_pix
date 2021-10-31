@@ -74,18 +74,21 @@ jQuery(document).ready(function($) {
   });
 
 
+
+
+
   // if ($(window).width() > 1025) {
   $(".home_page_main_wrapper .home_page_product_line_container, .home_page_main_wrapper .leaders-slider").slick({
     slidesToShow: 4,
-    infinite: true,
-    slidesToScroll: 4,
+    infinite: false,
+    slidesToScroll: 1,
     dots: false,
     arrows: true,
     responsive: [{
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           arrows: true,
         },
       },
@@ -93,12 +96,12 @@ jQuery(document).ready(function($) {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           arrows: true,
         },
       },
       {
-        breakpoint: 321,
+        breakpoint: 350,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
